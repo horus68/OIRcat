@@ -117,6 +117,8 @@ else {
 											
 		Else
 		%>
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
 </head>
 
 <body>
@@ -157,7 +159,7 @@ else {
  	Else  
 	        %>
 <div id="upload">
-	<img src="../imagens/logotipo.png"/>
+	<img src="../<%=simglogo%>"/>
 	<br /><br /><br />
 	<h3>Atenção! A sua sessão expirou!!!</h3>
 	<p>

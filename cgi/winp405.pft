@@ -12,7 +12,7 @@ if val(v1002)>1 then
 '</td>'/
 '<td valign="top">'
 if S((if v9000^n='selrec' then v9000^v fi))='1' then
-'<form method="get" action="/rbcatalogo/cgi/www.exe/[in=pesqsel.in]" name="selrecs">'
+'<form method="get" action="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=pesqsel.in]" name="selrecs">'
    '<input type="hidden" name="ut" value="'(if v9000^n='ut' then v9000^v fi)'">'
    '<input type="hidden" name="base" value="'v1051'">'
    '<input type="hidden" name="expressao" value='(| + |+V8000)'>'

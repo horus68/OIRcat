@@ -5,7 +5,7 @@
 '    <td width="20%"  valign="top" align="left"><strong><i>Ver também...</i></strong></td>'/
 '    <td width="80%" valign="top" align="left">'/
       
-     if p(v856) then mpl,(|Web <a href="|V856^u|" target="_blank">|V856^z| <img src="../../imagens/picactions/icon_url_alt.svg" height="20" width="20"/></a><br />|/) mhl,FI/
+     if p(v856) then mpl,(|Web <a href="|V856^u|" target="_blank" rel="noopener">|V856^z| <img src="../../imagens/picactions/icon_url_alt.svg" height="20" width="20"/></a><br />|/) mhl,FI/
      if p(v675) then ('CDU <a href="javascript:window.location.href=ChkLinkHref(2,&quot;wiusr&quot;,&quot;CDU ',MHU,V675^a,MHL,'&quot;)">'V675^a'</a><br />'/) FI/
      if p(v700) then ('<a href="javascript:window.location.href=ChkLinkHref(0,&quot;wiusr&quot;,&quot;AU ',MHU,V700^a,| |V700^b,| |V700^c,| |V700^f,MHL,'&quot;)">'V700^a,| |V700^b| |,V700^c,| |V700^f'</a><br />'/) FI/
      if p(v701) then ('<a href="javascript:window.location.href=ChkLinkHref(0,&quot;wiusr&quot;,&quot;AU ',MHU,V701^a,| |V701^b,| |V701^c,| |V701^f,MHL,'&quot;)">'V701^a,| |V701^b| |,V701^c,| |V701^f'</a><br />'/) FI/

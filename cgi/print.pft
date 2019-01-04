@@ -3,13 +3,13 @@
 '<table border="0" cellspacing="0" width="98%" cellpadding="0" height="0">'/
 '    <tr>'/
     
-'      <td width="10%" valign="top" align="left">  '/
-'      <a href="javascript:void(0);" onclick="javascript:if (ChkVer()) window.print(); else alert(&quot;Esta funcionalidade não está disponível!\n\nPara imprimir, utilize a opção disponível no seu navegador Web\n(use clique direito para menu / Imprimir...)&quot;);">Imprimir</a>'/
+'      <td width="15%" valign="top" align="left">  '/
+'      <a href="javascript:void(0);" onclick="javascript:if (ChkVer()) window.print(); else alert(&quot;Esta funcionalidade não está disponível!\n\nPara imprimir, utilize a opção disponível no seu navegador Web\n(use clique direito para menu / Imprimir...)&quot;);">[Imprimir]</a> '/
 '      </td>'/
-'        <td width="70%" valign="top" align="left"> '/
-'      <a href="javascript:void(0);" onclick="javascript:if (ChkVer()) doSaveAs(); else alert(&quot;Esta funcionalidade não está disponível no seu navegador Web\n(use clique direito para menu / Guardar como...)&quot;);">Guardar para ficheiro</a>'/
+'      <td width="65%" valign="top" align="left"> '/
+'      <a href="javascript:void(0);" onclick="javascript:if (ChkVer()) doSaveAs(); else alert(&quot;Esta funcionalidade não está disponível no seu navegador Web\n(use clique direito para menu / Guardar como...)&quot;);"> [Guardar em ficheiro]</a>'/
 '      </td>'
-'     <td align=right width="20%"><b>' if val(v1002)>25 then f(val(v1083),0,0) else f(val(v1002),0,0) fi'</b> ficha(s)</td>'/
+'      <td align=right width="20%"><b>' if val(v1002)>25 then f(val(v1083),0,0) else f(val(v1002),0,0) fi'</b> ficha(s)</td>'/
 '    </tr>'/
 '  </table>'/
 '</div>'/
@@ -145,7 +145,7 @@ proc('D9777A9777*'right(s(mhu,V859^u),4),mpl,'*'),
 proc('D9777A9777*'mid(s(mhu,V9777),instr(V9777,'.')+1,1000),mpl,'*'),
  if s('/JPG/JPEG/GIF/PNG/'):s(v9777) then
   '<p align="center">',
-   if p(v859^x) then '<a href="'v859^x'" target="_blank">' fi,
+   if p(v859^x) then '<a href="'v859^x'" target="_blank" rel="noopener" >' fi,
    '<img  src="'v859^u'" title="'v859^z'" onerror="ImageLoadFailed(this)" width="120" height="160" align="center">',
    if p(v859^x) then '</a>' fi,
    if p(v859^z) then

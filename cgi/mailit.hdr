@@ -6,7 +6,7 @@
 '<meta name="robots" content="noindex, nofollow" />'/
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '<title>Envio de registos por Email</title>
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body topmargin="3" leftmargin="3">'/
 
@@ -46,7 +46,7 @@ return true;
 '     }'/
 '}'/
 ' </script>'/
-'<form  method="POST" action="/rbcatalogo/admin/sendemail.asp"  target="_blank" >'/
+'<form  method="POST" action="/rbcatalogo/admin/sendemail.asp" target="_blank" rel="noopener" >'/
 
 '  <div align="center">'/
 '  <center>'/

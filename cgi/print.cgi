@@ -7,6 +7,6 @@
 'count=',(if v9000^n='limites' then v9000^v fi)/
 'pft=@wiprint.pft'/,
 
-/* Campos a excluir na importacao D9000 e D9001 s∆o obrigat¢rios */
+/* Campos a excluir na importacao D9000 e D9001 sao obrigatorios */
 /* Ex. D200 D225 D966 */
 'proc='"'D9000D9001'"N0/

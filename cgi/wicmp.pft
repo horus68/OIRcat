@@ -12,7 +12,7 @@ if val(v1002)>1 then
 '</td>'/
 '<td valign="top">'
 if S((if v9000^n='selrec' then v9000^v fi))='1' then
-'<form method="get" action="/rbcatalogo/cgi/www.exe/[in=pesqsel.in]" name="selrecs">'
+'<form method="get" action="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=pesqsel.in]" name="selrecs">'
    '<input type="hidden" name="ut" value="'(if v9000^n='ut' then v9000^v fi)'">'
    '<input type="hidden" name="base" value="'v1051'">'
    '<input type="hidden" name="expressao" value='(| + |+V8000)'>'
@@ -57,9 +57,9 @@ putenv('nvotos='ref(['votos']L(['votos']'MFN 'v966^a[1],v966^l[1]),v5))
 '    <td width="17%" valign="top">'
 ,@wnovo.pft,
 if val(v1002)>1 then 
-   '<span class="linkunimarc"><a href="javascript:popunimarc(&quot;'(if v9000^n='base' then v9000^v fi)'&quot;,&quot;'(if v9000^n='expressao' then v9000^v fi)'&quot;,&quot;wiunimarc&quot;,&quot;'mfn(7)'&quot;);" title="Ver registo no formato UNIMARC">'V1001'</a></span>- <div style="display:inline-block;width:120px ;"> ',@selreg.pft, if  v1051='rbcatalogo' and s(v930,v966)<>'' then ' <a href="javascript:void(0)" onclick="ver_comm('if getenv('user')='ADMIN' then '-1' else '0'getenv('nuser') fi',&quot;'v966^a[1]'@@'v966^l[1]'&quot;,'mfn(1)')" ><!--<img src="../../imagens/picactions/icon_comentarios.svg" alt="Comentários" title="Comentários" border="0" height="35" width="35"/>--></a> 'if getenv('nuser')<>'' then '<a style="margin-left:5px" href="javascript:void(0)" onclick="ver_tags(0'getenv('nuser')',&quot;'v966^a[1]'@@'v966^l[1]'&quot;,'mfn(1)')" ><img src="../../imagens/picactions/icon_etiquetas.svg" alt="Adicionar etiqueta de leitor" title="Adicionar etiqueta de leitor" border="0" height="35" width="35"/></a>'fi fi'</div>'
+   '<span class="linkunimarc"><a href="javascript:popunimarc(&quot;'(if v9000^n='base' then v9000^v fi)'&quot;,&quot;'(if v9000^n='expressao' then v9000^v fi)'&quot;,&quot;wiunimarc&quot;,&quot;'mfn(7)'&quot;);" title="Ver registo no formato UNIMARC">'V1001'</a></span>- <div style="display:inline-block;width:120px ;"> ',@selreg.pft, if  v1051='rbcatalogo' and s(v930,v966)<>'' then ' <a href="javascript:void(0)" onclick="ver_comm('if getenv('user')='ADMIN' then '-1' else '0'getenv('nuser') fi',&quot;'v966^a[1]'@@'v966^l[1]'&quot;,'mfn(1)')" ><!--<img src="../../imagens/picactions/icon_comentarios.svg" alt="Comentários" title="Comentários" height="35" width="35"/>--></a> 'if getenv('nuser')<>'' then '<a style="margin-left:5px" href="javascript:void(0)" onclick="ver_tags(0'getenv('nuser')',&quot;'v966^a[1]'@@'v966^l[1]'&quot;,'mfn(1)')" ><img src="../../imagens/picactions/icon_etiquetas.svg" alt="Adicionar etiqueta de leitor" title="Adicionar etiqueta de leitor" height="35" width="35"/></a>'fi fi'</div>'
 else
-   '<span class="linkunimarc"><a href="javascript:popunimarc(&quot;'(if v9000^n='base' then v9000^v fi)'&quot;,&quot;'(if v9000^n='expressao' then v9000^v fi)'&quot;,&quot;wiunimarc&quot;,&quot;'mfn(7)'&quot;);" title="Ver registo no formato UNIMARC">'V1001'</a></span>- <div style="display:inline-block;width:120px ">'if v1051='rbcatalogo' and s(v930,v966)<>'' then ' <a href="javascript:void(0)" onclick="ver_comm('if getenv('user')='ADMIN' then '-1' else '0'getenv('nuser') fi',&quot;'v966^a[1]'@@'v966^l[1]'&quot;,'mfn(1)')" ><!--<img src="../../imagens/picactions/icon_comentarios.svg" alt="Comentários" title="Comentários" border="0" height="35" width="35"/>--></a> 'if getenv('nuser')<>'' then '<a style="margin-left:5px" href="javascript:void(0)" onclick="ver_tags(0'getenv('nuser')',&quot;'v966^a[1]'@@'v966^l[1]'&quot;,'mfn(1)')" ><img src="../../imagens/picactions/icon_etiquetas.svg" alt="Adicionar etiqueta de leitor" title="Adicionar etiqueta de leitor" border="0" height="35" width="35"/></a>'fi fi'</div>',
+   '<span class="linkunimarc"><a href="javascript:popunimarc(&quot;'(if v9000^n='base' then v9000^v fi)'&quot;,&quot;'(if v9000^n='expressao' then v9000^v fi)'&quot;,&quot;wiunimarc&quot;,&quot;'mfn(7)'&quot;);" title="Ver registo no formato UNIMARC">'V1001'</a></span>- <div style="display:inline-block;width:120px ">'if v1051='rbcatalogo' and s(v930,v966)<>'' then ' <a href="javascript:void(0)" onclick="ver_comm('if getenv('user')='ADMIN' then '-1' else '0'getenv('nuser') fi',&quot;'v966^a[1]'@@'v966^l[1]'&quot;,'mfn(1)')" ><!--<img src="../../imagens/picactions/icon_comentarios.svg" alt="Comentários" title="Comentários" height="35" width="35"/>--></a> 'if getenv('nuser')<>'' then '<a style="margin-left:5px" href="javascript:void(0)" onclick="ver_tags(0'getenv('nuser')',&quot;'v966^a[1]'@@'v966^l[1]'&quot;,'mfn(1)')" ><img src="../../imagens/picactions/icon_etiquetas.svg" alt="Adicionar etiqueta de leitor" title="Adicionar etiqueta de leitor" height="35" width="35"/></a>'fi fi'</div>',
 fi
 '    </td>'/
 '    <td width="90%" valign="top" align="left"><b>'/
@@ -122,7 +122,7 @@ fi
 '  </tr>'
 '</table>'/
 ,if S(V930,V966)<>''  and v1051='rbcatalogo' then
-'<span style="float:right;font-size:0.7em;margin:-7px 8px 0 0;">Ver exemplares: <img id="vermais'mfn'" onclick="expandir(&quot;'mfn'&quot;,&quot;'v1051'&quot;,&quot;'v966^l[1]'&quot;,&quot;'getenv('user')'&quot;,&quot;'getenv('nuser')'&quot;,&quot;'getenv('ent')'&quot;);" src="../../imagens/picactions/icon_ver_plus.svg" align="absbottom" style="cursor:pointer" alt="Expandir" title="Expandir" alt="Expandir" border="0" height="28" width="28"></span>'/
+'<span style="float:right;font-size:0.7em;margin:-7px 8px 0 0;">Ver exemplares: <img id="vermais'mfn'" onclick="expandir(&quot;'mfn'&quot;,&quot;'v1051'&quot;,&quot;'v966^l[1]'&quot;,&quot;'getenv('user')'&quot;,&quot;'getenv('nuser')'&quot;,&quot;'getenv('ent')'&quot;);" src="../../imagens/picactions/icon_ver_plus.svg" align="absbottom" style="cursor:pointer" alt="Expandir" title="Expandir" alt="Expandir" height="28" width="28"></span>'/
 fi
 '<table  width="99%" cellpadding=2 cellspacing=0 class="Description">'/
 IF S(V966,V930)<>'' THEN,

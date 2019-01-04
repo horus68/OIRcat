@@ -3,8 +3,8 @@ if val(v1002)=0 then
 fi
 '</table>
 <p align="right" style="margin-top:4px"><font size="2">
-<img src="../../imagens/picreservas/res_disponivel.svg" alt="Disponível para reservas de leitura" title="Disponível para reservas de  leitura" border="0" height="14" width="14"/>: disponível para reservas de leitura; 
-<!--<img src="../../imagens/picreservas/res_relogio.svg" border="0" alt="Reserva pendente" title="Reserva pendente" border="0" height="15" width="15"/>: reserva pendente; 
-<img src="../../imagens/picreservas/res_lock.svg" alt="Reserva confirmada" title="Reserva confirmada" border="0" height="15" width="15"/>: reserva confirmada; -->
+<img src="../../imagens/picreservas/res_disponivel.svg" alt="Disponível para reserva de leitura" title="Disponível para reserva de leitura" height="14" width="14"/>: disponível para reserva de leitura; 
+<!--<img src="../../imagens/picreservas/res_relogio.svg" alt="Reserva pendente" title="Reserva pendente" height="14" width="14"/>: reserva pendente; 
+<img src="../../imagens/picreservas/res_lock.svg" alt="Reserva confirmada" title="Reserva confirmada" height="14" width="14"/>: reserva confirmada; -->
 </font></p>
 </html>'

@@ -5,9 +5,9 @@
 '<meta name="viewport" content="width=device-width, initial-scale=1" />'/
 '<meta name="robots" content="noindex, nofollow" />'/
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body>'/
-'<p align="center" class="aviso" style="font-weight:normal">Ficheiro exportado com SUCESSO! Para  <em>descarregar</em> o ficheiro 'mhu,(if v9000^n='expfile' then v9000^v fi),mhl' clique <a href="'(if v9000^n='isofilepath' then v9000^v fi)(if v9000^n='expfile' then v9000^v fi)'" target="TEMP">aqui (Botão direito - Guardar link como)</a></p>'/
+'<p align="center" class="aviso" style="font-weight:normal">Ficheiro exportado com SUCESSO! Para  <em>descarregar</em> o ficheiro 'mhu,(if v9000^n='expfile' then v9000^v fi),mhl' <a href="'(if v9000^n='isofilepath' then v9000^v fi)(if v9000^n='expfile' then v9000^v fi)'" target="TEMP">clique aqui (Botão direito + Guardar link como)</a></p>'/
 
 

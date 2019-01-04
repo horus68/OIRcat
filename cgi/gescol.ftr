@@ -8,7 +8,7 @@ if val(v1002)>0 then
 '<div align="right">'
 if val(v1032)<=val(v1002)
 	then
-	'<form method="post" action="/rbcatalogo/cgi/www.exe/%5Bin=gescol.in%5D">'
+	'<form method="post" action="/'ref(['_cnf']1,v103)'/cgi/www.exe/%5Bin=gescol.in%5D">'
 	'<input type="hidden" name="ut" value="'(if v9000^n='ut' then v9000^v fi)'">'
 	'<input type="hidden" name="base" value="'v1051'">'
 	'<input type="hidden" name="expressao" value="'V1021'">'
@@ -19,7 +19,7 @@ if val(v1032)<=val(v1002)
 	'<input type="hidden" name="op" value="'(if v9000^n='op' then v9000^v fi)'">'/ 
 	'<input type="hidden" name="user" value="'(if v9000^n='user' then v9000^v fi)'">'/
 	'<input TYPE="button" VALUE="&laquo; Página anterior" class="navbotao navbotaoanterior" ONCLICK="window.history.back(-1)">'/
-	'<input TYPE="button" VALUE="Nova pesquisa" class="navbotao navbotaopesquisa" ONCLICK="window.location.href = &quot;/rbcatalogo/col.asp?id=3&quot;">'/
+	'<input TYPE="button" VALUE="Nova pesquisa" class="navbotao navbotaopesquisa" ONCLICK="window.location.href = &quot;/'ref(['_cnf']1,v103)'/col.asp?id=3&quot;">'/
 	if val(v1083)+val(v1031)<=val(v1002) then 
 	'<input type="submit" class="navbotao navbotaoseguinte" value="'if val(v1002)-val(v1083) < val(v1031)+val(v1083)-1 then 'Últimos ' f(val(v1002)-val(v1083)-val(v1031)+1,0,0)  else 'Próximos 'f(val(v1083),0,0) fi ' registos" name="Submit" tabindex="1" ></p>'/
 	fi
@@ -27,7 +27,7 @@ if val(v1032)<=val(v1002)
 	'</form>'/
 '</div>'
 	'<br />'
-	'<div style="text-align:center">Ver gráfico<br /><a href="javascript:verGrafico();"><img src="../../imagens/picgraficos/graf_grafico.svg" alt="Gráficos" title="Gráficos" border="0" height="55" width="55"/></a>'/
+	'<div style="text-align:center">Ver gráfico<br /><a href="javascript:verGrafico();"><img src="../../imagens/picgraficos/graf_grafico.svg" alt="Gráficos" title="Gráficos" height="55" width="55"/></a>'/
 	'<br />'
 '</div></div>'
 	'<br />'/

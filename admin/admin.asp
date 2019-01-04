@@ -1,11 +1,5 @@
 <!--#include file="config.asp"-->
 <!--#include file="functions.asp"-->
-<%
-  sversao = ReadIniFile(Server.MapPath("/rbcatalogo/cgi/cgi.ini"), "GERAL", "versao")
-  surlRBE = ReadIniFile(Server.MapPath("/rbcatalogo/cgi/cgi.ini"), "GERAL", "urlRBE")
-  surlPORTAL = ReadIniFile(Server.MapPath("/rbcatalogo/cgi/cgi.ini"), "GERAL", "urlPORTAL")
-  sentidadelonga = ReadIniFile(Server.MapPath("/rbcatalogo/cgi/cgi.ini"), "GERAL", "entidadelonga")
-%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
 
@@ -24,6 +18,7 @@
 	<script type="text/javascript" src="../js/md5.js"></script>
 	<script defer="defer" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
 	<script>
+	// para colapsar filtros de pesquisa
 		if (typeof jQuery == 'undefined') {
     document.write(unescape("%3Cscript src='../js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
     } 
@@ -58,7 +53,7 @@ var lres = document.getElementById('limres').value;
 }
 
 function addBtPrint(id) {
- var c= '<input class="no-printable" type="image" src="../imagens/picgest/icon_imprimir.svg" title="Imprimir" border="0" height="28" width="28" onclick="javascript:printContents(&quot;'+id+'&quot;);return false;">';
+ var c= '<input class="no-printable" type="image" src="../imagens/picgest/icon_imprimir.svg" title="Imprimir" height="28" width="28" onclick="javascript:printContents(&quot;'+id+'&quot;);return false;">';
  $("#bPrint").html(c);
 }
 
@@ -91,7 +86,7 @@ function showDBanom() {
 	 if (oper=='in' || oper=='notin')
 	 var cs = $('#case').attr('checked') ? 1 : 0; 
      var nocc= (oper=='in' || oper=='notin')? (cs==0? $("#txtanom").val().toUpperCase(): $("#txtanom").val()): $("#ncanom").val();
-     $("#anomalias").html('<p class="aviso"><img src="../imagens/picgest/wait.gif" align="absmiddle"/> Aguarde um momento</p>');
+     $("#anomalias").html('<p class="aviso"><img src="../imagens/picgest/wait.gif" style="vertical-align:middle" /> Aguarde um momento</p>');
      switch(expr){
 	 case '005': case '010': case '011': case '021': case '035': case '100': 
 	 case '101': url ="../cgi/www.exe/[in=getDBanom.in]?base=";break;
@@ -159,17 +154,17 @@ function getfdados(){
       if (aresp[1]!=aresp[2])
 		  if (aresp[2]=="Erro") 
 		  {
-			 $("#fiso").html('<img style="cursor:pointer" src="../imagens/picgest/info_proibido.svg" height="22" width="22" border="0" align="absmiddle" title="Ficheiro ISO NÃO ENCONTRADO ou não foi possível ler o ficheiro.">');
+			 $("#fiso").html('<img style="cursor:pointer" src="../imagens/picgest/info_proibido.svg" height="22" width="22" style="vertical-align:middle" title="Ficheiro ISO NÃO ENCONTRADO ou não foi possível ler o ficheiro.">');
 		  } else 
 			  if (aresp[2]=="misc") 
-			    $("#alerta").html('<img style="cursor:pointer" src="../imagens/picgest/info_duvida.svg" height="22" width="22" border="0" align="absmiddle" title="Codificação do ficheiro ISO aparentemente com mistura do padrão ANSI com o padrão ASCII.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido">');
+			    $("#alerta").html('<img style="cursor:pointer" src="../imagens/picgest/info_duvida.svg" height="22" width="22" style="vertical-align:middle" title="Codificação do ficheiro ISO aparentemente com mistura do padrão ANSI com o padrão ASCII.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido">');
 			  else 
-			    $("#alerta").html('<img style="cursor:pointer" src="../imagens/picgest/info_aviso.svg" height="22" width="22" border="0" align="absmiddle" title="Codificação do ficheiro ISO aparentemente NÃO CONFERE com a parametrização.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido">');
-     else   $("#alerta").html('<img style="cursor:pointer" src="../imagens/picgest/info_verificado.svg" height="22" width="22" border="0" align="absmiddle" title="Codificação do ficheiro ISO aparentemente VÁLIDA.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido">');
+			    $("#alerta").html('<img style="cursor:pointer" src="../imagens/picgest/info_aviso.svg" height="22" width="22" style="vertical-align:middle" title="Codificação do ficheiro ISO aparentemente NÃO CONFERE com a parametrização.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido">');
+     else   $("#alerta").html('<img style="cursor:pointer" src="../imagens/picgest/info_verificado.svg" height="22" width="22" style="vertical-align:middle" title="Codificação do ficheiro ISO aparentemente VÁLIDA.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido">');
      }, 
      onFailure: function() {alert("Ocorreu um erro. Contacte o administrador.")}
       });
-     } else {$("#soft").html("----"); $("#codepage").html("");$("#alerta").html('<img style="cursor:pointer" src="../imagens/picgest/info_proibido.svg" height="22" width="22" border="0" align="absmiddle" title="Ficheiro ISO NÃO ENCONTRADO ou não foi possível ler o ficheiro.">');}	  
+     } else {$("#soft").html("----"); $("#codepage").html("");$("#alerta").html('<img style="cursor:pointer" src="../imagens/picgest/info_proibido.svg" height="22" width="22" style="vertical-align:middle" title="Ficheiro ISO NÃO ENCONTRADO ou não foi possível ler o ficheiro.">');}	  
    }, 
    onFailure: function() {alert("Ocorreu um erro. Contacte o administrador.")}
    });   
@@ -413,8 +408,8 @@ function mudahist(ob){
 	  }     
 }
 </script>
-	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
-	<link rel="icon" type="image/png" sizes="32x32" href="../imagens/app/favicon-32x32.png?v=001" />
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
 </head>
 <% Function URLDecode(str) 
 			str = Replace(str, "+", " ") 
@@ -482,7 +477,6 @@ function mudahist(ob){
 			<%else%>
 			» Administração </p>
 			<% end if%>
-			</p>
 		</div>
 		<div class="col3" id="lblutilizador">Utilizador: <span id="utilizador">
 				<% if session("user")="" then response.write "Visitante" else response.write ucase(session("user"))%>
@@ -601,7 +595,7 @@ If Session("LogError") < 3 Then
 
 		<% if request("op")<>"" then %>
 
-		<div id="admbotoes" style="float:right"><a href="admin.asp<% if ucase(session("user"))="ADMIN" then if request("tipo")="lt" then response.write "?mnut=2" else response.write "?mnut=1" end if else response.write "?id=5" %>"><img src="../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a></div>
+		<div id="admbotoes" style="float:right"><a href="admin.asp<% if ucase(session("user"))="ADMIN" then if request("tipo")="lt" then response.write "?mnut=2" else response.write "?mnut=1" end if else response.write "?id=5" %>"><img src="../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"/></a></div>
 		<h3>Novo registo</h3>
 
 		<% select case request("tipo")
@@ -785,7 +779,7 @@ If Session("LogError") < 3 Then
 			<!-- Separador Utilizadores geral -->
 			<div id="tab1" class="tabcontent">
 				<dl class="tabsubmenu1">
-					<dt style="font: 10pt Arial"><a href="admin.asp?mnut=1" <% if request("mnut")="1" or request("mnut")="" then response.write "class=""tabfakeon""" else response.write "class=""tabfakeoff""" %>">Institucionais</a><a href="admin.asp?mnut=2" <% if request("mnut")="2" then response.write "class=""tabfakeon""" else response.write "class=""tabfakeoff""" %>">Individuais</a></dt><br /><br />
+					<dt style="font: 10pt Arial"><a href="admin.asp?mnut=1" <% if request("mnut")="1" or request("mnut")="" then response.write "class=""tabfakeon""" else response.write "class=""tabfakeoff""" %>>Institucionais</a><a href="admin.asp?mnut=2" <% if request("mnut")="2" then response.write "class=""tabfakeon""" else response.write "class=""tabfakeoff""" %>>Individuais</a></dt><br /><br />
 				</dl>
 				<dl class="tabsubmenu">
 					<% select case request("mnut")
@@ -844,7 +838,7 @@ If Session("LogError") < 3 Then
 						<input type="hidden" name="ut" value="admin">
 
 					</form>
-					<dd><a href="javascript:document.frmcleanlog.submit()" OnClick="return confirm('Tem memsmo a certeza que quer reiniciar o ficheiro de registo de acessos à administração [LOGS]?')">Reiniciar o ficheiro de registo de acessos</a></dd>
+					<dd><a href="javascript:document.frmcleanlog.submit()" OnClick="return confirm('Tem mesmo a certeza que quer reiniciar o ficheiro de registo de acessos à administração [LOGS]?')">Reiniciar o ficheiro de registo de acessos</a></dd>
 				</dl>
 			</div>
 			<!-- Separador Acessos FIM -->
@@ -882,7 +876,7 @@ If Session("LogError") < 3 Then
                   end if
 				  on error goto 0
 				  if  uflag then %>
-<dt>Catálogo da minha biblioteca</dt>
+				  <dt>Catálogo da minha biblioteca</dt>
 					<dd><a href="catind.asp?id=0&base=<%=lcase(session("user"))%>">Pesquisa simplificada</a></dd>
 					<dd><a href="catind.asp?id=1&base=<%=lcase(session("user"))%>">Pesquisa orientada</a></dd>
 					<dd><a href="catind.asp?id=2&base=<%=lcase(session("user"))%>">Pesquisa avançada</a></dd>
@@ -1197,21 +1191,23 @@ If Session("LogError") < 3 Then
 										<div class="col5">
 											<span id="inputOcorrAnom">Ocorrências): <input type="text" id="ncanom" size="2" value="0" onKeyup="checkValInput(this)"></span>
 											&nbsp;<span id="inputTextoAnom" style="display:none">Texto <input type="text" id="txtanom" size="12" value=""></span>
-											<span id="case-sensitive" style="display:none"><img src="../imagens/picactions/case_sensitive.svg" height="21" width="15" align="absmiddle" /><input type="checkbox" value="" id="case" style="margin:-8px 0 0 0;vertical-align:bottom;font-size:1.6m"></span>&nbsp;
+											<span id="case-sensitive" style="display:none"><img src="../imagens/picactions/case_sensitive.svg" height="21" width="15" style="vertical-align:middle" /><input type="checkbox" value="" id="case" style="margin:-8px 0 0 0;vertical-align:bottom;font-size:1.6m"></span>&nbsp;
 											&nbsp;<input type="button" value="Ok" class="botao botao1" onclick="showDBanom();">
 										</div>
 									</div>
 
 								</div>
 
-								<div id="anomalias"></div>
+								<div id="anomalias">
+								</div>
 							</div>
 					</form>
-					<div id="nocat1" style="margin:30px 0 0 -80px"></div>
+					<div id="nocat1" style="margin:30px 0 0 -80px">
+					</div>
 					<br />
 					<% end select%>
 				</dl>
-			</div>
+						</div>
 			<!-- Separador Bases FIM -->
 			<!-- Separador Utilizadores Bibliotecas -->
 			<%if lcase(session("user"))<>"admin" then %>
@@ -1233,7 +1229,7 @@ If Session("LogError") < 3 Then
 						</form>
 						<dd><a href="javascript:document.frmlistaleitor1.submit()">Lista geral</a></dd>
 					</dl>
-<br />[Informação: As funcionalidades ligadas a <br />'Utilizadores individuais' não devem ser utilizadas!]<br />
+					<br />[Informação: As funcionalidades ligadas a <br />'Utilizadores individuais' não devem ser utilizadas!]<br />
 				</div>
 			<!-- Separador Utilizadores Bibliotecas FIM -->
 				<!-- Separador parametrizações -->
@@ -1304,7 +1300,7 @@ If Session("LogError") < 3 Then
 				<!-- Separador Social -->
 				<div id="tab11" class="tabcontent">
 					<dl class="tabsubmenu1">
-						<dd><a href="/rbcatalogo/cgi/www.exe/[in=lstcomm.in]?expr=$&ut=<%=session("user")%>">Comentários</a></dd>
+						<dd><a href="/<%=spastaOPAC%>/cgi/www.exe/[in=lstcomm.in]?expr=$&ut=<%=session("user")%>">Comentários</a></dd>
 						<!--<dd><a href="lstvotos.asp?id=7">Votações</a></dd>-->
 					</dl>
 				</div>
@@ -1313,19 +1309,19 @@ If Session("LogError") < 3 Then
 				<div id="tab12" class="tabcontent">
 					<dl class="tabsubmenu1">
 						<dt>Catálogo Coletivo</dt>
-						<dd>Entidade: <a style="text-decoration:none" href="<%=surlPORTAL%>" target="_blank">
+						<dd>Entidade: <a style="text-decoration:none" href="<%=surlPORTAL%>" target="_blank" rel="noopener">
 								<%=sentidadelonga%></a></dd>
-						<dd>Bibliotecas parceiras: <a style="text-decoration:none" href="/rbcatalogo/admin/fpdf/main.asp" target="_blank">Nomes e contactos (em PDF)</a></dd>
+						<dd>Bibliotecas parceiras: <a style="text-decoration:none" href="/<%=spastaOPAC%>/admin/fpdf/main.asp" target="_blank" rel="noopener">Nomes e contactos (em PDF)</a></dd>
 						<br />
 						<dt>Guias e Apoio</dt>
 						<dd>Guia de Utilização (básico) - <a style="text-decoration:none" href="../ajuda_dicas.asp">Público em geral</a></dd>
-						<dd>Guia de Utilização (avançado) - <a style="text-decoration:none" href="https://sites.google.com/view/pesquisarcatalogo" target="_blank">Público em geral</a></dd>
-						<dd>Guia de Utilização - <a style="text-decoration:none" href="https://sites.google.com/view/opacrbe/biblio" target="_blank">Bibliotecários</a></dd>
-						<dd>Guia de Utilização - <a style="text-decoration:none" href="https://sites.google.com/view/opacrbe/tec" target="_blank">Técnicos de Informática</a></dd>
+						<dd>Guia de Utilização (avançado) - <a style="text-decoration:none" href="<%=sguiaUTILIZADOR%>" target="_blank" rel="noopener">Público em geral</a></dd>
+						<dd>Guia de Utilização - <a style="text-decoration:none" href="<%=sguiaTEC%>/biblio" target="_blank" rel="noopener">Bibliotecários</a></dd>
+						<dd>Guia de Utilização - <a style="text-decoration:none" href="<%=sguiaTEC%>/tec" target="_blank" rel="noopener">Técnicos de Informática</a></dd>
 						<br />
 						<dt>Tecnologia</dt>
 						<dd>Software: <%=sversao%></dd>
-						<dd>Desenvolvimento: <a style="text-decoration:none" href="<%=surlRBE%>" target="_blank">Projeto RedesConcelhias.RBE</a></dd>
+						<dd>Desenvolvimento: <a style="text-decoration:none" href="<%=surlRBE%>" target="_blank" rel="noopener"><%=sprojetoRBE%></a></dd>
 						<dd>Contacto: redes.concelhias@mail-rbe.org</dd>
 					</dl>
 				</div>

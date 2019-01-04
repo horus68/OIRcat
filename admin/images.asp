@@ -11,9 +11,9 @@ Response.CacheControl = "no-cache"
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="robots" content="noindex, nofollow">
+	<meta name="robots" content="noindex, nofollow" />
 	<title>Selecionar imagens</title>
 	<script type="text/javascript" src="../js/prototype.min.js"></script>
 	<script>
@@ -175,13 +175,13 @@ Response.CacheControl = "no-cache"
 		}
 
 	</script>
-	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
-	<link rel="icon" type="image/png" sizes="32x32" href="../imagens/app/favicon-32x32.png?v=001" />
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
 </head>
 
 <body onload="init();window.focus();">
 	<div id="lista">
-		Escolha a imagem pretendida a partir da lista e depois pressione o botão "SELECIONAR FICHEIRO" (<img SRC="../imagens/navimages/pic_file_confirm.svg" align="absbottom" height="28" width="28"/>) para atualizar. <br /> Caso queira, poderá CARREGAR A IMAGEM PARA O SERVIDOR (<img SRC="../imagens/navimages/pic_file_upload.svg" align="absbottom" height="28" width="28"/>) a partir do seu computador.
+		Escolha a imagem pretendida, a partir da lista, e depois clique no botão "SELECIONAR FICHEIRO" (ou <img SRC="../imagens/navimages/pic_file_confirm.svg" align="absbottom" height="20" width="20"/>) para atualizar. <br /> Poderá ainda clicar em CARREGAR IMAGEM PARA O SERVIDOR (ou <img SRC="../imagens/navimages/pic_file_upload.svg" align="absbottom" height="20" width="20"/>) a partir do seu computador.
 		<table WIDTH="100%">
 			<tr>
 				<td VALIGN="top" width="200">
@@ -237,7 +237,7 @@ Response.CacheControl = "no-cache"
 
 					<img SRC="../imagens/navimages/inviz.png" NAME="i_image" ID="i_image" STYLE="display:none" height="120" width="120"/>
 					<br />
-					<span ID="img_props" NAME="img_props" style="font-size:7pt"><img src="../imagens/navimages/inviz.png" height="120" width="120" & slogo /></span>
+					<span ID="img_props" NAME="img_props" style="font-size:7pt"><img src="../imagens/navimages/inviz.png" height="120" width="120" & simglogo /></span>
 				</td>
 			</tr>
 		</table>

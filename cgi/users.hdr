@@ -10,9 +10,9 @@
 '<META HTTP-EQUIV="Expires" CONTENT="-1">'
 '<meta name="description" content="'v9002'" />'
 '<meta name="keywords"  content="'v9003'" />'
-'<script language="JavaScript" src="'v9000'/js/tools.js"></script>
+'<script language="JavaScript" src="'v9000'/js/tools.min.js"></script>
 '<link rel="stylesheet" href="'v9000'/css/default.min.css?version=001" type="text/css" />'
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head><body>'
 '      <h3><span>Utilizadores</span></h3>'
 '      <script>'

@@ -9,6 +9,6 @@
 '	<title>'ref(['_cnf']1,v100)'</title>'/	
 '	<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'/
 '<script type="text/javascript" src="../../js/prototype.min.js"></script>'/ 
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body>'/

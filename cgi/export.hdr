@@ -6,7 +6,7 @@
 '<meta name="robots" content="noindex, nofollow" />'/
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '<title>Exportação de registos  - ISO 2709</title>'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body >'/
 
@@ -16,7 +16,7 @@
 '  fich="'(if v9000^n='expfile' then v9000^v fi)'";'/
 '  fpath="'(if v9000^n='isofilepath' then v9000^v fi)'"+fich;'/
 '  loc=document.location.protocol+"//"+document.location.hostname+fpath;'/
-'  outp="Para <em>descarregar</em> o ficheiro&nbsp;&quot;"+fich+"&quot;&nbsp; <a href=\""+fpath+"\" target=\"TEMP\"  >clique aqui (botão direito + guardar como)</a>";'/
+'  outp="Para <em>descarregar</em> o ficheiro&nbsp;&quot;"+fich+"&quot;&nbsp; <a href=\""+fpath+"\" target=\"TEMP\"  >clique aqui (botão direito + guardar link como)</a>";'/
 '  return(outp);'/
 '}'/
 

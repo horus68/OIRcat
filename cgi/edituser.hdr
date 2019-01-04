@@ -14,7 +14,7 @@
 'function chk_iso(us,codigo) '/
 ' {'/
 ' var user=us.toLowerCase();'/
-' url = "/rbcatalogo/admin/chkiso.asp?file="+user+".iso&r="+new Date().getTime();'/
+' url = "/'ref(['_cnf']1,v103)'/admin/chkiso.asp?file="+user+".iso&r="+new Date().getTime();'/
 ' new Ajax.Request (url, { '/
 ' method:"get",   '/
 ' onSuccess: function(transport) {    '/
@@ -33,7 +33,7 @@
  }); '/
 '  }'/
 '</script>'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body >'/
 '<div class="destaque1">'/
@@ -85,8 +85,8 @@
 '</div>'/
 '</div>'/
 '      <div id="principal">'
-'<div id="admbotoes" style="float:right"><a href="../../cgi/www.exe/[in=relusers.in]?expressao=$&ut=ADMIN"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a></span></div>'/
+'<div id="admbotoes" style="float:right"><a href="../../cgi/www.exe/[in=relusers.in]?expressao=$&ut=ADMIN"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"/></a></span></div>'/
 '<h3>Editar utilizador</h3>'/
     '<!--<b>Expressão de pesquisa:</b> <input name="expr" id="expr" type="text" size="50" value="'(if v9000^n='expressao' then v9000^v fi)'" onkeypress="javascript:onEnter(event)">'/
-    '<a href="javascript:novapesq()"><img src="../../imagens/picgest/icon_refresh.svg" alt="Refazer pesquisa" title="Refazer pesquisa" border="0" width="20" height="20" align="absmiddle"/></a>-->'/
+    '<a href="javascript:novapesq()"><img src="../../imagens/picgest/icon_refresh.svg" alt="Refazer pesquisa" title="Refazer pesquisa" width="20" height="20" align="absmiddle"/></a>-->'/
      ''/

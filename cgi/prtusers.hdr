@@ -17,7 +17,7 @@
      table#users td{border:solid 1px;}
 }
 </STYLE>'
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head><body>'
 '<div class="destaque1">'/
 '<h1>Catálogo Coletivo: Utilizadores</h1>'/
@@ -31,8 +31,8 @@
 '</div>'/
 '</div>'/
 '<div id="principal">'
-'<div id="admbotoes" style="float:right"><a href="javascript:history.back()"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a><a href="javascript:window.print()"><img src="../../imagens/picgest/icon_imprimir.svg" title="Imprimir lista de utilizadores" alt="Imprimir lista de utilizadores" border="0" height="28" width="28"/></a></div>'/
+'<div id="admbotoes" style="float:right"><a href="javascript:history.back()"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"/></a><a href="javascript:window.print()"><img src="../../imagens/picgest/icon_imprimir.svg" title="Imprimir lista de utilizadores" alt="Imprimir lista de utilizadores" height="28" width="28"/></a></div>'/
 '<h3>Lista de utilizadores</h3>'/
 '<table id="users" class="sortable" summary="Lista de utilizadores");"
   onMouseOut="javascript:highlightTableRow(0);">'
-'  <th>ID</th><th>Sigla</th><th>Designação</th><th>Grupo</th><th>Morada</th><th>Localiade</th><th>Cod. Postal</th><th>Telefone</th><th>Email</th>'
+'  <tr><th>ID</th><th>Sigla</th><th>Designação</th><th>Grupo</th><th>Morada</th><th>Localiade</th><th>Cod. Postal</th><th>Telefone</th><th>Email</th></tr>'

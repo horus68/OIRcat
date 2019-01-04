@@ -17,7 +17,7 @@
      table#users td{border-style:solid 1px;}
 }
 </STYLE>'
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head><body>'
  putenv('user='mhu,(if v9000^n='ut' then v9000^v fi),mhl)
 '<div class="destaque1">'/
@@ -32,7 +32,7 @@
 '</div>'/
 '</div>'/
 '<div id="principal">'
-'	<div id="admbotoes" style="float:right"><a href="javascript:history.back()"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a><a href="javascript:window.print()"><img src="../../imagens/picgest/icon_imprimir.svg" title="Imprimir lista de utilizadores" alt="Imprimir lista de utilizadores" border="0" height="28" width="28"/></a></div><h3>Lista de leitores</h3>'/
+'	<div id="admbotoes" style="float:right"><a href="javascript:history.back()"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"/></a><a href="javascript:window.print()"><img src="../../imagens/picgest/icon_imprimir.svg" title="Imprimir lista de utilizadores" alt="Imprimir lista de utilizadores" height="28" width="28"/></a></div><h3>Lista de leitores</h3>'/
 '<table id="users" class="sortable" summary="Lista de leitores");"
   onMouseOut="javascript:highlightTableRow(0);">'
-'  <th 'if getenv('user')<>'ADMIN' then 'style="display:none"' fi'>Biblioteca</th><th>Nº</th><th>Nome</th><th>Morada</th><th>Cod. Postal</th><th>Data nasc.</th>'
+'  <tr><th 'if getenv('user')<>'ADMIN' then 'style="display:none"' fi'>Biblioteca</th><th>Nº</th><th>Nome</th><th>Morada</th><th>Cod. Postal</th><th>Data nasc.</th></tr>'

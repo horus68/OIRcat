@@ -7,15 +7,10 @@
  strMAIL=getUrl(strURL)
  tmp=split(request("mfn"),"@@")
 %>
-<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />
-<script type="text/javascript" src="/rbcatalogo/js/geral.min.js"></script>
+<link rel="stylesheet" href="/<%=spastaOPAC%>/css/default.min.css?version=001" type="text/css" />
+<script type="text/javascript" src="/<%=spastaOPAC%>/js/geral.min.js"></script>
 <script defer="defer" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
-	<script>
-		if (typeof jQuery == 'undefined') {
-    document.write(unescape("%3Cscript src='js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
-    } 
-    </script>
-<script type="text/javascript" src="/rbcatalogo/js/md5.js"></script>
+<script type="text/javascript" src="/<%=spastaOPAC%>/js/md5.js"></script>
 <script>
 	function filterText(sText) {
         var reBadWords = /<%=  ReadFile(Server.MapPath("/rbcatalogo/bases/bwords.stw"))%>/gi;
@@ -64,7 +59,7 @@ function check_comm(f) {
 		<input type="hidden" name="expr1" value="<%=tmp(0)%>">
 		<input type="hidden" name="expr2" value="<%=tmp(1)%>">
 		<input type="hidden" name="ftext" id="ftext" value="">
-		<div><span style="float:right;margin-right:30px"><a href="javascript:void(0)" onclick="javascript:history.go(-1)"><img src="imagens/picactions/icon_close.svg" alt="Fechar janela" title="Fechar janela" border="0" height="25" width="25"/></a></span><span style="font-size:1.1em; font-weight:bold">ADICIONAR COMENTÁRIO</span>
+		<div><span style="float:right;margin-right:30px"><a href="javascript:void(0)" onclick="javascript:history.go(-1)"><img src="imagens/picactions/icon_close.svg" alt="Fechar janela" title="Fechar janela"  height="25" width="25"/></a></span><span style="font-size:1.1em; font-weight:bold">ADICIONAR COMENTÁRIO</span>
 		</div>
 		<div id="live-preview-form" class="lp-block">
 			<p>

@@ -10,9 +10,9 @@
 
 	<title><%= sentidade %></title>
 	<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
-	<script language="JavaScript" src="../js/tools.js"></script>
-	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
-	<link rel="icon" type="image/png" sizes="32x32" href="../imagens/app/favicon-32x32.png?v=001" />
+	<script language="JavaScript" src="../js/tools.min.js"></script>
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
 </head>
 
 <body>
@@ -53,7 +53,7 @@
        }
       </script>
 	<div id="principal">
-		<div id="admbotoes" style="float:right"><a href="javascript:voltar()"><img src="../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a></div>
+		<div id="admbotoes" style="float:right"><a href="javascript:voltar()"><img src="../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"/></a></div>
 		<br />
 		<br />
 		<form name="pinleitor" id="pinleitor" action="../cgi/www.exe/[in=novpin.in]" method="post">

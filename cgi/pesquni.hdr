@@ -6,18 +6,18 @@
 '<meta name="robots" content="noindex, nofollow" />'/
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '<title>Formato UNIMARC para cópia de registo</title>'/
-'<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="stylesheet" href="/'ref(['_cnf']1,v103)'/css/default.min.css?version=001" type="text/css" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body id="topopagina" onload="window.focus()">'/
-'<script language="JavaScript" src="/rbcatalogo/js/geral.min.js"></script>'/
+'<script language="JavaScript" src="/'ref(['_cnf']1,v103)'/js/geral.min.js"></script>'/
 '<script language="JavaScript">'/
 'function ChkLinkHref(tipo,formato,linha_in)'/
 '{'/
 '  var dim=0;'/
 '  var tmp="",car="";'/
 '  tmp=ConvUp(linha_in);'/
-'  var param="/rbcatalogo/cgi/www.exe/[in=pesqger.in]?base='(if v9000^n='base' then v9000^v fi)'&ut='(if v9000^n='ut' then v9000^v fi)'&nut='(if v9000^n='nut' then v9000^v fi)'&nomemnu='(if v9000^n='nomemnu' then v9000^v fi)'&formato="+formato+"&lim_inicio=1&limites='(if v9000^n='limites' then v9000^v fi)'&iso2709='(if v9000^n='iso2709' then v9000^v fi)'&sortfmt='(if v9000^n='sortfmt' then v9000^v fi)'&user='(if v9000^n='user' then v9000^v fi)'&expressao=";'/
+'  var param="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=pesqger.in]?base='(if v9000^n='base' then v9000^v fi)'&ut='(if v9000^n='ut' then v9000^v fi)'&nut='(if v9000^n='nut' then v9000^v fi)'&nomemnu='(if v9000^n='nomemnu' then v9000^v fi)'&formato="+formato+"&lim_inicio=1&limites='(if v9000^n='limites' then v9000^v fi)'&iso2709='(if v9000^n='iso2709' then v9000^v fi)'&sortfmt='(if v9000^n='sortfmt' then v9000^v fi)'&user='(if v9000^n='user' then v9000^v fi)'&expressao=";'/
 '  dim=tmp.length;'/
 '  car=tmp.charAt(dim-1);'/
 '  if (tipo=="1" && car==")") tmp=tmp.substring(0,dim-1);'/

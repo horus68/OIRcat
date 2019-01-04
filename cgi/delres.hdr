@@ -14,8 +14,8 @@
 '<meta name="robots" content="noindex, nofollow" />'/
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '	<title>'ref(['_cnf']1,v100)'</title>'/ 	
-'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />'/
-'<script type="text/javascript" src="/rbcatalogo/js/prototype.min.js"></script>'/
+'	<link rel="stylesheet" href="/'ref(['_cnf']1,v103)'/css/default.min.css?version=001" type="text/css" />'/
+'<script type="text/javascript" src="/'ref(['_cnf']1,v103)'/js/prototype.min.js"></script>'/
 '<script>'/
 'function avisar()'/
 '   {'/
@@ -95,6 +95,6 @@ else
 fi
 '   }'/
 '</script>'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body>'/

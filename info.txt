@@ -7,61 +7,48 @@ Info: https://sites.google.com/view/opacrbe/oir/sobre
 
 
 ====== Alterações
-versão 2.0.0 - 08 outubro 2018
-++ Versão de referência para 2018-2019
-++ Alteração geral da formatação do código (por software Brackets)
-++ QRcode para entrada
-++ Análise da coleção ao público
-++ Revisão do top títulos com autor e subtítulo
-++ Parametrização e alteração de cores em gráficos CDU
-++ Pack de ícones em vetores para administração
-++ Licenças + ficheiros GIT
-++ Pesquisa fluída na vista completa
-++ Manifesto para Apps
-++ Compressão imagens
-++ Modo app e ecrã principal em móvel
-++ Registo de service works para móveis
-++ CSS com versões
-++ Revisão da ajuda
-++ Carregamento alternativo de ISOS
-++ Revisão importação Docbase e Biblionet
-++ RGPD e Cookie consent
-++ AddToAny substitui AddThis
--- Retirada de Fontwaesome para ícones de vetores
-~~ Revisão das bases Demo
-~~ Rev. favicon
-~~ Rev. Metatags
-~~ Revisão completa de ícones da zona pública para vetores
-~~ Revisão pesquisa por termos na administração
-~~ Revisão visualização móvel dos gráficos
-~~ Revisão visualização móvel dos separadores da administração
-~~ Rev. código de imagens
-~~ Rev. jquery em gráficos
-~~ Rev. favicon
+versão 2.0.2 - 03 janeiro 2019
+++ Variáveis de URL para ficheiros ASP definidas em config.asp
+++ Variável de pasta do OPAC para ficheiros HDR e PFT definida em ficheiro _CNF
+++ Novos gráficos da coleção e revisão de visual
+++ Ativação de ARIA Roles e Landmarks para leitores de ecrã
+~~ Revisão de títulos em ficheiros não ASP
+~~ Correção de Top reservas
+~~ Revisão de links
+~~ Revisão de código de tabelas
+~~ Limpeza de código border e absmiddle
+~~ Minimificação de tools.js
+~~ Copyright 2019
 
 
-================ Apoio a técnicos de informática
+
+**************************
+********* INFOS *********
+**************************
+
+
+======= Apoio a técnicos de informática
 Guia de instalação e administração:
 https://sites.google.com/view/opacrbe/tec
 
 
-================ Apoio a bibliotecários
+======= Apoio a bibliotecários
 Guia de gestão:
 https://sites.google.com/view/opacrbe/biblio
 
 
-================ Guia do utilizador
+======= Guia do utilizador
 Pesquisa pelo público: 
 https://sites.google.com/view/pesquisarcatalogo
 
 
-================ Direitos de autor e Licenças
-Copyright (c) 2005-2018 RBE. Todos os direitos reservados.
+======= Direitos de autor e Licenças
+Copyright (c) 2005-2019 RBE (Projeto RedesConcelhias.RBE). Todos os direitos reservados.
 Distribuído pela licença GNU AGPL-3.0 ou posterior 
 Ver detalhes no ficheiro license_info.txt
 
 
-================ Projeto RedesConcelhias.RBE
+======= Projeto RedesConcelhias.RBE
 Email: redes.concelhias@mail-rbe.org
 Infos e recursos: https://sites.google.com/view/redesconcelhias
 Sítio RBE (Redes Concelhias): https://www.rbe.mec.pt/np4/redesconcelhias/

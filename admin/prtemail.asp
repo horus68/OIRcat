@@ -4,6 +4,8 @@
 <head>
 	<title>Imprimir email</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="robots" content="noindex, nofollow" />
 	<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 
 <body><br /><br />
@@ -18,7 +20,7 @@
 	response.write "</fieldset>"
 %>
 	<br /><br />
-	<div style="float:right; margin-right: 20px; font:0.8em;">Imprimir<a href="javascript:window.print()"><img src="../imagens/picactions/icon_imprimir.svg" align="absmiddle" border="0" height="22" width="22"/></a></div>
+	<div style="float:right; margin-right: 20px; font:0.8em;">Imprimir<a href="javascript:window.print()"><img src="../imagens/picactions/icon_imprimir.svg"style="vertical-align:middle" height="22" width="22"/></a></div>
 
 	<!--<center><input type="button" onclick="javascript:window.print()" value="Imprimir"></center>-->
 </body>

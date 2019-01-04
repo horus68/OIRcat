@@ -3,22 +3,23 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="icon" href="../favicon.ico" type="image/ico"/>
-<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="robots" content="noindex, nofollow" />
-<title>Leitor - entrada no sistema</title>
-<% Response.CacheControl = "no-cache" %>
-<% Response.AddHeader "Pragma", "no-cache" %> 
-<% Response.Expires = -1 %>
-<!--#include file="md5.asp"-->
-<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
-<script type="text/javascript" src="../js/md5.js"></script>
-<script type="text/javascript" src="../js/rc4.js"></script>
-<script type="text/javascript" src="../js/prototype.min.js"></script>
-<script type="text/javascript">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="robots" content="noindex, nofollow" />
+	<title>Leitor - entrada no sistema</title>
+  <% Response.CacheControl = "no-cache" %>
+  <% Response.AddHeader "Pragma", "no-cache" %> 
+  <% Response.Expires = -1 %>
+	<!--#include file="md5.asp"-->
+	<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
+	<script type="text/javascript" src="../js/md5.js"></script>
+	<script type="text/javascript" src="../js/rc4.js"></script>
+	<script type="text/javascript" src="../js/prototype.min.js"></script>
+	<script type="text/javascript">
 <!--
 function removeacento(texto){
 var car,i,dim,p,linha_out="";
@@ -43,7 +44,7 @@ function addElement(s,n)
 		window.opener.parent.parent.document.getElementById("utilizador").innerHTML=removeacento(s);
 		window.opener.parent.parent.document.getElementById("basket").style.display="";
 		var temp=window.opener.parent.parent.location.href.replace(/ut=guest/,"ut="+removeacento(s));
-		
+
 		temp=temp.replace(/nut=/,"nut="+n);
 		//window.opener.parent.parent.location.hash=unescape(temp);
 		window.opener.parent.parent.location.href=unescape(temp);
@@ -88,11 +89,11 @@ Function log_erro(msg)
     on error resume next
     strHTML=getUrl(strROOT & "/cgi/www.exe/[in=getmailusr.in]?expressao=SIGLA ADMIN&r=" & rnd())
 	writeLog("LOGIN (insucesso) - Leitor:" & ucase(nu) & msg )
-	response.write "<p>&nbsp;</p>"						 
+	response.write "<p>&nbsp;</p>"
 	response.write "<h4 style=""font: 9pt Verdana;color:red"">Acesso negado. O leitor não tem acesso ao sistema...</h3>"
 	response.write "<p style=""font: 8pt Verdana"">Mensagem: " & msg & "</p>"
 	response.write "<p style=""font: 8pt Verdana"">Contacte o administrador do sistema " & strHTML & "</p>"
-	'Session("LogError")=Session("LogError")+1        
+	'Session("LogError")=Session("LogError")+1 
 	response.write "<div align=""right"" style=""font: 8pt Verdana;margin-right:10px""><a href=""javascript:window.self.close();"" >Fechar</a></div>"
 	on error goto 0
 end function
@@ -113,7 +114,7 @@ if request("op")="vp" then
 	  if metodo = "POST" then  
 			op = trim(Server.HTMLEncode(Replace(Request.Form("oldpin"),"'","''"))) 
 			np = trim(Server.HTMLEncode(Replace(Request.Form("novopin"),"'","''")))
-									
+
 			strHTML=getUrl(strROOT & "/cgi/www.exe/[in=getpin.in]?expressao=NL " & trim(session("nuser")))
 			avalores=split(strHTML,",")
 			'response.write RC4(np) & "<br />"
@@ -125,7 +126,7 @@ if request("op")="vp" then
 	
 				strHTML=getUrl(strROOT & "/cgi/www.exe/[in=savepin.in]?v11=" & np & "&from=" & avalores(0))
 				strHTML=OnlyAlphaNumericChars(Server.HTMLEncode(strHTML)) 
-				if strHTML="Erro" then				    
+				if strHTML="Erro" then
 					response.write "<p style=""margin-top:55px"">Ocorreu um erro durante a alteração do PIN!</p>"
 				else
 				   response.write "<p style=""margin-top:55px"">A alteração do PIN foi concluída com sucesso!</p>"
@@ -140,11 +141,11 @@ if request("op")="vp" then
 			   response.write "<div align=""right""> » <a style=""font:10pt bold Arial "" href=""javascript:history.back()"">Voltar</a> &nbsp;</div>"
 			   response.End
 			end if    
-			
-		end if	
-		
+
+		end if
+
 end if
-If Session("LogError") < 3 Then			
+If Session("LogError") < 3 Then
 	If Request.QueryString("Login") = "1" Then
 		      
 		  dim nm, pw, metodo  
@@ -167,15 +168,15 @@ If Session("LogError") < 3 Then
                         if strHTML="" then 
 						     log_erro "Este utilizador não está registado na base de leitores!"
 							 response.End
-						end if	 
+						end if
 						nomelt= left(strHTML,len(strHTML)-2)
-						
-					end if	
+
+					end if
 				else
 					log_erro "Por favor, verifique os dados introduzidos."
 					response.end
-				end if 							
-				Set objXmlHttp = Nothing						
+				end if
+				Set objXmlHttp = Nothing
 	  
 			    if strcomp(pin,md5(registo(1)),0)=0 and trim(nomelt)<>"" then
 				  
@@ -214,49 +215,56 @@ If Session("LogError") < 3 Then
    else
 
 		%>
-		</head>
-		<body onLoad="window.focus();" style="margin-left:15px;text-align:left">
-  <div class="destaque1">    <h4>Catálogo Coletivo - Leitores</h4>
-  </div> 
-		<%
-		if request("op")="ap" and session("LeitorIn") then
-		%>
+</head>
+
+<body onLoad="window.focus();" style="margin-left:10px;text-align:left">
+	<div class="destaque1">
+		<h4>Catálogo Coletivo - Leitores</h4>
+	</div> 
+	<%
+	if request("op")="ap" and session("LeitorIn") then
+	%>
 		<br />
 		<p style="font: bold 10pt Arial ">Leitores - alteração do código PIN</p>
 		<form name="Login" action="logleitor.asp?op=vp" method="post" onSubmit="oldpin.value = hex_md5(oldpin.value);novopin.value = novopin.value;">
-		<input type="hidden" name="reqPath" value="<%=server.URLEncode(replace(replace(replace(request.ServerVariables("HTTP_REFERER"),"%5B","["),"%5D","]"),"%3D","="))%>">
-		<table style="font: 9pt Arial"  border="0" cellpadding="1" cellspacing="0" >					 
-		  <tr>									
-			<td  valign="middle">PIN anterior: </td>
-			<td valign="middle"> <input type="password" name="oldpin" size="10"></td>
-			<td width="20">&nbsp;</td>												
-			<td  valign="middle">Novo PIN: (4 números)</td>
-			<td > <input  type="password" name="novopin" size="10"></td>					
-		  </tr> 					  					 
-		</table> 
-		 <br /> <div align="center"><input style="font: 9pt Arial" type="submit" value="Confirmar" class="botao botao4" onClick="return novopin.value!=''"></div>
+			<input type="hidden" name="reqPath" value="<%=server.URLEncode(replace(replace(replace(request.ServerVariables("HTTP_REFERER"),"%5B","["),"%5D","]"),"%3D","="))%>">
+			<table style="font: 9pt Arial"  border="0" cellpadding="1" cellspacing="0" >
+				<tr>									
+					<td  valign="middle">PIN anterior: </td>
+					<td valign="middle"> <input type="password" name="oldpin" size="10"></td>
+					<td width="20">&nbsp;</td>
+					<td  valign="middle">Novo PIN: (4 números)</td>
+					<td > <input  type="password" name="novopin" size="10"></td>
+				</tr>
+			</table>
+			<br />
+			<div align="center"><input style="font: 9pt Arial" type="submit" value="Confirmar" class="botao botao4" onClick="return novopin.value!=''">
+			</div>
 		</form>
-		<div align="right" style="font: 9pt Arial"><a href="javascript:window.self.close();" >Fechar</a>&nbsp; </div>  		      
-		
-		<% else %>
+		<div align="right" style="font: 9pt Arial"><a href="javascript:window.self.close();" >Fechar</a>&nbsp;
+		</div>
+	<% else %>
 		<br />
 		<p style="font: bold 10pt Arial ">Leitores - acesso ao sistema</p>
 		<form name="Login" action="logLeitor.asp?Login=1" method="post" onSubmit="pin.value = hex_md5(pin.value);">
-		<input type="hidden" name="reqPath" value="<%=server.URLEncode(replace(replace(replace(request.ServerVariables("HTTP_REFERER"),"%5B","["),"%5D","]"),"%3D","="))%>">
-		<table style="font: 9pt Arial"  border="0" cellpadding="1" cellspacing="0" >					 
-		  <tr>									
-			<td  valign="middle"> Nº de leitor: </td>
-			<td valign="middle"> <input type="text" name="utilizador" size="10"></td>					
-		     <td width="40"></td>								
-			 <td  valign="middle">PIN:</td>
-			 <td > <input  type="password" name="pin" size="10"></td>					
-		  </tr> 					  									
-		</table>
-		<br /><div align="center"> <input type="submit" value="Entrada" class="botao botao1" maxlength="4" onClick="return (pin.value!='')"></div>
+			<input type="hidden" name="reqPath" value="<%=server.URLEncode(replace(replace(replace(request.ServerVariables("HTTP_REFERER"),"%5B","["),"%5D","]"),"%3D","="))%>">
+			<table style="font: 9pt Arial"  border="0" cellpadding="1" cellspacing="0" >
+				<tr>
+					<td  valign="middle"> Nº de leitor: </td>
+					<td valign="middle"> <input type="text" name="utilizador" size="10"></td>
+					<td width="40"></td>
+					<td  valign="middle">PIN:</td>
+					<td > <input  type="password" name="pin" size="10"></td>
+				</tr>
+			</table>
+			<br />
+			<div align="center"> <input type="submit" value="Entrada" class="botao botao1" maxlength="4" onClick="return (pin.value!='')">
+			</div>
 		</form>
 		<div align="right" style="font: 9pt Arial"><a href="javascript:window.self.close();" >Fechar</a> &nbsp;</div>  		      
-		<% end if %>
-		</body>
+	<% end if %>
+
+</body>
 <% end if
 Else
 		writeLog("LOGIN (insucesso): nº máx de tentativas")

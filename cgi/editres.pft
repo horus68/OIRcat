@@ -43,10 +43,10 @@
   '</div>'
   '<div class="col5-contentor" style="width:100%">'  
     '<div class="col5">'
-	  '<label for="estado"><span>Estado: </span></label>'if getenv('estado')='cancelada' then '<img src="../../imagens/picreservas/res_cancelada.svg" alt="Reserva cancelada" title="Reserva cancelada" align="absmiddle" border="0" height="15" width="15"/> (cancelada)' else '<img src="../../imagens/picreservas/res_circulando.svg" alt="Reserva em curso" title="Reserva em curso" align="absmiddle" border="0" height="15" width="15"/> (em curso)' fi 	
+	  '<label for="estado"><span>Estado: </span></label>'if getenv('estado')='cancelada' then '<img src="../../imagens/picreservas/res_cancelada.svg" alt="Reserva cancelada" title="Reserva cancelada" height="15" width="15" style="vertical-align:middle" /> (cancelada)' else '<img src="../../imagens/picreservas/res_circulando.svg" alt="Reserva em curso" title="Reserva em curso" height="15" width="15" style="vertical-align:middle" /> (em curso)' fi 	
     '</div>'
     '<div class="col5">'
-	  '<label for="situa"><span>Situação: </span></label>'if v200^a='0' then '<img src="../../imagens/picreservas/res_relogio.svg" alt="Reserva pendente" title="Reserva pendente" align="absmiddle" border="0" height="15" width="15"/> (pendente)' else '<img src="../../imagens/picreservas/res_lock.svg" alt="Reserva confirmada" title="Reserva confirmada" align="absmiddle" border="0" height="15" width="15"/> (confirmada)' fi
+	  '<label for="situa"><span>Situação: </span></label>'if v200^a='0' then '<img src="../../imagens/picreservas/res_relogio.svg" alt="Reserva pendente" title="Reserva pendente" height="15" width="15" style="vertical-align:middle" /> (pendente)' else '<img src="../../imagens/picreservas/res_lock.svg" alt="Reserva confirmada" title="Reserva confirmada" height="15" width="15" style="vertical-align:middle" /> (confirmada)' fi
     '</div>'  
   '</div>'
 	  '</fieldset>'

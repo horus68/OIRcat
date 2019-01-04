@@ -67,11 +67,11 @@ fi
 ' if (selObj != null) {'/
 '	 var selIndex = selObj.selectedIndex==-1?  0: selObj.selectedIndex;'/
 '    biblio=selObj.options[selIndex].text;'/
-'    window.location.href="/rbcatalogo/cgi/www.exe/[in=pesqleitor.in]?expressao=SI "+ biblio+"&from=1&to=25&ut=ADMIN";'
+'    window.location.href="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=pesqleitor.in]?expressao=SI "+ biblio+"&from=1&to=25&ut=ADMIN";'
 ' }'/  
 '}'/
 ' function mostra_biblio(){'/
-'	  url ="/rbcatalogo/cgi/www.exe/[in=relinst.in]";'/
+'	  url ="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=relinst.in]";'/
 '	  new Ajax.Request(url, {    '/
 '       method:"get",  '/
 '		onSuccess: function(transport){       '/
@@ -88,7 +88,7 @@ fi
 '	   onFailure: function(){ alert("Ocorreu um erro. Contacte o administrador.") }  }); '/
 '}'/
 '</script>'
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body onload="start();'if getenv('user')='ADMIN' then 'mostra_biblio();' fi'">'/
 '<div class="destaque1">'/
@@ -103,7 +103,7 @@ fi
 '</div>'/
 '</div>'/
 '      <div id="principal">'
-'<div id="admbotoes" style="float:right"><a href="../../admin/admin.asp?'if getenv('user')='ADMIN' then 'mnut=2' else 'id=5' fi'"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a></div><h3>Seleção de leitor</h3>'/
+'<div id="admbotoes" style="float:right"><a href="../../admin/admin.asp?'if getenv('user')='ADMIN' then 'mnut=2' else 'id=5' fi'"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"/></a></div><h3>Seleção de leitor</h3>'/
 '<div align="center">'/
 '<form name="frmselleitor" id="frmselleitor" action="../../cgi/www.exe/[in=pleitor.in]" method="post" >  '/
 ' <input type="hidden" name="ut" value="'getenv('user')'">'/

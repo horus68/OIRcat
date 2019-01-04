@@ -8,8 +8,8 @@
     putenv('expr=' (if v9000^n='expressao' then v9000^v fi))
 '	<title>'ref(['_cnf']1,v100)'</title>'/	
 '	<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'/
-'<script language="JavaScript" src="../../js/tools.js"></script>'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<script language="JavaScript" src="../../js/tools.min.js"></script>'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body>'/
 '<div class="destaque1">'/
@@ -36,7 +36,7 @@
 '      </script>'
 '<div class="col3-contentor">'/
 '<div class="col3">'/
-'<p class="fil">» <a href="../../default.asp">Zona pública</a> » <a href="../../admin/admin.asp">Administração</a> » <a href="/rbcatalogo/cgi/www.exe/[in=pleitor.in]?ut='(if v9000^n='ut' then v9000^v fi)'&expressao='(if v9000^n='expressao' then v9000^v fi)'">'/
+'<p class="fil">» <a href="../../default.asp">Zona pública</a> » <a href="../../admin/admin.asp">Administração</a> » <a href="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=pleitor.in]?ut='(if v9000^n='ut' then v9000^v fi)'&expressao='(if v9000^n='expressao' then v9000^v fi)'">'/
 '      Leitores </a> » Definição de permissões</p>'/
 '</div>'/
 '<div class="col3" id="lblutilizador">'/
@@ -44,4 +44,4 @@
 '</div>'/
 '</div>'/
 '      <div id="principal">'
-'      <div id="admbotoes" style="float:right"><a href="javascript:voltar()"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a></div><h3>Definição de permissões</h3>'/
+'      <div id="admbotoes" style="float:right"><a href="javascript:voltar()"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"/></a></div><h3>Definição de permissões</h3>'/

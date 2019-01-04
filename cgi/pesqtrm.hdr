@@ -6,13 +6,13 @@
 '<meta name="robots" content="noindex, nofollow" />'/
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '	<title>'ref(['_cnf']1,v100)'</title>'/	
-'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'	<link rel="stylesheet" href="/'ref(['_cnf']1,v103)'/css/default.min.css?version=001" type="text/css" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body id="topopagina">'/
 
-'<script language="JavaScript" src="/rbcatalogo/js/geral.min.js"></script>'/
-'<script language="JavaScript" src="/rbcatalogo/js/tools.js"></script>'/
+'<script language="JavaScript" src="/'ref(['_cnf']1,v103)'/js/geral.min.js"></script>'/
+'<script language="JavaScript" src="/'ref(['_cnf']1,v103)'/js/tools.min.js"></script>'/
 '<script LANGUAGE="JavaScript">'/
 
 '  window.status="Resultado da pesquisa";'/
@@ -166,22 +166,22 @@
          putenv('mnuori='(if v9000^n='nomemnu' then v9000^v fi))   
 	     putenv('op='(if v9000^n='id' then v9000^v fi))
 	  if  getenv('mnuori') : 'admin/catind.asp' then
-	     '<a href="../../default.asp">Zona pública</a> » <a href="/rbcatalogo/admin/admin.asp">Administração</a> »' 
+	     '<a href="../../default.asp">Zona pública</a> » <a href="/'ref(['_cnf']1,v103)'/admin/admin.asp">Administração</a> »' 
        else 
-		'<a href="/rbcatalogo/default.asp">Entrada</a> »' 	     
+		'<a href="/'ref(['_cnf']1,v103)'/default.asp">Entrada</a> »' 	     
 	   fi
         
 	          if getenv('op')='1' then      
-	       ' <a href="/rbcatalogo/'getenv('mnuori')'&id=1"> Pesquisa orientada </a>'
+	       ' <a href="/'ref(['_cnf']1,v103)'/'getenv('mnuori')'&id=1"> Pesquisa orientada </a>'
 		    fi
 		    if getenv('op')='0' then      
-	       ' <a href="/rbcatalogo/'getenv('mnuori')'&id=0"> Pesquisa simplificada </a>'
+	       ' <a href="/'ref(['_cnf']1,v103)'/'getenv('mnuori')'&id=0"> Pesquisa simplificada </a>'
 		    fi
 		    if getenv('op')='2' then      
-	       ' <a href="/rbcatalogo/'getenv('mnuori')'&id=2"> Pesquisa avançada </a>'
+	       ' <a href="/'ref(['_cnf']1,v103)'/'getenv('mnuori')'&id=2"> Pesquisa avançada </a>'
 		    fi
 		    if getenv('op')='3' then      
-	       ' <a href="/rbcatalogo/'getenv('mnuori')'&id=3"> Pesquisa por termos </a>'
+	       ' <a href="/'ref(['_cnf']1,v103)'/'getenv('mnuori')'&id=3"> Pesquisa por termos </a>'
 		    fi
         
  
@@ -190,7 +190,7 @@
 '   </div>  '/
 '   <div class="col3" id="lblutilizador">Utilizador: <span id="utilizador">' 
         if getenv('user')='guest' then 'Visitante' else getenv('user') fi
-        '</span>' if getenv('user')<>'guest' then ' [ <a href="/rbcatalogo/logout.asp?sys=admin">Sair</a> ] ' fi ' '/
+        '</span>' if getenv('user')<>'guest' then ' [ <a href="/'ref(['_cnf']1,v103)'/logout.asp?sys=admin">Sair</a> ] ' fi ' '/
 '   </div>  '/
 '   </div>  '/
 '	<div id="principal" class="resultado">

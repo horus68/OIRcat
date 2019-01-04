@@ -71,9 +71,10 @@ document.getElementById('forme').toBeReloaded.value = 1;
 };
 }
 </script>
-
-
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
 </head>
+
 <body >
   <div id="principal" style="width:450px">
 <%

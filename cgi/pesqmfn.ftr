@@ -1,6 +1,6 @@
 if s(v1091)='0' then
    '<input TYPE="button" VALUE="&laquo; Página anterior" class="navbotao navbotaoanterior" ONCLICK="window.history.back(-1)" NAME="PagAnt" ></small>'/
-   '<input TYPE="button" VALUE="Nova pesquisa" class="navbotao navbotaopesquisa" ONCLICK="window.location.href = &quot;/rbcatalogo/'(if v9000^n='nomemnu' then v9000^v fi)'&nut='(if v9000^n='nut' then v9000^v fi)'&quot;" NAME="mnuprincipal" >'/
+   '<input TYPE="button" VALUE="Nova pesquisa" class="navbotao navbotaopesquisa" ONCLICK="window.location.href = &quot;/'ref(['_cnf']1,v103)'/'(if v9000^n='nomemnu' then v9000^v fi)'&nut='(if v9000^n='nut' then v9000^v fi)'&quot;" NAME="MnuPrincipal" >'/
 else
 ,@wierro.pft,
 fi,

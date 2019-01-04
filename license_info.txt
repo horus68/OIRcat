@@ -3,20 +3,21 @@ Sistema para pesquisa em catálogo coletivo de bibliotecas.
 OIR (de OPAC-ISIS-RBE) é um software que permite a disponibilização de 
 um serviço de pesquisa bibliográfica em catálogos coletivos criados de
 forma não síncrona. 
-O catálogo público (OPAC) é criado a partir das bases individuais de 
-cada biblioteca de um concelho, que continuam a utilizar os seus 
-próprios programas de catalogação. 
+O catálogo público (OPAC) é criado a partir de cópia das bases individuais de 
+cada biblioteca de um concelho. As bibliotecas continuam a utilizar os seus 
+próprios programas de catalogação enviando para o sistema cópias atualizadas das bases. 
 
 
 === Copyright/Direitos de Autor
-(c) Copyright RBE 2005-2018 <redes.concelhias@mail-rbe.org>
+(c) Copyright RBE (Projeto RedesConcelhias.RBE) - 2005-2019 <redes.concelhias@mail-rbe.org>
 
-O OIR, criado em set. 2018, é uma aplicação gratuita e de código aberto 
+O OIR, criado em setembro de 2018, é uma aplicação gratuita e de código aberto 
 com base em software CDS/ISIS da Unesco, adaptada pela 
 Rede de Bibliotecas Escolares (RBE) do Ministério da Educação de Portugal.
-Incorpora e é o sucessor do software anterior, designado por "OpacWin" 
-(2005-2015), que inclui código resultante da colaboração de uma empresa
-externa no âmbito de um projeto apoiado pela RBE (2005-2009).
+Incorpora partes do código e é o sucessor do software anterior, designado por "OpacWin" 
+(2005-2015). Esta versão inclui código aberto de várias fontes bem código resultante da 
+colaboração direta de uma empresa externa, 
+no âmbito de um projeto escolar apoiado pela RBE (2005-2009).
 
 
 === Responsabilidade
@@ -26,7 +27,7 @@ A RBE declina qualquer responsabilidade pelo uso do software.
 
 === Direitos de autor
 
-Copyright (c) 2005-2018 RBE. Todos os direitos reservados.
+Copyright (c) 2005-2019 RBE / Projeto RedesConcelhias.RBE. Todos os direitos reservados.
 
 Inclui ficheiros e código com direitos de entidades terceiras, conforme notas nos ficheiros
 
@@ -51,4 +52,4 @@ Projeto RedesConcelhias.RBE
 Informações: https://sites.google.com/view/opacrbe/oir/
 Software: https://github.com/RBErecon
 
-Porto, 01/09/2018
+Porto, 01 janeiro 2019

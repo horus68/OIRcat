@@ -9,7 +9,7 @@ else
 
    if val(v1032)<=val(v1002) and val(v1002)>val(v1083)  
    then
-     '<form method="get" action="/rbcatalogo/cgi/www.exe/[in=pesqleitor.in]">'
+     '<form method="get" action="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=pesqleitor.in]">'
 	 '<input type="hidden" name="ut" value="'(if v9000^n='ut' then v9000^v fi)'">'
      '<input type="hidden" name="expressao" value="'if getenv('user')='ADMIN' then '$' else 'SI '(if v9000^n='ut' then v9000^v fi) fi'">'
      '<input type="hidden" name="from" value="'f(val(v1031)+val(v1083),0,0)'">'

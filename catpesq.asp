@@ -30,10 +30,6 @@
 			  'response.write i
 			  'response.end
   %>
-<%
-  sentidadelonga = ReadIniFile(Server.MapPath("cgi/cgi.ini"), "GERAL", "entidadelonga")
-  stitulo = ReadIniFile(Server.MapPath("cgi/cgi.ini"), "PORTAL", "titulo")
-%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="pt-PT" lang="pt-PT">
 
@@ -41,15 +37,16 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="robots" content="index, follow" />
-	<title>Pesquisas <%=stitulo%></title>
+	<title>Pesquisas - <%=stitulo%></title>
 	<link rel="stylesheet" href="css/default.min.css?version=001" type="text/css" />
 	<script language="JavaScript" src="js/geral.min.js"></script>
 	<link rel="dns-prefetch" href="https://www.google-analytics.com" />
 	<link rel="dns-prefetch" href="https://ajax.googleapis.com" />
 	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
-	<link rel="dns-prefetch" href="//www.pesquisardocumentos.com" />
+	<link rel="dns-prefetch" href="<%=surlOPACdominio%>" />
 	<script defer="defer" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
 	<script>
+	// para colapsar filtros de pesquisa
 		if (typeof jQuery == 'undefined') {
     document.write(unescape("%3Cscript src='js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
     } 
@@ -61,7 +58,7 @@
 	  var tmp="",car="";
 	  tmp=ConvUp(linha_in);
 	  tmp=FindRepChar(unescape(tmp),"`","\"");
-	  var param="/rbcatalogo/cgi/www.exe/[in=pesqger.in]?base=rbcatalogo&ut=<%=session("user")%>&formato="+formato+"&lim_inicio=1&limites=1&id=2";
+	  var param="/<%=spastaOPAC%>/cgi/www.exe/[in=pesqger.in]?base=<%=sentidade%>&ut=<%=session("user")%>&formato="+formato+"&lim_inicio=1&limites=1&id=2";
 		  param+="&user=<%=session("user")%>&nut=<%=session("nuser")%>&expressao=";
 	  dim=tmp.length;
 	  car=tmp.charAt(dim-1);
@@ -118,32 +115,36 @@
   });
 
 </script>
-	<meta name="description" content="Pesquisar nas bibliotecas da Rede de Bibliotecas do Concelho - XXPTO - Pesquise os documentos no OPAC e saiba onde os pode requisitar. Ler, ver, sentir e viver" />
-	<meta name="keywords" content="Catálogo coletivo, Bibliotecas, pesquisar biblioteca, OPAC, registo bibliográfico" />
-	<meta name="author" content="Rede Concelhia de Bibliotecas - XXPTO" />
+	<meta name="description" content="<%=sdescription%>" />
+	<meta name="keywords" content="<%=skeywords%>" />
+	<meta name="author" content="<%=sentidadelonga%>" />
 	<!-- Favicon Geral -->
-	<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/x-icon" />
-	<link rel="icon" type="image/png" sizes="32x32" href="/rbcatalogo/imagens/app/favicon-32x32.png?v=001" />
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
 	<!-- Favicon Android -->
 	<link rel="manifest" href="manifest.json?v=001" />
 	<meta name="theme-color" content="#cdc8b1" />
 	<!-- Favicon Windows IE -->
 	<meta name="msapplication-config" content="IEconfig.xml?v=001" />
-	<meta name="application-name" content="Cat.RB XXPTO" />
+	<meta name="application-name" content="<%=snomeAPP%>" />
 	<meta name="msapplication-TileColor" content="#afa782" />
 	<!-- Favicon iOS -->
-	<link rel="apple-touch-icon-precomposed" href="/rbcatalogo/imagens/app/apple-touch-icon-precomposed.png?v=001" />
-	<link rel="mask-icon" href="/rbcatalogo/imagens/app/safari-pinned-tab.svg?v=001" color="#5bbad5" />
+	<link rel="apple-touch-icon-precomposed" href="<%=sFAVios%>" />
+	<link rel="mask-icon" href="<%=sFAVsafari%>" color="#5bbad5" />
+	<!-- Google / Search Engine Tags -->
+	<meta itemprop="name" content="<%=sOGsitename%>" />
+	<meta itemprop="description" content="<%=sOGdescription%>" />
+	<meta itemprop="image" content="<%=sOGimage%>" />
 	<!-- OpenGraph Facebook -->
-	<meta property="og:image" content="http://www.pesquisardocumentos.com/rbcatalogo/partilhasocial.png"/>
-	<meta property="og:image:height" content="363"/>
-	<meta property="og:image:width" content="694"/>
-	<meta property="og:title" content="XXPTO - Catálogo da Rede de Bibliotecas do concelho"/>
-	<meta property="og:description" content="Pesquise os documentos e saiba rapidamente onde os pode requisitar. OPAC - XXPTO: Catálogo coletivo da Rede de Bibliotecas do Concelho. Ler, ver, sentir e viver"/>
-	<meta property="og:url" content="http://www.pesquisardocumentos.com/rbcatalogo/"/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:site_name" content="Catálogo.XXPTO - Rede de bibliotecas - XXPTO"/>
-	<meta property="og:locale" content="pt_PT"/>
+	<meta property="og:image" content="<%=sOGimage%>" />
+	<meta property="og:image:height" content="363" />
+	<meta property="og:image:width" content="694" />
+	<meta property="og:title" content="<%=sOGtitle%>" />
+	<meta property="og:description" content="<%=sOGdescription%>" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="<%=sOGsitename%>" />
+	<meta property="og:url" content="<%=surlOPAC%>" />
+	<meta property="og:locale" content="pt_PT" />
 </head>
 
 <body>
@@ -193,10 +194,10 @@
 	<%if Session("LoggedIn") or session("LeitorIn") then %>
 	<div class="navegatopo">
 		<% if session("nuser")<>"" then %>
-		<a href="javascript:void(0)" onclick="javascript:alterarPin()" rel="nofollow"><img src="imagens/setnav/nav_leitor.svg" alt="Alterar o meu PIN" title="Alterar o meu PIN" border="0" height="28" width="28"/></a>
+		<a href="javascript:void(0)" onclick="javascript:alterarPin()" rel="nofollow"><img src="imagens/setnav/nav_leitor.svg" alt="Alterar o meu PIN" title="Alterar o meu PIN" height="28" width="28"/></a>
 		<% end if%>
 		<!--
-  <%if (session("user")<>"" and session("user")<>"ADMIN") or session("nuser")<>"" then %> <a href="javascript:void(0)" onclick="javascript:build_reservas(&quot;<%=session("user")%>&quot;,&quot;<%=session("nuser")%>&quot;)" rel="nofollow"><img src="imagens/setnav/nav_reservas.svg" alt="As minhas reservas" title="As minhas reservas" border="0" height="28" width="28"/></a><br />
+  <%if (session("user")<>"" and session("user")<>"ADMIN") or session("nuser")<>"" then %> <a href="javascript:void(0)" onclick="javascript:build_reservas(&quot;<%=session("user")%>&quot;,&quot;<%=session("nuser")%>&quot;)" rel="nofollow"><img src="imagens/setnav/nav_reservas.svg" alt="As minhas reservas" title="As minhas reservas" height="28" width="28"/></a><br />
   <% end if%>
 -->
 	</div>
@@ -220,7 +221,7 @@
 			<input type="hidden" name="ent" value="<%=session("entidade")%>">
 			<!-- Segmento Pesquisa orientada Cabeçalho - FIM -->
 			<!-- Segmento Pesquisa orientada Filtros -->
-			Filtros: <img id="slick-show" src="imagens/picactions/icon_arrow_down.svg" alt="mostrar filtros" title="mostrar filtros" align="absmiddle" style="cursor:pointer" border="0" height="24" width="24" /><span style="font-size:0.8em;color:red;margin-left:15px" id="txtfilter"></span><br />
+			Filtros: <img id="slick-show" src="imagens/picactions/icon_arrow_down.svg" alt="mostrar filtros" title="mostrar filtros" style="cursor:pointer; vertical-align:middle" height="24" width="24" /><span style="font-size:0.8em;color:red;margin-left:15px" id="txtfilter"></span><br />
 			<div id="slickbox" style="margin-top: 12px;">
 				<div class="col4-contentor">
 					<div class="col4">
@@ -276,10 +277,12 @@
 			<!-- Segmento Pesquisa orientada Filtros - FIM -->
 			<!-- Segmento Pesquisa orientada Caixa -->
 			<table>
-				<th>Operador</th>
-				<th>Campo</th>
-				<th>Termo</th>
-				<th>Truncatura</th>
+				<tr>
+					<th>Operador</th>
+					<th>Campo</th>
+					<th>Termo</th>
+					<th>Truncatura</th>
+				</tr>
 				<tr>
 					<td> </td>
 					<td> <select size="1" name="PRFX1">
@@ -457,22 +460,22 @@
 			</div>
 		</form>
 		<!-- Segmento Pesquisa orientada Caixa FIM -->
-		<p class="info"><img src="imagens/pictitulos/pic_ajuda_alt.svg" alt="Ajuda" title="Ajuda" border="0" height="32" width="32" align="absmiddle"/> Informação: Esta pesquisa (orientada) permite utilizar operadores para relacionar dados em campos diferentes.
+		<p class="info"><img src="imagens/pictitulos/pic_ajuda_alt.svg" alt="Ajuda" title="Ajuda" height="32" width="32" style="vertical-align:middle" /> Informação: Esta pesquisa (orientada) permite utilizar operadores para relacionar dados em campos diferentes.
+		</p>
 			<dl>
 				<dd>Ao pesquisar deve indicar pelo menos <b>uma palavra com o mínimo de dois carateres.</b></dd>
 				<dd>Sem truncatura = Pesquisa exata. Pesquisar com a <b>marca de truncatura ativa</b> permite obter resultados mesmo sem indicar os dados completos (por exemplo quando só conhece a parte inicial de um título ou para encontrar autores começados pelo mesmo nome)</dd>
 				<dd>A pesquisa será realizada em todo o catálogo mas <b>pode ser limitada a uma das bibliotecas</b> (ver campo de escolha de bibliotecas). </dd>
 				<dd>Pode escolher uma biblioteca e pesquisar sem preencher nenhum dos outros campos: obterá <b>todos os documentos dessa biblioteca</b>.</dd>
 			</dl>
-		</p>
-		<h4><a style="text-decoration:none" href="ajuda_dicas.asp"><img src="imagens/pictitulos/pic_questao_alt.svg" alt="Dúvidas" title="Dúvidas" border="0" height="22" width="22" align="absmiddle"/> Dúvidas? Carregue aqui para ver dicas de pesquisa</a></h4>
+		<h4><a style="text-decoration:none" href="ajuda_dicas.asp"><img src="imagens/pictitulos/pic_questao_alt.svg" alt="Dúvidas" title="Dúvidas" height="22" width="22" style="vertical-align:middle" /> Dúvidas? Carregue aqui para ver dicas de pesquisa</a></h4>
 		<br />
 		<!-- Segmento Pesquisa simples Cabeçalho -->
 		<% elseif request.QueryString("id")=0 then%>
 		<form action="cgi/www.exe/[in=pesqger.in]" method="get">
 			<input type="hidden" name="base" value="<%=base%>">
 			<input type="hidden" name="expressao" value>
-			<input type="hidden" name="html_form" value="rbcatalogo">
+			<input type="hidden" name="html_form" value="<%=ssigla%>">
 			<input type="hidden" name="lim_inicio" value="1">
 			<input type="hidden" name="nomemnu" value="catpesq.asp?bd=<%=request.querystring("bd")%>">
 			<input type="hidden" name="id" value="0">
@@ -483,7 +486,7 @@
 			<% end if%>
 			<input type="hidden" name="nut" value="<%=session("nuser")%>">
 			<input type="hidden" name="ent" value="<%=session("entidade")%>">
-			Filtros: <img id="slick-show" src="imagens/picactions/icon_arrow_down.svg" alt="mostrar filtros" title="mostrar filtros" align="absmiddle" style="cursor:pointer" border="0" height="24" width="24" /><span style="font-size:0.8em;color:red;margin-left:45px" id="txtfilter"></span><br />
+			Filtros: <img id="slick-show" src="imagens/picactions/icon_arrow_down.svg" alt="mostrar filtros" title="mostrar filtros" style="cursor:pointer; vertical-align:middle" height="24" width="24" /><span style="font-size:0.8em;color:red;margin-left:45px" id="txtfilter"></span><br />
 			<!-- Segmento Pesquisa simples Cabeçalho - FIM -->
 			<!-- Segmento Pesquisa simples Filtros -->
 			<div id="slickbox" style="margin-top: 12px;">
@@ -543,7 +546,8 @@
 			<div class="caixapesquisa" style="width:100%">
 				<h2 style="text-align:left; font-variant: small-caps">Palavra/Expressão a pesquisar</h2>
 				<p>
-					Irá procurar em todas as bibliotecas por palavras presentes na descrição do documento (título, autor, assunto, editora, etc.) <br />
+					Irá procurar em todas as bibliotecas por palavras presentes na descrição do documento (título, autor, assunto, editora, etc.)
+				</p>
 					<input type="text" size="768" name="termo" id="simptrm" maxlength="80" class="form-pesquisa" placeholder="Escrever aqui...">
 					<div align="center">
 						<input type="submit" value="Pesquisar" onClick="return ValidaExpress_3(this.form)" name="Submit" class="botao botao1">
@@ -551,20 +555,20 @@
 					</div>
 			</div>
 		</form>
-		</p><br />
+		<br />
 		<!-- Segmento Pesquisa simples Caixa FIM -->
-		<p class="info"><img src="imagens/pictitulos/pic_ajuda_alt.svg" alt="Ajuda" title="Ajuda" border="0" height="32" width="32" align="absmiddle"/> Informação: Esta é uma pesquisa livre em <b>todos os campos da ficha do documento</b> (título, autor, etc.) e em <b>todas as bibliotecas</b>.
+		<p class="info"><img src="imagens/pictitulos/pic_ajuda_alt.svg" alt="Ajuda" title="Ajuda" height="32" width="32" style="vertical-align:middle" /> Informação: Esta é uma pesquisa livre em <b>todos os campos da ficha do documento</b> (título, autor, etc.) e em <b>todas as bibliotecas</b>.
 			<br />Serão encontrados registos de documentos que contenham <b>pelo menos UMA das palavras</b> que escrever.
 			<br />Se carregar apenas no botão "Pesquisar", <b>sem introduzir qualquer texto</b>, serão apresentados <b>todos os documentos do catálogo</b>.
 			<br />
-			<br />Para que a pesquisa seja <b>mais exata</b> (e com menos resultados), pode:
+			<br />Para que a pesquisa seja <b>mais exata</b> (e com menos resultados), poderá:
+		</p>
 			<dl>
 				<dd>Colocar aspas (") no início e final da expressão a pesquisar (ou um sinal + entre cada palavra)</dd>
 				<dd>Utilizar o modo de "Pesquisa orientada" (carregue acima em "ENTRADA" para voltar à página de entrada do catálogo)</dd>
 			</dl>
-		</p>
 		<br />
-		<h4><a style="text-decoration:none" href="ajuda_dicas.asp"><img src="imagens/pictitulos/pic_questao_alt.svg" alt="Dúvidas" title="Dúvidas" border="0" height="22" width="22" align="absmiddle"/> Dúvidas? Carregue aqui para ver dicas de pesquisa</a></h4>
+		<h4><a style="text-decoration:none" href="ajuda_dicas.asp"><img src="imagens/pictitulos/pic_questao_alt.svg" alt="Dúvidas" title="Dúvidas" height="22" width="22" style="vertical-align:middle" /> Dúvidas? Carregue aqui para ver dicas de pesquisa</a></h4>
 		<!-- Segmento Pesquisa por termos = em ficheiro separado -->
 		<!-- Segmento Pesquisa por termos - FIM -->
 		<!-- Segmento pesquisa etiquetas Cabeçalho -->
@@ -582,7 +586,7 @@
 			<% end if%>
 			<input type="hidden" name="nut" value="<%=session("nuser")%>">
 			<input type="hidden" name="ent" value="<%=session("entidade")%>">
-			Filtros: <img id="slick-show" src="imagens/picactions/icon_arrow_down.svg" alt="mostrar filtros" title="mostrar filtros" align="absmiddle" style="cursor:pointer" border="0" height="24" width="24" /><span style="font-size:0.8em;color:red;margin-left:20px" id="txtfilter"></span><br />
+			Filtros: <img id="slick-show" src="imagens/picactions/icon_arrow_down.svg" alt="mostrar filtros" title="mostrar filtros" style="cursor:pointer; vertical-align:middle" height="24" width="24" /><span style="font-size:0.8em;color:red;margin-left:20px" id="txtfilter"></span><br />
 			<!-- Segmento pesquisa etiquetas Filtros Cabeçalho - FIM -->
 			<!-- Segmento pesquisa etiquetas Filtros -->
 			<div id="slickbox" style="margin-top: 12px;">

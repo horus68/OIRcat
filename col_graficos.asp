@@ -156,6 +156,7 @@ Set objXmlHttp = Nothing
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="pt-PT" lang="pt-PT">
 
 <head>
+	<meta http-equiv="X-UA-Compatible" content="IE=11,chrome=1" />
 	<title>Gráficos - <%=sentidadelonga%></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -164,11 +165,6 @@ Set objXmlHttp = Nothing
 	<link rel="stylesheet" id="ui-theme" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css" type="text/css" crossorigin="anonymous" />
 	<link rel="stylesheet" href="js/jquery.jui_dropdown.css" type="text/css" />
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" crossorigin="anonymous"></script>
-	<script>
-		if (typeof jQuery == 'undefined') {
-    document.write(unescape("%3Cscript src='js/jquery_graficos.min.js' type='text/javascript'%3E%3C/script%3E"));
-    } 
-    </script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="js/tabcontent.min.js"></script>
 	<script type="text/javascript" src="js/jquery.jui_dropdown.min.js"></script>
@@ -189,8 +185,8 @@ Set objXmlHttp = Nothing
 		}
 
 		function ver_grafcomp() {
-			var loc ="col_CDUcomp.asp?base=<%=request("base")%>&sBase=<%=siglaBase%>&sigla=<%=sigla%>";
-			popup = window.open(loc,"ID","toolbar=no,location=no,directories=no,status=no,scrollbars=no,resizable=no,width=740,height=450,left=50,top=50");
+			var loc ="col_cdu_comp.asp?base=<%=request("base")%>&sBase=<%=siglaBase%>&sigla=<%=sigla%>";
+			popup = window.open(loc,"ID","toolbar=no,location=no,directories=no,status=no,scrollbars=no,resizable=no,width=740,height=550,left=50,top=50");
 			if (window.focus) {
 				popup.focus()
 			}
@@ -202,83 +198,147 @@ Set objXmlHttp = Nothing
 		}
 
 	</script>
+	<!-- Google Charts com carregamento de versão específica -->
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
 		<% if sp<>"3" then %>
-		google.charts.load("visualization", "1", {packages:["<%if valores(9)="N" then response.write "corechart" else if valores(7)="S" then response.write "barchart" else response.write "corechart" end if end if%>"], 'language': 'pt'});
+		google.charts.load('46.2', {packages:["<%if valores(9)="N" then response.write "corechart" else if valores(7)="S" then response.write "barchart" else response.write "corechart" end if end if%>"], 'language': 'pt'});
 		<%else%>
-		google.charts.load("visualization", "1", {packages:["corechart"], 'language': 'pt'});
+		google.charts.load('46.2', {packages:["corechart"], 'language': 'pt'});
 		<%end if%>
 		google.charts.setOnLoadCallback(drawChart);
 
 		function drawChart() {
 
-			var valores="<%=strDados%>";
+			var valores = "<%=strDados%>";
 			<% if sp<>"3" then %>
-			var entidades="<%=strHTML%>";
-			var s=entidades.split(",");
+			var entidades = "<%=strHTML%>";
+			var s = entidades.split(",");
 			<%end if%>
-			var t=valores.split(",");
-			var scaleH=t.length<5? 1.4: 1;
-			var flag=false;
-			for(i=0;i< t.length-1;i++) if (t[i]!=0) flag=true;
-			if (flag==false) {
-				document.getElementById("chart_div").innerHTML = "<div style='position: relative; background: url(imagens/picgraficos/no-graph.png); width: 450px; height: 270px;'><div style='position: absolute; top: 1em; left: 2em; padding: 4px;color:red;'><b>Não existem dados para mostrar!</b></div></div>";return}
+			var t = valores.split(",");
+			var scaleH = t.length < 5 ? 1.4 : 1;
+			var flag = false;
+			for (i = 0; i < t.length - 1; i++)
+				if (t[i] != 0) flag = true;
+			if (flag == false) {
+				document.getElementById("chart_div").innerHTML = "<div style='position: relative; background: url(imagens/picgraficos/no-graph.png); width: 450px; height: 270px;'><div style='position: absolute; top: 1em; left: 2em; padding: 4px;color:red;'><b>Não existem dados para mostrar!</b></div></div>";
+				return
+			}
 			var data = new google.visualization.DataTable();
 			<% if sp<>"3" then %>
-			var c2='Instituições';
-			var nr= s.length-1;
+			var c2 = 'Instituições';
+			var nr = s.length - 1;
 			<% else %>
-			var c2='CDU';
-			var nr=10;
+			var c2 = 'CDU';
+			var nr = 10;
 			<% end if%>
-			eval("data.addColumn('string', '"+c2+"')");
+			eval("data.addColumn('string', '" + c2 + "')");
 			data.addColumn('number', 'Refªs');
-			eval("data.addRows("+nr+")");
+			eval("data.addRows(" + nr + ")");
 			document.getElementById("chart_div").innerHTML = "";
-			for (i=0;i <nr;i++) {
-				<% if sp="3" then %> var c3= 'CDU '+i <%else%>var c3= s[i]<%end if%>
+			for (i = 0; i < nr; i++) {
+				<% if sp="3" then %>
+				var c3 = 'CDU ' + i <%else%>
+				var c3 = s[i]
+				<%end if%>
 				data.setValue(i, 0, c3);
 				data.setValue(i, 1, parseFloat(t[i]));
 			}
-			<% if sp<>"3" then %> /* Gráfico barras rede - por grupos */
+			<% if sp<>"3" then %>
 			<%if valores(9)="N"   then  %> /* or (sigla<>"X" and lcase(sigla)<>lcase(base)) */
-			var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-			chart.draw(data, {
-				width: "100%",
-				height: 470,
+			/* Gráfico Distribuição na rede - tarte (config admin) */
+			var options = {
+				/* width: "100%",
+				height: 470, */
 				enableTootlTip: true,
 				is3D: false,
 				title: ''
-			});
-			<% else %> /* Gráfico barras grupo - rede */
+			};
+			var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+			chart.draw(data, options);
+			<% else %> /* Gráfico Distribuição na rede - barras */
 			<%if valores(7)="S" then %>
-			var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-			var h=t.length*37*scaleH;
-			<% else %> /* Gráfico colunas grupo - bibliotecas */
-			var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-			var h=270;
-			<% end if%>
-			var larg = '100%';
-			chart.draw(data, {
-				width: larg,
-				height: h,
+			/* var h = t.length * 57 * scaleH; */
+			var options = {
+				/* width: '100%',
+				height: h, */
 				vAxis: {
-					minValue: 0
+					minValue: 0,
+					baseline: 0,
+					viewWindow: {min: 0},
+					viewWindowMode: "explicit"
 				},
+				hAxis: {
+					minValue: 0,
+					baseline: 0,
+					viewWindow: {min: 0},
+					viewWindowMode: "explicit"
+				},
+				bar: {groupWidth: "95%"},
 				enableTootlTip: true,
 				axisFontSize: 12,
 				is3D: false,
 				legend: 'none',
-				title: '',
+				title: 'Existências por entidade (Qtd.)',
 				tooltipFontSize: 16
-			});
+			};
+			var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+						chart.draw(data, options);
+			<% else %> /* Gráfico Distribuição na rede - colunas (admin)*/
+			var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+						chart.draw(data, options);
+			/* var h = 470; */
 			<% end if%>
-			<%else%> /* Gráfico tarte biblioteca */
-			var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-			chart.draw(data, {
-				width: "100%",
-				height: 600,
+			/* var larg = '100%';*/
+			var options = {
+				/* width: larg,
+				height: h, */
+				vAxis: {
+					minValue: 0,
+					baseline: 0,
+					viewWindow: {min: 0},
+					viewWindowMode: "explicit"
+				},
+				hAxis: {
+					minValue: 0,
+					baseline: 0,
+					viewWindow: {min: 0},
+					viewWindowMode: "explicit"
+				},
+				bar: {groupWidth: "95%"},
+				enableTootlTip: true,
+				axisFontSize: 12,
+				is3D: false,
+				legend: 'none',
+				title: 'Existências por entidade (Qtd.)',
+				tooltipFontSize: 16
+			};
+			<% end if%>
+			 /* Gráfico Distribuição na rede - tarte */
+			var options = {
+				/* width: "100%",
+				height: 470, */
+				is3D: false,
+				axisFontSize: 12,
+				title: 'Existências por entidade (%)',
+				titleTextStyle: {
+					color: 'black',
+					fontSize: 10
+				},
+				//colors: ['#1F78B4', '#E31A1C', '#33A02C', '#FF7F00', '#6A3D9A', '#B15928', '#A880BB', '#8ACF4E', '#F8514F', '#FFFF4D', '#03CEA4'],
+				pieSliceTextStyle: {
+					color: '#000000',
+					fontSize: 12
+				},
+				enableTootlTip: true,
+				tooltipFontSize: 16,
+			};
+			var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+			chart.draw(data, options);
+			<%else%> /* Gráfico ficha de biblioteca - tarte */
+			var options = {
+				/* width: "100%",
+				height: 600, */
 				enableTootlTip: true,
 				is3D: true,
 				chartArea: {
@@ -294,103 +354,178 @@ Set objXmlHttp = Nothing
 						fontSize: 16
 					}
 				},
-				tooltip: {
-					fontSize: 14
+				tooltipFontSize: 16,
+				'tooltip': {
+					'boxStyle': {
+						'stroke': '#b2b2b2',
+						'strokeOpacity': 1,
+						'strokeWidth': 1.5,
+						'fill': 'white',
+						'fillOpacity': 1,
+						'shadow': {
+							'radius': 1,
+							'opacity': 0.2,
+							'xOffset': 0,
+							'yOffset': 2
+						}
+					}
 				},
 				pieSliceTextStyle: {
 					color: '#000000',
 					fontSize: 12
 				},
 				slices: [{
-						color: '#996633' // CDU 0
-					}, {
-						color: '#9966CC' // CDU 1
-					}, {
-						color: '#99CCFF' // CDU 2
-					}, {
-						color: '#006600' // CDU 3
-					}, {
-						color: '#666600' // CDU 4
-					}, {
-						color: '#FF9900' // CDU 5
-					}, {
-						color: '#FF66CC' // CDU 6
-					}, {
-						color: '#800080' // CDU 7
-					}, {
-						color: '#3366CC' // CDU 8
-					}, {
-						color: '#FF0000' // CDU 9
-					}
-				]
-			});
+					color: '#996633' // CDU 0
+				}, {
+					color: '#9966CC' // CDU 1
+				}, {
+					color: '#99CCFF' // CDU 2
+				}, {
+					color: '#006600' // CDU 3
+				}, {
+					color: '#666600' // CDU 4
+				}, {
+					color: '#FF9900' // CDU 5
+				}, {
+					color: '#FF66CC' // CDU 6
+				}, {
+					color: '#800080' // CDU 7
+				}, {
+					color: '#3366CC' // CDU 8
+				}, {
+					color: '#FF0000' // CDU 9
+				}]
+			};
+			var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+			chart.draw(data, options);
 			<%end if%>
-
 		}
 		<% if sp<>"3" and strBibs1<>"" then %>
-		// Gráfico barras bibliotecas do grupo */
+		/* Gráfico barras bibliotecas do grupo */
 		google.charts.setOnLoadCallback(drawChart1);
 
 		function drawChart1() {
 
-
-			var valores1="<%=strBibs%>";
+			var valores1 = "<%=strBibs%>";
 			<% if sp<>"3" then %>
-			var biblios="<%=strHTML1%>";
-			var u=biblios.split(",");
+			var biblios = "<%=strHTML1%>";
+			var u = biblios.split(",");
 
 			<%end if%>
 
-			var z=valores1.split(",");
-			var flag=false;
-			for (i=0;i< z.length-1;i++) if (z[i]!=0) flag=true;
-			if (flag==false) {
+			var z = valores1.split(",");
+			var flag = false;
+			for (i = 0; i < z.length - 1; i++)
+				if (z[i] != 0) flag = true;
+			if (flag == false) {
 				document.getElementById("chart_div1").innerHTML = "<div style='position: relative; background: url(imagens/picgraficos/no-graph.png); width: 350px; height: 270px;'><div style='position: absolute; top: 1em; left: 2em; padding: 4px;color:red;'><b>Não existem dados para mostrar!</b></div></div>";
 				return
 			}
 			var data = new google.visualization.DataTable();
 			<% if sp<>"3" then %>
-			var c2='Instituições';
-			var nr= u.length- 1;
+			var c2 = 'Instituições';
+			var nr = u.length - 1;
 			<% else %>
-			var c2='CDU';
-			var nr=10;
+			var c2 = 'CDU';
+			var nr = 10;
 			<% end if%>
-			eval("data.addColumn('string', '"+c2+"')");
+			eval("data.addColumn('string', '" + c2 + "')");
 			data.addColumn('number', 'Referências');
-			eval("data.addRows("+nr+")");
+			eval("data.addRows(" + nr + ")");
 
-			document.getElementById("chart_div1").innerHTML="";
-			for (i=0;i < nr;i++) {
-				<% if sp="3" then %> var c3= 'CDU '+i <%else%>var c3= u[i]<%end if%>
+			document.getElementById("chart_div1").innerHTML = "";
+			for (i = 0; i < nr; i++) {
+				<% if sp="3" then %>
+				var c3 = 'CDU ' + i <%else%>
+				var c3 = u[i]
+				<%end if%>
 				data.setValue(i, 0, c3);
 				data.setValue(i, 1, parseFloat(z[i]));
 			}
-			var chart = new google.visualization.ColumnChart(document.getElementById('chart_div1'));
-			<% if sp<>"3" then %> var titulo=""; <%else%> var titulo='Distribuição por classe CDU';
-			<%end if%>
-			var h=270;
-			var larg = '400';
-			chart.draw(data, {
-				width: larg,
-				height: h,
+			var options = {
+				width: 1150,
+				height: 1150,
+				bar: {groupWidth: "95%"},
 				vAxis: {
-					minValue: 0
+					minValue: 0,
+					baseline: 0,
+					viewWindow: {min: 0},
+					viewWindowMode: "explicit"
 				},
-				enableTootlTip: true,
+				hAxis: {
+					minValue: 0,
+					baseline: 0,
+					viewWindow: {min: 0},
+					viewWindowMode: "explicit"
+				},
+				chartArea: {width: '40%'},
 				is3D: false,
-				axisFontSize: 12,
-				legend:'none',
+				axisFontSize: 9,
+				legend: 'none',
+				titleTextStyle: {
+					color: 'black',
+					fontSize: 10,
+					italic: true,
+				},
 				title: '',
-				tooltipFontSize: 16
-			});
-			}
+				enableTootlTip: true,
+				tooltipFontSize: 16,
+				'tooltip': {
+					'boxStyle': {
+						'stroke': '#b2b2b2',
+						'strokeOpacity': 1,
+						'strokeWidth': 1.5,
+						'fill': 'white',
+						'fillOpacity': 1,
+						'shadow': {
+							'radius': 1,
+							'opacity': 0.2,
+							'xOffset': 0,
+							'yOffset': 2
+						}
+					}},
+			};
+			var chart = new google.visualization.BarChart(document.getElementById('chart_div1'));
+			<% if sp<>"3" then %>
+			var titulo = "";
+			<%else%>
+			var titulo = 'Distribuição por classe CDU';
+			<%end if%>
+			chart.draw(data, options);
+		}
 		<% end if%>
 
 	</script>
-	<link rel="icon" href="favicon.ico" type="image/x-icon" />
-	<link rel="icon" type="image/png" sizes="32x32" href="/rbcatalogo/imagens/app/favicon-32x32.png?v=001" />
-
+	<meta name="description" content="<%=sdescription%>" />
+	<meta name="keywords" content="<%=skeywords%>" />
+	<meta name="author" content="<%=sentidadelonga%>" />
+	<!-- Favicon Geral -->
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
+	<!-- Favicon Android -->
+	<link rel="manifest" href="manifest.json?v=001" />
+	<meta name="theme-color" content="#cdc8b1" />
+	<!-- Favicon Windows IE -->
+	<meta name="msapplication-config" content="IEconfig.xml?v=001" />
+	<meta name="application-name" content="<%=snomeAPP%>" />
+	<meta name="msapplication-TileColor" content="#afa782" />
+	<!-- Favicon iOS -->
+	<link rel="apple-touch-icon-precomposed" href="<%=sFAVios%>" />
+	<link rel="mask-icon" href="<%=sFAVsafari%>" color="#5bbad5" />
+	<!-- Google / Search Engine Tags -->
+	<meta itemprop="name" content="<%=sOGsitename%>" />
+	<meta itemprop="description" content="<%=sOGdescription%>" />
+	<meta itemprop="image" content="<%=sOGimage%>" />
+	<!-- OpenGraph Facebook -->
+	<meta property="og:image" content="<%=sOGimage%>" />
+	<meta property="og:image:height" content="363" />
+	<meta property="og:image:width" content="694" />
+	<meta property="og:title" content="<%=sOGtitle%>" />
+	<meta property="og:description" content="<%=sOGdescription%>" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="<%=sOGsitename%>" />
+	<meta property="og:url" content="<%=surlOPAC%>" />
+	<meta property="og:locale" content="pt_PT" />
 </head>
 <%dim v1
 v1= split(strDados,",")
@@ -406,51 +541,52 @@ if sp="3" then menu=3 else menu=2
 
 %>
 
-<body <% if (sp<>"3" and sigla<>"X" and lcase(sigla)=lcase(base)) or sigla="X" then response.write "onload='start()'" %>> 
-		<div class="destaque1">
-			<h1 style="font-variant: small-caps">Catálogo Coletivo: Avaliação de existências</h1>
+<body <% if (sp<>"3" and sigla<>"X" and lcase(sigla)=lcase(base)) or sigla="X" then response.write "onload='start()'" %>>
+	<div class="destaque1">
+		<h1 style="font-variant: small-caps">Catálogo Coletivo: Avaliação de existências</h1>
+	</div>
+	<!-- Segmento Navegação topo -->
+	<div class="col3-contentor">
+		<div class="col3">
+			<p class="fil">» <a href="default.asp">Entrada</a> » <a href="col.asp?id=3">Coleção</a> »
+				<% if sp="3" then %><a href="cgi/www.exe/[in=mnucol.in]?mnu=3">
+					<% else %><a href="col_colselop.asp?ut=<%=ucase(session(" user"))%>&base=
+						<%=lcase(base)%>&criterio=
+						<%=sigla%>&users=
+						<%=sigla%>">
+						<% end if %>Existências</a> »
+					<% if sp<>"3" then %><a href="javascript:history.back()">Lista de títulos</a> »
+					<% end if %> Gráficos
+			</p>
 		</div>
-		<!-- Segmento Navegação topo -->
-		<div class="col3-contentor">
-			<div class="col3">
-				<p class="fil">» <a href="default.asp">Entrada</a> » <a href="col.asp?id=3">Coleção</a> »
-					<% if sp="3" then %><a href="cgi/www.exe/[in=mnucol.in]?mnu=3">
-						<% else %><a href="col_colselop.asp?ut=<%=ucase(session("user"))%>&base=
-							<%=lcase(base)%>&criterio=
-							<%=sigla%>&users=
-							<%=sigla%>">
-							<% end if %>Avaliação de existências</a> »
-						<% if sp<>"3" then %><a href="javascript:history.back()">Lista de títulos</a> »
-						<% end if %> Gráficos
-				</p>
-			</div>
-			<div class="col3" id="lblutilizador">Utilizador: <span id="utilizador">
-					<% if session("user")="" then response.write "Visitante" else response.write ucase(session("user"))%>
-					<%if Session("LoggedIn") then%> [ <a href="default.asp?Logout=1">Sair</a> ]
-					<%end if%>
-				</span>
-			</div>
-		</div>
-		<!-- Segmento Navegação topo - FIM -->
-		<div id="principal">
-			<div id="admbotoes" style="float:right;margin-right:30px"><a href="javascript:history.go(-1);"><img src="imagens/picactions/icon_close.svg" alt="Voltar à página anterior" border="0" height="25" width="25"/></a>
-				<% if flag=1 then %><a href="javascript:window.print()"><img src="imagens/picactions/icon_imprimir.svg" alt="Imprimir esta página" title="Imprimir esta página" border="0" height="25" width="25"/></a>
+		<div class="col3" id="lblutilizador">Utilizador: <span id="utilizador">
+				<% if session("user")="" then response.write "Visitante" else response.write ucase(session("user"))%>
+				<%if Session("LoggedIn") then%> [ <a href="default.asp?Logout=1">Sair</a> ]
 				<%end if%>
-			</div>
-			<h3>Referências por entidade/biblioteca</h3>
+			</span>
+		</div>
+	</div>
+	<!-- Segmento Navegação topo - FIM -->
+	<div id="principal">
+		<div id="admbotoes" style="float:right;margin-right:30px"><a href="javascript:history.go(-1);"><img src="imagens/picactions/icon_close.svg" alt="Voltar à página anterior"  height="25" width="25" /></a>
+			<% if flag=1 then %><a href="javascript:window.print()"><img src="imagens/picactions/icon_imprimir.svg" alt="Imprimir esta página" title="Imprimir esta página"  height="25" width="25" /></a>
+			<%end if%>
+		</div>
+		<h3>Referências por entidade/biblioteca</h3>
 		<!-- Segmento Gráfico Geral -->
-			<div>
-				<% 'if request("voltar") then response.write "javascript:history.go(-1);" else if sigla="X" then response.write "col.asp" else response.write "../cgi/www.exe/[in=mnucol.in]?mnu="& menu %>
-				<span style="float:right;">
-					<% 
+		<div>
+			<% 'if request("voltar") then response.write "javascript:history.go(-1);" else if sigla="X" then response.write "col.asp" else response.write "../cgi/www.exe/[in=mnucol.in]?mnu="& menu 
+			%>
+			<span style="float:right;">
+				<% 
 		if (lcase(base)= lcase(sigla)) and (sp<>"3") then
 		if ubound(biblios)>0 then
 			response.write "<div id=""drop"">"
-			response.write "<div id=""launcher_container"">Ver gráficos:"
+			response.write "<div id=""launcher_container"">Gráficos extra:"
 			if ubound(biblios)>1 then
-			response.write "<a id=""vgraf"" href=""javascript:void(0)"" onclick=""ver_grafcomp()""><img src=""imagens/picgraficos/graf_comparativo.svg"" align=""absmiddle"" alt=""Gráfico comparativo da CDU"" title=""Gráfico comparativo da CDU"" border=""0"" height=""32"" width=""32""/></a>"
+			response.write "<a id=""vgraf"" href=""javascript:void(0)"" onclick=""ver_grafcomp()""><img src=""imagens/picgraficos/graf_comparativo.svg"" align=""absmiddle"" alt=""Gráfico comparativo da CDU"" title=""Gráfico comparativo da CDU"" border=""0"" height=""60"" width=""60""/></a>"
 			end if
-			response.write "<input style=""width:32px;height:32px;padding:0;border:none"" type=""image"" src=""imagens/picgraficos/graf_biblios.svg"" id=""launcher4"" title=""Distribuição por biblioteca""/>"
+			response.write "<input style=""width:60px;height:60px;padding:0;border:none"" type=""image"" src=""imagens/picgraficos/graf_biblios.svg"" id=""launcher4"" title=""Distribuição por biblioteca"" border=""0"" height=""60"" width=""60""/>"
 			response.write "<div>" 
 			response.write "<ul id=""menu4"">"
   		
@@ -463,53 +599,53 @@ if sp="3" then menu=3 else menu=2
 			response.write "</div>"
 	 		
 	%>
-					<script>
-						$(function() {
-							if ($("#drop").name == "undefined") return;
-							$("#drop").jui_dropdown({
-								launcher_id: 'launcher4',
-								launcher_container_id: 'launcher_container',
-								menu_id: 'menu4',
-								launcherUIShowText: false,
-								launchOnMouseEnter: true,
-								launcherUISecondaryIconClass: 'ui-icon-gear',
-								menuClass: 'menu4',
-								containerClass: 'container4',
-								my_position: 'right top',
-								at_position: 'right bottom',
-								onSelect: function(event, data) {
-									base = data.id;
-								}
-							});
-
+				<script>
+					$(function() {
+						if ($("#drop").name == "undefined") return;
+						$("#drop").jui_dropdown({
+							launcher_id: 'launcher4',
+							launcher_container_id: 'launcher_container',
+							menu_id: 'menu4',
+							launcherUIShowText: false,
+							launchOnMouseEnter: true,
+							launcherUISecondaryIconClass: 'ui-icon-gear',
+							menuClass: 'menu4',
+							containerClass: 'container4',
+							my_position: 'right top',
+							at_position: 'right bottom',
+							onSelect: function(event, data) {
+								base = data.id;
+							}
 						});
 
-					</script>
-					<%
+					});
+
+				</script>
+				<%
 		else
 		   response.write "<div id=""launcher_container"">"
-	       response.write "<a id=""vgraf""	href=""javascript:void(0)"" onclick=""verCDU('"&base&"')""><input style=""width:32px;height:32px;padding:0;border:none"" type=""image"" src=""imagens/picgraficos/graf_biblios.svg"" id=""launcher4"" title=""Distribuição na biblioteca""/></a>"	
+	       response.write "<a id=""vgraf"" href=""javascript:void(0)"" onclick=""verCDU('"&base&"')""><input style=""width:60px;height:60px;padding:0;border:none"" type=""image"" src=""imagens/picgraficos/graf_biblios.svg"" id=""launcher4"" title=""Distribuição na biblioteca""/></a>"
 		   response.write "</div>"
 		end if
 
 	end if
     if sigla="X" then 
-		 response.write "<div id=""launcher_container"">Ver gráfico por CDU: "
-	     response.write "<a id=""vgraf""	href=""javascript:void(0)"" onclick=""ver_grafcomp()""><img src=""imagens/picgraficos/graf_comparativo.svg"" alt=""Gráfico comparativo da CDU"" title=""Gráfico comparativo da CDU"" border=""0"" height=""32"" width=""32""/></a>"	
+		 response.write "<div id=""launcher_container"">Gráfico por CDU: "
+	     response.write "<a id=""vgraf"" href=""javascript:void(0)"" onclick=""ver_grafcomp()""><img src=""imagens/picgraficos/graf_comparativo.svg"" alt=""Gráfico comparativo da CDU"" title=""Gráfico comparativo da CDU"" border=""0"" height=""60"" width=""60""/></a>"	
 		 response.write "</div>"
 	end if
 %>
-				</span>
+			</span>
 
 
-				<span style="font-size:0.9em"> critério: [
-					<%if sp<>"3" then  response.write sfiltro else  response.write sigla & " (<span style=""color:red"">" & trim(siglaEXT) & "</span>)"%>]
-					<% if sp<>"3" then%>em
-					<% if sigla <>"X" then response.write sigla & " (<span style=""color:red"">" & trim(siglaEXT) & "</span>)" & nomeAGRUP  else response.write "Toda a rede"%>
-					<% end if%></span>
-			</div>
-			<div style="clear:both;margin-bottom:5px"></div>
-			<%
+			<span style="font-size:0.9em"> critério: [
+				<%if sp<>"3" then  response.write sfiltro else  response.write sigla & " (<span style=""color:red"">" & trim(siglaEXT) & "</span>)"%>]
+				<% if sp<>"3" then%>em
+				<% if sigla <>"X" then response.write sigla & " (<span style=""color:red"">" & trim(siglaEXT) & "</span>)" & nomeAGRUP  else response.write "Toda a rede"%>
+				<% end if%></span>
+		</div>
+		<div style="clear:both;margin-bottom:5px"></div>
+		<%
 flagtabs=false
 if sp<>"3" then
    if sigla<>"X" then 
@@ -521,27 +657,31 @@ if sp<>"3" then
 	end if 
  end if 
  if flagtabs then %>
-			<ul id="tabs" class="shadetabs">
-				<li><a href="#" rel="tab1" class="selected">Distribuição na rede</a></li>
-				<li><a href="#" rel="tab2">Distribuição na entidade</a></li>
-			</ul>
-			<div id="painel">
-				<div id="tab1" class="tabcontent">
-					<br />
-					<%
+		<ul id="tabs" class="shadetabs">
+			<li><a href="#" rel="tab1" class="selected">Distribuição na rede</a></li>
+			<li><a href="#" rel="tab2">Distribuição na entidade</a></li>
+		</ul>
+		<div id="painel">
+			<div id="tab1" class="tabcontent">
+				<br />
+				<%
  else
     response.write "<div id=""painel"">"  
  end if 
 			 if sp<>"3" and sigla<>"X" and lcase(sigla)=lcase(base) then response.write "<b>A) Distribuição na rede</b>"  else response.write "<br />" 
 			 if sp="3" then response.write "<b>Distribuição por CDU</b>"
 			 %>
-		<!-- Segmento Gráfico Distribuição na rede -->
-			<div id="chart_div" style="width:100%">A carregar dados... aguarde um momento, por favor.
-			</div>
-		<!-- Segmento Tabela Gráfico Parcial -->
-			<div>
-			<br />
-								<%
+				<!-- Segmento Gráfico Distribuição na rede -->
+				<div id="chart_div" style="width:100%; height:450px;">A carregar dados... aguarde um momento, por favor.
+				</div>
+				<br /><hr><br />
+				<!-- Segmento Gráfico Distribuição na rede - tarte -->
+				<div id="chart_div2" style="width:100%; height: 450px;"></div>
+				<br /><br />
+				<!-- Segmento Tabela Gráfico Parcial -->
+				<div>
+					<br />
+					<%
 			if flag=1 then
 				%>
 					<table id="users" class="graficos">
@@ -552,7 +692,7 @@ if sp<>"3" then
 							<%end if%>
 						</th>
 						<th>Ref.ªs</th>
-							<% response.write "<th title=""Nº de refªs &divide; Total encontrado para todas as entidades""> A </th>"
+						<% response.write "<th title=""Nº de refªs &divide; Total encontrado para todas as entidades""> A </th>"
 				   if sigla<>"X" or criterio<>"$" then    
 					 if sp<>"3" then response.write "<th title=""Nº de refªs &divide; Total de referências por entidade""> B </th>" 
 				   end if
@@ -583,38 +723,38 @@ if sp<>"3" then
 				%>
 					</table>
 				</div>
-					<% end if
+			<% end if
 			%>
-<!-- Segmento Gráfico Distribuição na rede - FIM -->
-<!-- Segmento Gráfico Distribuição na entidade -->
-					<% 
+			<!-- Segmento Gráfico Distribuição na rede - FIM -->
+			<!-- Segmento Gráfico Distribuição na entidade -->
+			<% 
 response.write "</div>" 
-if sp<>"3" then
-   if sigla<>"X" then 
-      if  lcase(sigla)=lcase(base) then
-	    if ubound(biblios)>0 then  
-%>
+	if sp<>"3" then
+		if sigla<>"X" then 
+			if  lcase(sigla)=lcase(base) then
+				if ubound(biblios)>0 then  
+		%>
 
-		<div id="tab2" class="tabcontent">
-			<br />
-			<b>B) Distribuição nas bibliotecas da entidade</b>
-				<div id="chart_div1" style="width:100%">A carregar dados... aguarde um momento, por favor.
+			<div id="tab2" class="tabcontent">
+				<br />
+				<b>B) Distribuição nas bibliotecas da entidade</b>
+				<div id="chart_div1" style="width:100%; height:100%; overflow: auto">A carregar dados... aguarde um momento, por favor.
 				</div>
-		<!-- Segmento Tabela Gráfico Parcial -->
-									<%
+				<!-- Segmento Tabela Gráfico Parcial -->
+				<%
 			if flag=1 then
-%>
-		<br />
-			<div>
+	%>
+				<br />
+				<div>
 					<table id="users" class="graficos">
-						<caption>Tabela de valores</caption>
+						<caption>Tabela de valores (Grupo)</caption>
 						<th>
 							<%if sp<>"3" then%>Fundo
 							<%else%>CDU
 							<%end if%>
 						</th>
 						<th>Ref.ªs</th>
-							<% response.write "<th title=""Nº de refªs &divide; Total encontrado para todas as entidades""> A </th>"
+						<% response.write "<th title=""Nº de refªs &divide; Total encontrado para todas as entidades""> A </th>"
 				   if sigla<>"X" or criterio<>"$" then    
 					 if sp<>"3" then response.write "<th title=""Nº de refªs &divide; Total de referências por entidade""> B </th>" 
 				   end if
@@ -643,38 +783,47 @@ if sp<>"3" then
 				'response.write "<tr><td>Total</td><td align=""right""><b>" & total1 & "</b></td></tr>"
 				%>
 					</table>
+				</div>
+				<% end if%>
 			</div>
-						<% end if%>
-		</div>
-				<script type="text/javascript">
-					var menus = new ddtabcontent("tabs")
-					menus.setpersist(true)
-					menus.setselectedClassTarget("link") //"link" or "linkparent"
-					menus.init()
+			<script type="text/javascript">
+				var menus = new ddtabcontent("tabs")
+				menus.setpersist(true)
+				menus.setselectedClassTarget("link") //"link" or "linkparent"
+				menus.init()
 
-				</script>
-				<script>
-					menus.expandit(<% if request("id")="" then response.write 0 else response.write request("id") end if%>)
+			</script>
+			<script>
+				menus.expandit(<% if request("id")="" then response.write 0 else response.write request("id") end if%>)
 
-				</script>
-				<%    end if
+			</script>
+			<%    end if
      end if
    end if
  end if%>
-		<!-- Segmento Gráficos FIM -->
-				<p>Legenda: <ul>
-						<li><b>coluna A</b> - Nº de refªs &divide; Total de refªs para o critério de pesquisa </li>
-						<% if sp<>"3" and sigla<>"X" or (criterio<>"$" and sp<>"3") then %>
-						<li><b>coluna B</b> - Nº de refªs &divide; Total de refªs por entidade</li>
-						<% end if%>
-					</ul>
-				</p>
+			<!-- Segmento Gráficos FIM -->
+			<p>Legenda: <ul>
+					<li><b>coluna A</b> - Nº de refªs &divide; Total de refªs para o critério de pesquisa </li>
+					<% if sp<>"3" and sigla<>"X" or (criterio<>"$" and sp<>"3") then %>
+					<li><b>coluna B</b> - Nº de refªs &divide; Total de refªs por entidade</li>
+					<% end if%>
+				</ul>
+			</p>
 			</div>
-				<p id="noprint">Sugestões:
-					<br />- Use o botão "X" (no topo) para voltar à página anterior. 
-					<br />- Os botões de gráficos, no topo, permitem ver gráficos de distribuição por CDU ou alternar entre bibliotecas do mesmo grupo.
-					<br />- Nos gráficos com grupos de bibliotecas pode carregar numa das linhas da tabela de dados para aceder a detalhes das bibliotecas desse grupo.
-				</p>
+			<p id="noprint" style="margin-left:15px">Sugestões:
+				<br />- Use o botão "X" (no topo) para voltar à página anterior.
+				<br />- Os botões de gráficos, no topo, permitem ver gráficos de distribuição por CDU ou alternar entre bibliotecas do mesmo grupo.
+				<br />- Nos gráficos com grupos de bibliotecas pode carregar numa das linhas da tabela de dados para aceder a detalhes das bibliotecas desse grupo.
+			</p>
+		</div>
+	</div>
+	<script>
+		// Gráficos responsivos
+		$(window).resize(function() {
+			drawChart();
+			drawChart1();
+		});
+	</script>
 </body>
 
 </html>

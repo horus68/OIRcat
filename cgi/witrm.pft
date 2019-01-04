@@ -1,6 +1,6 @@
    if val(v1001)=1 then
 
-'<form method="get"  ONSUBMIT="return ChkSelTrm(this)" action="/rbcatalogo/cgi/www.exe/[in=pesqger.in]">'/
+'<form method="get"  ONSUBMIT="return ChkSelTrm(this)" action="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=pesqger.in]">'/
 '<input type="hidden" name="ut" value="'(if v9000^n='ut' then v9000^v fi)'">'
 ' <input type="hidden" name="base" value="'v1051'">'/
 ' <input type="hidden" name="formato" value="'(if v9000^n='formato' then v9000^v fi)'">'/
@@ -43,7 +43,7 @@ fi/
 '		</div>'/
 if a(v1) then
 ' <a name="opcoes"></a>'/
-' <form method="get" action="/rbcatalogo/cgi/www.exe/[in=pesqtrm.in]">'/
+' <form method="get" action="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=pesqtrm.in]">'/
 '<input type="hidden" name="ut" value="'(if v9000^n='ut' then v9000^v fi)'">'
 ' <input type="hidden" name="base" value="'v1051'">'/
 ' <input type="hidden" name="formato" value="'(if v9000^n='formato' then v9000^v fi)'">'/
@@ -58,7 +58,7 @@ if a(v1) then
 ' <input type="hidden" name="sortfmt" value="'(if v9000^n='sortfmt' then v9000^v fi)'">'/
 ' <input type="submit" class="navbotao navbotaoseguinte" value="Próximos 'f(val(v1083),0,0)' termos >>" name="PagSeg">'/
 ' <input TYPE="button" class="navbotao navbotaoanterior" VALUE="Página anterior" ONCLICK="window.history.back(-1)" NAME="PagAnt" >'/
-' <input TYPE="button" class="navbotao navbotaopesquisa" VALUE="Novos termos" ONCLICK="window.location.href = &quot;/rbcatalogo/'(if v9000^n='nomemnu' then v9000^v fi)'&id='(if v9000^n='id' then v9000^v fi)'&quot;" NAME="MnuPrincipal">'/
+' <input TYPE="button" class="navbotao navbotaopesquisa" VALUE="Novos termos" ONCLICK="window.location.href = &quot;/'ref(['_cnf']1,v103)'/'(if v9000^n='nomemnu' then v9000^v fi)'&id='(if v9000^n='id' then v9000^v fi)'&quot;" NAME="MnuPrincipal">'/
 '	</div>'/
 
 '</form>'/

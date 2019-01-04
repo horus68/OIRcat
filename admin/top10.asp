@@ -5,10 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
 
 <head>
-	<TITLE><%=stitulo%></TITLE>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<meta name="robots" content="noindex, nofollow" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="robots" content="noindex, nofollow" />
+	<TITLE>Top leitores - <%=stitulo%></TITLE>
 	<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 	<script type="text/javascript" src="../js/sorttable.min.js"></script>
 	<script type="text/javascript" src="../js/tableH.min.js"></script>
@@ -27,10 +27,8 @@
 		}
 
 	</STYLE>
-	<link rel="icon" href="../favicon.ico" type="image/ico" />
-	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
-	<link rel="icon" type="image/png" sizes="32x32" href="../imagens/app/favicon-32x32.png?v=001" />
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
 </head>
 <%
 
@@ -96,17 +94,17 @@
 	</div>
 	<!-- Segmento Navegação topo - FIM -->
 	<div id="principal">
-		<div id="admbotoes" style="float:right"><a href="admin.asp?id=2&mnres=2"><img src="../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"></a><a href="javascript:window.print()"><img src="../imagens/picgest/icon_imprimir.svg" title="Imprimir TOP" alt="Imprimir TOP" border="0" height="28" width="28"/></a></div>
-		<h3>Os 10 leitores com mais pedidos de reserva <img src="../imagens/picgest/tops.svg" align="absmiddle" border="0" height="32" width="32"/></h3>
+		<div id="admbotoes" style="float:right"><a href="admin.asp?id=2&mnres=2"><img src="../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"></a><a href="javascript:window.print()"><img src="../imagens/picgest/icon_imprimir.svg" title="Imprimir TOP" alt="Imprimir TOP" height="28" width="28"/></a></div>
+		<h3>Os 10 leitores com mais pedidos de reserva <img src="../imagens/picgest/tops.svg" style="vertical-align:middle" height="32" width="32"/></h3>
 		<table id="users" class="sortable" summary="Leitores com mais pedidos de reserva">
-			<thead>
+			<tr>
 				<th width="90">Nº leitor</th>
 				<th>Entidade</th>
 				<th>Nome</th>
 				<th>Pedidos</th>
 				<th>Confirmados</th>
 				<th>Foto</th>
-			</thead>
+			</tr>
 			<% if ubound(adados)<1 then %>
 			<tr height="200">
 				<td colspan="6" align="center">Ficheiro vazio</td>
@@ -118,21 +116,11 @@
 	    qtd=qtd+1 
 %>
 			<tr>
-				<td align="center" width="70">
-					<%=adados(i,0)%>
-				</td>
-				<td align="center">
-					<%=adados4(i,1)%>
-				</td>
-				<td>&nbsp;
-					<%=adados1(i,1)%>
-				</td>
-				<td align="center">
-					<%=adados(i,1)%>
-				</td>
-				<td align="center">
-					<%=adados2(i,1)%>
-				</td>
+				<td align="center" width="70"><%=adados(i,0)%></td>
+				<td align="center"><%=adados4(i,1)%></td>
+				<td>&nbsp;<%=adados1(i,1)%></td>
+				<td align="center"><%=adados(i,1)%></td>
+				<td align="center"><%=adados2(i,1)%></td>
 				<td align="center" width="50"><img src="<% if adados3(i,1)<>"" then response.write replace(adados3(i,1)," ../../","../") else response.write "../imagens/picextra/no_photo.jpg" end if%>" width="50"/></td>
 			</tr>
 			<%     end if

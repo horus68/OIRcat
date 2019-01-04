@@ -10,7 +10,7 @@
 '   <style>'/
 '    body {overflow-x: hidden;}'/
 '	</style>'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body >'/
 '      <div id="principal">'

@@ -6,8 +6,8 @@
 '<meta name="robots" content="noindex, nofollow" />'/
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '	<title>'ref(['_cnf']1,v100)'</title>'/ 	
-'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />'/
-'<script language="JavaScript" src="/rbcatalogo/js/geral.min.js"></script>'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'	<link rel="stylesheet" href="/'ref(['_cnf']1,v103)'/css/default.min.css?version=001" type="text/css" />'/
+'<script language="JavaScript" src="/'ref(['_cnf']1,v103)'/js/geral.min.js"></script>'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body style="text-align:left;margin-left:10px">'/

@@ -5,7 +5,7 @@
  
 		if p(v2) then
  			    
-        '<tr><td width="10%">' mfn'</td><td>' v2'</td><td>' v3'</td><td><a href="javascript:edUser(&quot;'v2'&quot;)"><img src="../../imagens/picgest/icon_editar.svg" alt="Editar registo" border="0" height="28" width="28"/></a> 'if v2<>'ADMIN' then '<a href="javascript:dlUser(&quot;'v2'&quot;,&quot;'mfn(1)'&quot;)"><img src="../../imagens/picgest/icon_delete.svg" title="Eliminar registo" alt="Eliminar registo" border="0" height="28" width="28"/></a> 'else'<img src="../../imagens/picgest/icon_del_stop.svg" alt="Não é possível eliminar este registo" border="0" height="20" width="20"/>' fi' 'if REF(['prmusr']L(['prmusr']'SIGLA 'v2),mfn(1))<>'' then '<a href="javascript:permUser(&quot;'v2'&quot;)">' else '<a href="javascript:permNovo(&quot;'v2'&quot;)">' fi '<img src="../../imagens/picgest/icon_chave.svg" alt="Definir permissões" title="Definir permissões" border="0" height="28" width="28"/></a></td></tr>'/      		
+        '<tr><td width="10%">' mfn'</td><td>' v2'</td><td>' v3'</td><td><a href="javascript:edUser(&quot;'v2'&quot;)"><img src="../../imagens/picgest/icon_editar.svg" alt="Editar registo" height="28" width="28"/></a> 'if v2<>'ADMIN' then '<a href="javascript:dlUser(&quot;'v2'&quot;,&quot;'mfn(1)'&quot;)"><img src="../../imagens/picgest/icon_delete.svg" title="Eliminar registo" alt="Eliminar registo" height="28" width="28"/></a> 'else'<img src="../../imagens/picgest/icon_del_stop.svg" alt="Não é possível eliminar este registo" height="20" width="20"/>' fi' 'if REF(['prmusr']L(['prmusr']'SIGLA 'v2),mfn(1))<>'' then '<a href="javascript:permUser(&quot;'v2'&quot;)">' else '<a href="javascript:permNovo(&quot;'v2'&quot;)">' fi '<img src="../../imagens/picgest/icon_chave.svg" alt="Definir permissões" title="Definir permissões" height="28" width="28"/></a></td></tr>'/      		
         fi
 	  '</table>'
       '<form id="frmedituser" action="../../cgi/www.exe/[in=upduser.in]" autocomplete="off" method="post" onsubmit="v7.value=check(this);">'
@@ -88,7 +88,7 @@
     '<div class="col6" style="background-color:#f9f9ed">'
       '<label for="v26">Codificação do ISO2709</label><select id="v26" name="v26" onblur="chgColor(this,false)" onfocus="chgColor(this,true)">'
       '<option value="ansi">Ansi</option><option 'if v26='ascii' then ' selected ' fi' value="ascii">Ascii</option></select>&nbsp;'
-      '<div style="width:20px;display:inline" id="alerta"><img src="../../imagens/picgest/wait.gif" width="15" align="absmiddle" /></div>' 	 
+      '<div style="width:20px;display:inline" id="alerta"><img src="../../imagens/picgest/wait.gif" width="15" style="vertical-align:middle" /></div>' 	 
       fi
     '(Info: Bibliobase, Docbase Isis = ASCII; Outros = ANSI)</div>'
   '</div>'

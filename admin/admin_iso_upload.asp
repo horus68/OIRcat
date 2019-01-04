@@ -52,14 +52,14 @@ function TestEnvironment()
     on error resume next
     Set testFile = fso.CreateTextFile(fileName, true)
     If Err.Number<>0 then
-        TestEnvironment = "<B>Pasta de UPLOAD sem permissões de escrita.</B>"
+        TestEnvironment = "<B>Pasta UPLOAD sem permissões de escrita.</B>"
         exit function
     end if
     Err.Clear
     testFile.Close
     fso.DeleteFile(fileName)
     If Err.Number<>0 then
-        TestEnvironment = "<B>Pasta de UPLOAD sem permissões para eliminar ficheiros</B>, embora possua permissões de escrita.<br />"
+        TestEnvironment = "<B>Pasta UPLOAD sem permissões para eliminar ficheiros</B>, embora possua permissões de escrita.<br />"
         exit function
     end if
     Err.Clear
@@ -146,7 +146,7 @@ end function
 			if (fext == 'ISO') {
 
 				if (s != user) {
-					var r=confirm("O sistema detetou que o nome do ficheiro ISO não confere com o nome do UTILIZADOR atual.\nATENÇÃO: O ficheiro ISO será carregado mas não será processado. \nTem a certeza que pretende continuar?")
+					var r=confirm("O sistema detetou que o nome do ficheiro ISO não é igual ao nome do UTILIZADOR atual. Devia ter um nome do tipo: SiglaConcelhiaDaBiblioteca.iso\nATENÇÃO: Caso continue, o ficheiro ISO será carregado mas não será processado. \nTem a certeza que pretende continuar?")
 					if (r==true) return true;
 					else return false;
 				}
@@ -165,6 +165,8 @@ end function
 		}
 
 	</script>
+	<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+	<link rel="icon" type="image/png" sizes="32x32" href="../imagens/app/favicon-32x32.png?v=001" />
 </head>
 
 <body>

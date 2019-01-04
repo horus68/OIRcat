@@ -115,7 +115,7 @@ putenv('sigla='(if v9000^n='sigla' then v9000^v fi))
 '       window.parent.document.getElementById("exemplares").style.display="none"; '/  
 '}'/
 ' </script>'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 ' </head>'/
 '<body topmargin="0" leftmargin="0">'
 '<table id="showex" border="1" cellspacing="0" width="100%" style="font:0.8em Verdana">'

@@ -93,8 +93,8 @@ Set objXmlHttp = nothing
 	<style>
 		table#users {width: 350px;font-size:1em}
 </style>
-	<link rel="icon" href="../favicon.ico" type="image/ico" />
-	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
 </head>
 
 <body>
@@ -115,8 +115,8 @@ Set objXmlHttp = nothing
 	</div>
 	<!-- Segmento Navegação topo - FIM -->
 	<div id="principal">
-		<div id="admbotoes" style="float:right"><a href="../admin/admin.asp?id=5"><img src="../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a>
-			<% if flag=1 then %><a href="javascript:window.print()"><img src="../imagens/picgest/icon_imprimir.svg" title="Imprimir esta página" alt="Imprimir esta página" border="0" height="28" width="28"/></a>
+		<div id="admbotoes" style="float:right"><a href="../admin/admin.asp?id=5"><img src="../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"/></a>
+			<% if flag=1 then %><a href="javascript:window.print()"><img src="../imagens/picgest/icon_imprimir.svg" title="Imprimir esta página" alt="Imprimir esta página" height="28" width="28"/></a>
 			<%end if%>
 		</div>
 		<h3>Férias e feriados [
@@ -126,11 +126,12 @@ Set objXmlHttp = nothing
 resp=getUrl(strROOT & "/cgi/www.exe/[in=getcal.in]")
 tabela=split(resp,",")
 response.write "<form name=""frmtabela"" id=""frmTabela"" method=""post"" action="""">"
-response.write "<div>Data: <input type=""text"" size=""4"" maxlength=""5"" name=""data"" id=""data""> Motivo: <input type=""text"" size=""30"" name=""motivo"" id=""motivo""> <a href=""javascript:submeter(0);""><img  src=""../imagens/picgest/icon_save.svg"" border=""0"" height=""28"" width=""28""></a><a href=""javascript:submeter(1)""><img  src=""../imagens/picgest/icon_delete.svg"" border=""0"" height=""28"" width=""28""></a></div>"
+response.write "<div>Data: <input type=""text"" size=""4"" maxlength=""5"" name=""data"" id=""data""><br /><br /> Motivo: <input type=""text"" size=""30"" name=""motivo"" id=""motivo""> <br /><br /><a href=""javascript:submeter(0);""><img  src=""../imagens/picgest/icon_save.svg"" border=""0"" height=""60"" width=""60""></a><a href=""javascript:submeter(1)""><img  src=""../imagens/picgest/icon_delete.svg"" border=""0"" height=""60"" width=""60""></a></div>"
 response.write "<input type=""hidden"" id=""nreg"" name=""nreg"">"
 response.write "</form>"
+response.write "<br />"
 response.write "<table class=""sortable"" id=""users"" summary=""Tabela de férias e feriados"">"
-response.write "<th align=""center"">ID</th><th>Data</th><th>Nome</th>"
+response.write "<tr><th align=""center"">ID</th><th>Data</th><th>Nome</th></tr>"
 for i=0 to ubound(tabela)-1
    pos1=instr(tabela(i),"^a")
    pos2=instr(tabela(i),"^b")

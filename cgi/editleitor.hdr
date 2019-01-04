@@ -5,9 +5,9 @@
 '<meta name="viewport" content="width=device-width, initial-scale=1" />'/
 '<meta name="robots" content="noindex, nofollow" />'/
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
-'<title>'ref(['_cnf']1,v100)'</title>'/
+'<title>Editar leitor - 'ref(['_cnf']1,v100)'</title>'/
 '<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '<script language="JavaScript" src="../../js/users.min.js"></script>'/
 '<script type="text/javascript" src="../../js/prototype.min.js"></script>'/
 '<script>'/
@@ -18,7 +18,7 @@
 '	 if (selObj == null) return;'/
 '	 var selIndex = selObj.selectedIndex==-1?  0: selObj.selectedIndex;'/
 '	 if (selIndex==0) {$("labelbib").innerHTML=""; return};'/
-'	  url ="/rbcatalogo/cgi/www.exe/[in=getuser.in]?expressao=SIGLA " + selObj.options[selIndex].text;'/
+'	  url ="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=getuser.in]?expressao=SIGLA " + selObj.options[selIndex].text;'/
 '	  new Ajax.Request(url, {    '/
 '       method:"get",  '/
 '		onSuccess: function(transport){       '/
@@ -87,7 +87,7 @@
 '       }'
 
 '       function chkpin(nreg,bib){'
-'           url ="/rbcatalogo/cgi/www.exe/[in=getpin.in]?expressao="+nreg+bib+"&d="+new Date().getTime();'/
+'           url ="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=getpin.in]?expressao="+nreg+bib+"&d="+new Date().getTime();'/
 '  			new Ajax.Request(url, {    '/
 '   				method:"get",  '/
 '					onSuccess: function(transport){       '/
@@ -99,7 +99,7 @@
 
 '       function confirmaSubmit(nreg,us,bib){'/
 '           var fret=false;  '/ 
-'           url ="/rbcatalogo/cgi/www.exe/[in=chksumres.in]?expressao="+nreg+bib;'/
+'           url ="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=chksumres.in]?expressao="+nreg+bib;'/
 '  			new Ajax.Request(url, {    '/
 '   				method:"get",  '/
 '					onSuccess: function(transport){       '/
@@ -123,15 +123,15 @@
 '<div class="col3-contentor">'/
 '<div class="col3">'/
 '<p class="fil">» <a href="../../default.asp">Zona pública</a> » <a href="../../admin/admin.asp?'if getenv('user')='ADMIN' then 'mnut=2' else 'id=5' fi'">Administração</a>'/
-' » <a href="/rbcatalogo/cgi/www.exe/[in=pesqleitor.in]?expressao=$&from=1&to=25&ut='getenv('user')'">Seleção de leitor </a>» Edição de leitor</p>'/
+' » <a href="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=pesqleitor.in]?expressao=$&from=1&to=25&ut='getenv('user')'">Seleção de leitor </a>» Edição de leitor</p>'/
 '</div>'/
 '<div class="col3" id="lblutilizador">'/
 'Utilizador: <span id="utilizador">'mhu,(if v9000^n='ut' then v9000^v fi),mhl'&nbsp; [ <a href="../../admin/admin.asp?Logout=1">Sair</a> ]</span>'/		
 '</div>'/
 '</div>'/
 '      <div id="principal">'
-'      <div id="admbotoes" style="float:right"><a href="javascript:fechar();"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" width="28" height="28"/></a></div>'/
+'      <div id="admbotoes" style="float:right"><a href="javascript:fechar();"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" width="28" height="28" /></a></div>'/
 '<h3>Edição de Leitor</h3>'/
     '<!--<b>Expressão de pesquisa:</b> <input name="expr" id="expr" type="text" size="50" value="'(if v9000^n='expressao' then v9000^v fi)'" onkeypress="javascript:onEnter(event)">'/
-    '<a href="javascript:novapesq()"><img src="../../imagens/picgest/icon_refresh.svg" alt="Refazer pesquisa" title="Refazer pesquisa" border="0" width="20" height="20" align="absmiddle"/></a>-->'/
+    '<a href="javascript:novapesq()"><img src="../../imagens/picgest/icon_refresh.svg" alt="Refazer pesquisa" title="Refazer pesquisa" border="0" width="20" height="20" style="vertical-align:middle" /></a>-->'/
      ''/

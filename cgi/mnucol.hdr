@@ -8,25 +8,25 @@
     putenv('user=' (if v9000^n='ut' then v9000^v fi))
     putenv('mnu=' (if v9000^n='mnu' then v9000^v fi))
     putenv('base=' (if v9000^n='base' then v9000^v fi))
-'	<title>'ref(['_cnf']1,v100)'</title>'/
+'	<title>Existências - 'ref(['_cnf']1,v100)'</title>'/
 '	<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'/
 '<script type="text/javascript" src="../../js/users_col.min.js"></script>'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body>'/
 '<div class="destaque1">'/
-'<h1>Catálogo Coletivo: Avaliação das existências</h1>'/
+'<h1>Catálogo Coletivo: Análise de existências</h1>'/
 '</div>'/
 '<div class="col3-contentor">'/
 '<div class="col3">'/
-'<p class="fil">» <a href="../../default.asp">Zona pública</a> » <a href="../../col.asp">Coleção</a> » Avaliação de existências</p>'/
+'<p class="fil">» <a href="../../default.asp">Zona pública</a> » <a href="../../col.asp">Coleção</a> » Existências</p>'/
 '</div>'/
 '<div class="col3" id="lblutilizador">'/
 'Utilizador: ' if getenv('user')='guest' then 'Visitante' else getenv('user') fi ' [ <a href="../../default.asp?Logout=1">Sair</a> ] '/		
 '</div>'/
 '</div>'/
 '<div id="principal" class="resultado"> '/
-'<div id="admbotoes" style="float:right"><a href="../../col.asp"><img src="../../imagens/picactions/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a></div>'/
+'<div id="admbotoes" style="float:right"><a href="../../col.asp"><img src="../../imagens/picactions/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"/></a></div>'/
 '<br />'
 	  'Selecione uma biblioteca ou entidade: '	   
 		'<div align="center">'/

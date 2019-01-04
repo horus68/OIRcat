@@ -78,7 +78,7 @@
     '<div class="col6" style="background-color:#f9f9ed">'
 	  '<label for="v26">Codificação do ISO2709 (Bibliobase, Docbase Isis = ASCII; Outros = ANSI)<select id="v26" name="v26" onblur="chgColor(this,false)" onfocus="chgColor(this,true)">'
 	  '<option value="ansi">Ansi</option><option 'if v26='ascii' then ' selected ' fi' value="ascii">Ascii</option></select>&nbsp;'
-	  '<div style="width:20px;display:inline" id="alerta"><img src="../../imagens/picgest/wait.gif" width="15" align="absmiddle" /></div>' 	 
+	  '<div style="width:20px;display:inline" id="alerta"><img src="../../imagens/picgest/wait.gif" width="15" style="vertical-align:middle" /></div>' 	 
       '<br />'
     '</div>'
   '</div>'

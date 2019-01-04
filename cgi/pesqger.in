@@ -4,4 +4,4 @@ pfxtag=T
 prolog=@pesqger.hdr
 cgi=@pesqger.cgi
 epilog=@pesqger.ftr
-get=exportok=1&selrec=1&tmppath=../tmp/&isofilepath=/rbcatalogo/tmp/
+get=exportok=1&selrec=1&tmppath=../tmp/&isofilepath=/'ref(['_cnf']1,v103)'/tmp/

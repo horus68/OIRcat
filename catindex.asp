@@ -2,10 +2,6 @@
 <!--#include file="admin/functions.asp"-->
 <% base= request("base") 
    if base="" then base="rbcatalogo" %>
-<%
-  sentidadelonga = ReadIniFile(Server.MapPath("cgi/cgi.ini"), "GERAL", "entidadelonga")
-  stitulo = ReadIniFile(Server.MapPath("cgi/cgi.ini"), "PORTAL", "titulo")
-%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="pt-PT" lang="pt-PT">
 
@@ -19,13 +15,8 @@
 	<link rel="dns-prefetch" href="https://www.google-analytics.com" />
 	<link rel="dns-prefetch" href="https://ajax.googleapis.com" />
 	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
-	<link rel="dns-prefetch" href="//www.pesquisardocumentos.com" />
+	<link rel="dns-prefetch" href="<%=surlOPACdominio%>" />
 	<script defer="defer" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
-	<script>
-		if (typeof jQuery == 'undefined') {
-    document.write(unescape("%3Cscript src='js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
-    } 
-    </script>
 	<script language="JavaScript" type="text/javascript">
 		var tabs = new Array(26);
 		for(i=0;i<26;i++) tabs[i]='tab'+(i+1);
@@ -37,7 +28,7 @@
 			var tmp="",car="";
 			tmp=ConvUp(linha_in);
 			tmp=FindRepChar(unescape(tmp),"`","\"");
-			var param="/rbcatalogo/cgi/www.exe/[in=pesqger.in]?ut=<% if session("Nome")="" then response.write "guest" else response.write session("Nome") end if%>&base=<%=base %>&nomemnu=catindex.asp&formato="+formato+"&lim_inicio=1&limites=100&id=3";
+			var param="/<%=spastaOPAC%>/cgi/www.exe/[in=pesqger.in]?ut=<% if session("Nome")="" then response.write "guest" else response.write session("Nome") end if%>&base=<%=base %>&nomemnu=catindex.asp&formato="+formato+"&lim_inicio=1&limites=100&id=3";
 			param+="&letra="+letra+"&user=<%=session("Nome")%>&expressao=";
 			dim=tmp.length;
 			car=tmp.charAt(dim-1);
@@ -120,32 +111,36 @@
 		}
 
 	</script>
-	<meta name="description" content="XXPTO: catálogo coletivo da Rede de Bibliotecas do Concelho. Pesquise os documentos existentes nas bibliotecas deste concelho" />
-	<meta name="keywords" content="Catálogo coletivo, Bibliotecas, pesquisar biblioteca, OPAC, registo bibliográfico" />
-	<meta name="author" content="Rede Concelhia de Bibliotecas - XXPTO" />
+	<meta name="description" content="<%=sdescription%>" />
+	<meta name="keywords" content="<%=skeywords%>" />
+	<meta name="author" content="<%=sentidadelonga%>" />
 	<!-- Favicon Geral -->
-	<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/x-icon" />
-	<link rel="icon" type="image/png" sizes="32x32" href="/rbcatalogo/imagens/app/favicon-32x32.png?v=001" />
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
 	<!-- Favicon Android -->
 	<link rel="manifest" href="manifest.json?v=001" />
 	<meta name="theme-color" content="#cdc8b1" />
 	<!-- Favicon Windows IE -->
 	<meta name="msapplication-config" content="IEconfig.xml?v=001" />
-	<meta name="application-name" content="Cat.RB XXPTO" />
+	<meta name="application-name" content="<%=snomeAPP%>" />
 	<meta name="msapplication-TileColor" content="#afa782" />
 	<!-- Favicon iOS -->
-	<link rel="apple-touch-icon-precomposed" href="/rbcatalogo/imagens/app/apple-touch-icon-precomposed.png?v=001" />
-	<link rel="mask-icon" href="/rbcatalogo/imagens/app/safari-pinned-tab.svg?v=001" color="#5bbad5" />
+	<link rel="apple-touch-icon-precomposed" href="<%=sFAVios%>" />
+	<link rel="mask-icon" href="<%=sFAVsafari%>" color="#5bbad5" />
+	<!-- Google / Search Engine Tags -->
+	<meta itemprop="name" content="<%=sOGsitename%>" />
+	<meta itemprop="description" content="<%=sOGdescription%>" />
+	<meta itemprop="image" content="<%=sOGimage%>" />
 	<!-- OpenGraph Facebook -->
-	<meta property="og:image" content="http://www.pesquisardocumentos.com/rbcatalogo/partilhasocial.png"/>
-	<meta property="og:image:height" content="363"/>
-	<meta property="og:image:width" content="694"/>
-	<meta property="og:title" content="XXPTO - Catálogo da Rede de Bibliotecas do concelho"/>
-	<meta property="og:description" content="Pesquise os documentos e saiba rapidamente onde os pode requisitar. OPAC - XXPTO: Catálogo coletivo da Rede de Bibliotecas do Concelho. Ler, ver, sentir e viver"/>
-	<meta property="og:url" content="http://www.pesquisardocumentos.com/rbcatalogo/"/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:site_name" content="Catálogo.XXPTO - Rede de bibliotecas - XXPTO"/>
-	<meta property="og:locale" content="pt_PT"/>
+	<meta property="og:image" content="<%=sOGimage%>" />
+	<meta property="og:image:height" content="363" />
+	<meta property="og:image:width" content="694" />
+	<meta property="og:title" content="<%=sOGtitle%>" />
+	<meta property="og:description" content="<%=sOGdescription%>" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="<%=sOGsitename%>" />
+	<meta property="og:url" content="<%=surlOPAC%>" />
+	<meta property="og:locale" content="pt_PT" />
 </head>
 
 <body>
@@ -200,13 +195,14 @@
 		<div id="panel" style="min-height:120px"><span id="panel_a" style="height:120px"><span style="position:relative;left:50%;top:40%;"><img src="imagens/picactions/wait.gif"/></span></span>
 		</div>
 		<br />
-		<p class="info"><img src="imagens/pictitulos/pic_ajuda_alt.svg" alt="Ajuda" title="Ajuda" border="0" height="32" width="32" align="absmiddle"/> Informação: Esta pesquisa (por termos) permite navegar por índices automáticos criados com o conteúdo das bases de dados.
+		<p class="info"><img src="imagens/pictitulos/pic_ajuda_alt.svg" alt="Ajuda" title="Ajuda" height="32" width="32" style="vertical-align:middle" /> Informação: Esta pesquisa (por termos) permite navegar por índices automáticos criados com o conteúdo das bases de dados.
+		</p>
 			<dl>
+			<dt>Sugestões de navegação</dt>
 				<dd>Pode <b>limitar a lista</b> por Autor, Título, Assunto, Coleção ou Palavra.</dd>
 				<dd>Na listagem carregue numa entrada para ver a <b>ficha do documento</b> correspondente.</dd>
 			</dl>
-		</p>
-		<h4><a style="text-decoration:none" href="ajuda_dicas.asp"><img src="imagens/pictitulos/pic_questao_alt.svg" alt="Dúvidas" title="Dúvidas" border="0" height="22" width="22" align="absmiddle"/>  Dúvidas? Carregue aqui para ver dicas de pesquisa</a></h4>
+		<h4><a style="text-decoration:none" href="ajuda_dicas.asp"><img src="imagens/pictitulos/pic_questao_alt.svg" alt="Dúvidas" title="Dúvidas" height="22" width="22" style="vertical-align:middle" />  Dúvidas? Carregue aqui para ver dicas de pesquisa</a></h4>
 		<div class="txtrodape" align="center"><a style="text-decoration:none" href="creditos.asp">Catálogo Coletivo<br /> &copy; <b><%=sentidadelonga%></b></a>
 		</div>
 	</div>

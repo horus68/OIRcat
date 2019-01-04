@@ -3,7 +3,7 @@
  
 		if p(v11) then
  			    
-        '<tr><td> 'mfn(1)'</td><td> 'v1'</td><td> 'v2'</td><td><a href="javascript:void(0)" onclick="javascript:edLeitor(&quot;'mfn(1)'&quot;,&quot;'v20'&quot;)"><img src="../../imagens/picgest/icon_editar.svg" alt="Editar registo" title="Editar registo" border="0" height="28" width="28"/></a> <a href="javascript:void(0)" onclick="javascript:dlLeitor(&quot;'v1'&quot;,&quot;'v2'&quot;,&quot;'v20'&quot;,&quot;'mfn(1)'&quot;)"><img src="../../imagens/picgest/icon_delete.svg" alt="Eliminar registo" border="0" height="28" width="28"/></a> <a href="javascript:void(0)" onclick="javascript:chkpin(&quot;'v1'&quot;,&quot;'v20'&quot;)"><img src="../../imagens/picgest/icon_chave.svg" alt="Definir/Alterar PIN" title="Definir/Alterar PIN" border="0" height="28" width="28"/></a></td></tr>'/      
+        '<tr><td> 'mfn(1)'</td><td> 'v1'</td><td> 'v2'</td><td><a href="javascript:void(0)" onclick="javascript:edLeitor(&quot;'mfn(1)'&quot;,&quot;'v20'&quot;)"><img src="../../imagens/picgest/icon_editar.svg" alt="Editar registo" title="Editar registo" height="28" width="28"/></a> <a href="javascript:void(0)" onclick="javascript:dlLeitor(&quot;'v1'&quot;,&quot;'v2'&quot;,&quot;'v20'&quot;,&quot;'mfn(1)'&quot;)"><img src="../../imagens/picgest/icon_delete.svg" alt="Eliminar registo" height="28" width="28"/></a> <a href="javascript:void(0)" onclick="javascript:chkpin(&quot;'v1'&quot;,&quot;'v20'&quot;)"><img src="../../imagens/picgest/icon_chave.svg" alt="Definir/Alterar PIN" title="Definir/Alterar PIN" height="28" width="28"/></a></td></tr>'/      
         fi
 	  '</table>'
 	  '<script>var bib="'v20'";</script>'/	

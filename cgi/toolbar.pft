@@ -1,26 +1,26 @@
 /* Nova Pesquisa */
-'<a href="javascript:window.location.href=&quot;/rbcatalogo/'getenv('mnuori'),if instr(getenv('mnuori'),'?') >0 then '&' else '?' fi 'id='(if v9000^n='id' then v9000^v fi)'&quot;"><img src="../../imagens/setnav/nav_pesquisa.svg" alt="Nova pesquisa" title="Nova pesquisa" border="0" height="32" width="32"/></a> '/
+'<a href="javascript:window.location.href=&quot;/'ref(['_cnf']1,v103)'/'getenv('mnuori'),if instr(getenv('mnuori'),'?') >0 then '&' else '?' fi 'id='(if v9000^n='id' then v9000^v fi)'&quot;"><img src="../../imagens/setnav/nav_pesquisa.svg" alt="Nova pesquisa" title="Nova pesquisa" height="32" width="32"/></a> '/
 
 /* Página anterior */
-'<a href="javascript:window.history.back(-1)"><img src="../../imagens/setnav/nav_anterior.svg" alt="Página anterior..." title="Página anterior..." border="0" height="32" width="32"/></a> '/
+'<a href="javascript:window.history.back(-1)"><img src="../../imagens/setnav/nav_anterior.svg" alt="Página anterior..." title="Página anterior..." height="32" width="32"/></a> '/
 
 /* Proximos registos */
 if val(v1083)+val(v1031)<=val(v1002)
    then
-    '<a href="/rbcatalogo/cgi/www.exe/[in=pesqger.in]?base='v1051'&exectype=2&expressao='V1021'&formato='(if v9000^n='formato' then v9000^v fi)'&TDOC='(if v9000^n='TDOC' then v9000^v fi)'&nomemnu='(if v9000^n='nomemnu' then v9000^v fi)'&lim_inicio='f(val(v1031)+val(v1083),0,0),'&','limites='f(val(v1032)+val(v1083),0,0),'&','iso2709='(if v9000^n='iso2709' then v9000^v fi),'&','entidade='(if v9000^n='entidade' then v9000^v fi),'&','user='(if v9000^n='user' then v9000^v fi),'&','nut='(if v9000^n='nut' then v9000^v fi),'&','vt='(if v9000^n='vt' then v9000^v fi),'&','el='(if v9000^n='el' then v9000^v fi),'&','ut='(if v9000^n='ut' then v9000^v fi),'&','id='(if v9000^n='id' then v9000^v fi)'">'
-    '<img src="../../imagens/setnav/nav_seguinte.svg" border="0" height="32" width="32" title="'if val(v1002)-val(v1083)<val(v1031)+val(v1083)-1 then 'Últimas 'f(val(v1002)-val(v1083)-val(v1031)+1,0,0) else 'Próximas 'f(val(v1083),0,0) fi' fichas"/></a> '/ 
+    '<a href="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=pesqger.in]?base='v1051'&exectype=2&expressao='V1021'&formato='(if v9000^n='formato' then v9000^v fi)'&TDOC='(if v9000^n='TDOC' then v9000^v fi)'&nomemnu='(if v9000^n='nomemnu' then v9000^v fi)'&lim_inicio='f(val(v1031)+val(v1083),0,0),'&','limites='f(val(v1032)+val(v1083),0,0),'&','iso2709='(if v9000^n='iso2709' then v9000^v fi),'&','entidade='(if v9000^n='entidade' then v9000^v fi),'&','user='(if v9000^n='user' then v9000^v fi),'&','nut='(if v9000^n='nut' then v9000^v fi),'&','vt='(if v9000^n='vt' then v9000^v fi),'&','el='(if v9000^n='el' then v9000^v fi),'&','ut='(if v9000^n='ut' then v9000^v fi),'&','id='(if v9000^n='id' then v9000^v fi)'">'
+    '<img src="../../imagens/setnav/nav_seguinte.svg" height="32" width="32" title="'if val(v1002)-val(v1083)<val(v1031)+val(v1083)-1 then 'Últimas 'f(val(v1002)-val(v1083)-val(v1031)+1,0,0) else 'Próximas 'f(val(v1083),0,0) fi' fichas"/></a> '/ 
 fi,
 
 /* Histórico de pesquisas */
-'<a href="#" onclick="javascript:ver_his()"><img src="../../imagens/setnav/nav_historico.svg" alt="Histórico de pesquisas" title="Histórico de pesquisas" border="0" height="32" width="32"/></a>'/
+'<a href="#" onclick="javascript:ver_his()"><img src="../../imagens/setnav/nav_historico.svg" alt="Histórico de pesquisas" title="Histórico de pesquisas" height="32" width="32"/></a>'/
 
 /* Exportar ISO */
    ,  IF (val(V1001)=val(V1031)) or (V1001='1') then ,@export.pft, fi,
 
 /* Imprimir */
-'<a href="#" onclick="javascript:Imprimir(&quot;'V1051'&quot;,&quot;'(if v9000^n='formato' then v9000^v fi)'&quot;,&quot;'V1021'&quot;,&quot;'V1001'&quot;,&quot;'f(val(v1032)+val(v1083),0,0)'&quot;,&quot;'(if v9000^n='entidade' then v9000^v fi)'&quot;)"><img src="../../imagens/setnav/nav_imprimir.svg" alt="Imprimir fichas" title="Imprimir fichas da página" border="0" height="32" width="32"/></a>'
+'<a href="#" onclick="javascript:Imprimir(&quot;'V1051'&quot;,&quot;'(if v9000^n='formato' then v9000^v fi)'&quot;,&quot;'V1021'&quot;,&quot;'V1001'&quot;,&quot;'f(val(v1032)+val(v1083),0,0)'&quot;,&quot;'(if v9000^n='entidade' then v9000^v fi)'&quot;)"><img src="../../imagens/setnav/nav_imprimir.svg" alt="Imprimir fichas" title="Imprimir fichas da página" height="32" width="32"/></a>'
 
 /* Enviar por Mail */
 /*
-'<a href="#" onclick="javascript:MailIt(&quot;'V1051'&quot;,&quot;mailit&quot;,&quot;'V1021'&quot;,&quot;'V1001'&quot;,&quot;'f(val(v1032)+val(v1083),0,0)'&quot;);"><img src="../../imagens/setnav/nav_mail.svg" alt="Enviar fichas por email" title="Enviar fichas por email" border="0" height="32" width="32"/></a>'
+'<a href="#" onclick="javascript:MailIt(&quot;'V1051'&quot;,&quot;mailit&quot;,&quot;'V1021'&quot;,&quot;'V1001'&quot;,&quot;'f(val(v1032)+val(v1083),0,0)'&quot;);"><img src="../../imagens/setnav/nav_mail.svg" alt="Enviar fichas por email" title="Enviar fichas por email" height="32" width="32"/></a>'
 */

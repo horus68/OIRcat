@@ -9,7 +9,7 @@
 '<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'/
 putenv('mnu='(if v9000^n='mnu' then v9000^v fi))
 '<script language="JavaScript" src="../../js/users.min.js"></script>'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body >'/
 '<div class="destaque1">'/
@@ -24,6 +24,6 @@ putenv('mnu='(if v9000^n='mnu' then v9000^v fi))
 '</div>'/
 '</div>'/
 '<div id="principal">'
-'<div id="admbotoes" style="float:right"><a href="javascript:history.go(-1)"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a><a href="javascript:window.print()"><img src="../../imagens/picgest/icon_imprimir.svg" alt="Imprimir reservas" title="Imprimir reserva" border="0" height="28" width="28"/></a></div>'/
+'<div id="admbotoes" style="float:right"><a href="javascript:history.go(-1)"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"/></a><a href="javascript:window.print()"><img src="../../imagens/picgest/icon_imprimir.svg" alt="Imprimir reservas" title="Imprimir reserva" height="28" width="28"/></a></div>'/
 '<h3>Reservas</h3>'
 ''/

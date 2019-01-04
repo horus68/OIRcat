@@ -8,15 +8,15 @@
 '<meta name="viewport" content="width=device-width, initial-scale=1" />'/
 '<meta name="robots" content="noindex, nofollow" />'/
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
-'	<title>'ref(['_cnf']1,v100)'</title>'/	
-'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />'/
-'<script language="JavaScript" src="/rbcatalogo/js/geral.min.js"></script>'/
-'<script language="JavaScript" src="/rbcatalogo/js/prototype.min.js"></script>'/
-'<script type="text/javascript" src="/rbcatalogo/js/jquery.min.js"></script>'/
-'<script type="text/javascript" src="/rbcatalogo/js/jquery-tagbox/js/jquery.tagbox.min.js"></script>'/
-'<link rel="stylesheet" href="/rbcatalogo/js/jquery-tagbox/css/jquery.tagbox.min.css" type="text/css" />'/
-'<script type="text/javascript" src="/rbcatalogo/js/jqueryRater/jquery.rater.min.js"></script>'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'	<title>Pesquisas - 'ref(['_cnf']1,v100)'</title>'/	
+'	<link rel="stylesheet" href="/'ref(['_cnf']1,v103)'/css/default.min.css?version=001" type="text/css" />'/
+'<script language="JavaScript" src="/'ref(['_cnf']1,v103)'/js/geral.min.js"></script>'/
+'<script language="JavaScript" src="/'ref(['_cnf']1,v103)'/js/prototype.min.js"></script>'/
+'<script type="text/javascript" src="/'ref(['_cnf']1,v103)'/js/jquery.min.js"></script>'/
+'<script type="text/javascript" src="/'ref(['_cnf']1,v103)'/js/jquery-tagbox/js/jquery.tagbox.min.js"></script>'/
+'<link rel="stylesheet" href="/'ref(['_cnf']1,v103)'/js/jquery-tagbox/css/jquery.tagbox.min.css" type="text/css" />'/
+'<script type="text/javascript" src="/'ref(['_cnf']1,v103)'/js/jqueryRater/jquery.rater.min.js"></script>'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '<script>'/
  putenv('exp='(if v9000^n='expressao' then v9000^v fi))
  putenv('termo='(if v9000^n='termo' then v9000^v fi))
@@ -101,7 +101,7 @@
 '  var tmp="",car="";'/
 '  tmp=ConvUp(linha_in);'/
 '  tmp=FindRepChar(unescape(tmp),"`","\"");'/
-'  var param="/rbcatalogo/cgi/www.exe/[in=pesqger.in]?base='(if v9000^n='base' then v9000^v fi)'&ut='(if v9000^n='ut' then v9000^v fi)'&nomemnu='(if v9000^n='nomemnu' then v9000^v fi)'&formato="+formato+"&lim_inicio=1&limites='(if v9000^n='limites' then v9000^v fi)'&id='(if v9000^n='id' then v9000^v fi)'";'
+'  var param="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=pesqger.in]?base='(if v9000^n='base' then v9000^v fi)'&ut='(if v9000^n='ut' then v9000^v fi)'&nomemnu='(if v9000^n='nomemnu' then v9000^v fi)'&formato="+formato+"&lim_inicio=1&limites='(if v9000^n='limites' then v9000^v fi)'&id='(if v9000^n='id' then v9000^v fi)'";'
 '      param+="&user='(if v9000^n='user' then v9000^v fi)'&nut='(if v9000^n='nut' then v9000^v fi)'&sortfmt='(if v9000^n='sortfmt' then v9000^v fi)'&termo="+linha_in+"&expressao=";'/
 '  dim=tmp.length;'/
 '  car=tmp.charAt(dim-1);'/
@@ -123,35 +123,35 @@
            putenv('mnuori='(if v9000^n='nomemnu' then v9000^v fi))
            putenv('op='(if v9000^n='id' then v9000^v fi))
 	   if  getenv('mnuori') : 'admin/catind.asp' then
-	     '<a href="/rbcatalogo/default.asp">Zona pública</a> » <a href="/rbcatalogo/admin/admin.asp?id=1">Administração</a> » '/
+	     '<a href="/'ref(['_cnf']1,v103)'/default.asp">Zona pública</a> » <a href="/'ref(['_cnf']1,v103)'/admin/admin.asp?id=1">Administração</a> » '/
 	   else
-	     '<a href="/rbcatalogo/default.asp">Entrada</a> » '/
+	     '<a href="/'ref(['_cnf']1,v103)'/default.asp">Entrada</a> » '/
 		
 	   fi
 		    if getenv('op')='1' then      
-	       ' <a href="/rbcatalogo/'getenv('mnuori')'&id=1"> Pesquisa orientada </a>'
+	       ' <a href="/'ref(['_cnf']1,v103)'/'getenv('mnuori')'&id=1"> Pesquisa orientada </a>'
 		    fi
 		    if getenv('op')='0' then      
-	       ' <a href="/rbcatalogo/'getenv('mnuori')'&id=0"> Pesquisa simplificada </a>'
+	       ' <a href="/'ref(['_cnf']1,v103)'/'getenv('mnuori')'&id=0"> Pesquisa simplificada </a>'
 		    fi
 		    if getenv('op')='2' then      
-	       ' <a href="/rbcatalogo/'getenv('mnuori')'&id=2' if getenv('mnuori'):'bd' then '' else '&bd=col' fi'"> Pesquisa por termos</a>'
+	       ' <a href="/'ref(['_cnf']1,v103)'/'getenv('mnuori')'&id=2' if getenv('mnuori'):'bd' then '' else '&bd=col' fi'"> Pesquisa por termos</a>'
 		    fi
 		    if getenv('op')='3' then      
-	       ' <a href="/rbcatalogo/'getenv('mnuori'),if instr(getenv('mnuori'),'?') >0 then '&' else '?' fi 'id=3' if getenv('mnuori'):'bd' then '' else '&bd=col' fi'"> Pesquisa por termos</a>'
+	       ' <a href="/'ref(['_cnf']1,v103)'/'getenv('mnuori'),if instr(getenv('mnuori'),'?') >0 then '&' else '?' fi 'id=3' if getenv('mnuori'):'bd' then '' else '&bd=col' fi'"> Pesquisa por termos</a>'
 		    fi
         
  
 	'  » Resultado</p>	'/
 '   </div>  '/
-'   <div class="col3" id="lblutilizador">Utilizador: ' 
+'   <div class="col3" id="lblutilizador">Utilizador: <span>' 
         if getenv('user')='guest' then 'Visitante' else getenv('user') fi
-        '</span>' if getenv('user')<>'guest' then ' [ <a href="/rbcatalogo/logout.asp?sys=admin">Sair</a> ] ' fi ' '/
+        '</span>' if getenv('user')<>'guest' then ' [ <a href="/'ref(['_cnf']1,v103)'/logout.asp?sys=admin">Sair</a> ] ' fi ' '/
 '   </div>  '/
 '   </div>  '/
 	'  <!-- '/
 '  <div class="navegatopo" style="padding: 0px; 'if getenv('user')<>'guest' and getenv('user')<>'ADMIN' then '' else 'display:none' fi '">'/
-'<br />'if getenv('nuser')<>'' then '<span style="font: 8pt Arial">Alterar PIN</span> <a  href="javascript:void(0)"   onclick="javascript:alterarPin()"><img src="../../imagens/setnav/nav_leitor.svg" alt="Alterar o meu PIN" title="Alterar o meu PIN" border="0" height="28" width="28"/></a> ' fi'  <span style="font: 8pt Arial"> As minhas reservas </span> <a href="javascript:void(0)" onclick="javascript:build_reservas(&quot;'getenv('user')'&quot;,&quot;'getenv('nuser')'&quot;)" align="absmiddle"><img src="../../imagens/setnav/nav_reservas.svg" alt="As minhas reservas" title="As minhas reservas" border="0" height="28" width="28"/></i></span></a>'/
+'<br />'if getenv('nuser')<>'' then '<span style="font: 8pt Arial">Alterar PIN</span> <a  href="javascript:void(0)"   onclick="javascript:alterarPin()"><img src="../../imagens/setnav/nav_leitor.svg" alt="Alterar o meu PIN" title="Alterar o meu PIN" height="28" width="28"/></a> ' fi'  <span style="font: 8pt Arial"> As minhas reservas </span> <a href="javascript:void(0)" onclick="javascript:build_reservas(&quot;'getenv('user')'&quot;,&quot;'getenv('nuser')'&quot;)" align="absmiddle"><img src="../../imagens/setnav/nav_reservas.svg" alt="As minhas reservas" title="As minhas reservas" height="28" width="28"/></i></span></a>'/
 '	<table border="0">'/
 '		<tr>'/
 '			<td></td><td></td>'/

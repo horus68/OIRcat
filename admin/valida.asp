@@ -9,9 +9,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
 
 <head>
-	<title><%=stitulo%></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="robots" content="noindex, nofollow" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Validar bases - <%=stitulo%></title>
 	<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 	<style>
 		#users table th {
@@ -51,9 +53,10 @@
 		}
 
 	</script>
-	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
-	<link rel="icon" type="image/png" sizes="32x32" href="../imagens/app/favicon-32x32.png?v=001" />
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
 </head>
+
 <body>
 	<div class="destaque1">
 		<h1>Catálogo Coletivo: Validação de registos</h1>
@@ -74,7 +77,7 @@
 	</div>
 	<!-- Segmento Navegação topo - FIM -->
 	<div id="principal">
-		<div id="admbotoes" style="float:right"><a href="admin.asp?id=4"><img src="../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"></a><a href="javascript:window.print()"><img src="../imagens/picgest/icon_imprimir.svg" title="Imprimir lista de erros" alt="Imprimir lista de erros" border="0" height="28" width="28"/></a></div>
+		<div id="admbotoes" style="float:right"><a href="admin.asp?id=3&mnbases=3"><img src="../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"></a><a href="javascript:window.print()"><img src="../imagens/picgest/icon_imprimir.svg" title="Imprimir lista de erros" alt="Imprimir lista de erros" height="28" width="28"/></a></div>
 		<h3>Validação de registos: listagem de erros </h3>
 		<%		
 			if request("MFNde")="" then desde= "1" else desde=request("MFNde")
@@ -104,7 +107,7 @@
 				    response.write "<td width=""50"" align=""center"">"
 					response.write "<a href=""javascript:ChkLinkHref(&quot;" & request("base") & "&quot;,&quot;" & areg(0) & "&quot;)"">" & areg(0) & "</a></td>"
 					response.write "<td style=""border:none"">"
-					response.write "<table width=""100%""><th>Campo</th><th>Tipo</th><th>Mensagem</th><th align=""center"">Ação</th>"
+					response.write "<table width=""100%""><tr><th>Campo</th><th>Tipo</th><th>Mensagem</th><th align=""center"">Ação</th></tr>"
 					for j=1 to ubound (areg)
 			          if trim(areg(j))<>"" then
 							if isnumeric(areg(j)) then

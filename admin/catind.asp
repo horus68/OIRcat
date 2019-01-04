@@ -8,12 +8,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="robots" content="noindex, nofollow" />
-
-	<title><%=stitulo%></title>
+	<title>Pesquisa na biblioteca - <%=stitulo%></title>
 	<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 	<script language="JavaScript" src="../js/geral.min.js"></script>
-	<link rel="icon" href="../favicon.ico" type="image/ico" />
-	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
 </head>
 
 <body>
@@ -23,7 +22,7 @@
 	<!-- Segmento Navegação topo -->
 	<div class="col3-contentor">
 		<div class="col3">
-			<p class="fil">» <a href="../default.asp">Zona Pública</a> » <a href="admin.asp?id=1">Administração</a> » Visualizar o meu catálogo
+			<p class="fil">» <a href="../default.asp">Zona Pública</a> » <a href="admin.asp?id=1">Administração</a> » Pesquisar o meu catálogo
 			</p>
 		</div>
 		<div class="col3" id="lblutilizador">Utilizador: <span id="utilizador">
@@ -36,8 +35,8 @@
 	</div>
 	<!-- Segmento Navegação topo - FIM -->
 	<div id="principal">
-		<div id="admbotoes" style="float:right"><a href="admin.asp?id=1"><img src="../imagens/picgest/icon_close.svg" alt="Voltar à página anterior" border="0" height="28" width="28"/></a>
-			<% if flag=1 then %><a href="javascript:window.print()"><img src="../imagens/picgest/icon_imprimir.svg" alt="Imprimir esta página" title="Imprimir esta página" border="0" height="28" width="28"/></a>
+		<div id="admbotoes" style="float:right"><a href="admin.asp?id=1"><img src="../imagens/picgest/icon_close.svg" alt="Voltar à página anterior" height="28" width="28"/></a>
+			<% if flag=1 then %><a href="javascript:window.print()"><img src="../imagens/picgest/icon_imprimir.svg" alt="Imprimir esta página" title="Imprimir esta página" height="28" width="28"/></a>
 			<%end if%>
 		</div>
 		<h3>O catálogo da minha biblioteca</h3>
@@ -113,10 +112,11 @@
 			<!-- Segmento Pesquisa orientada Caixa -->
 			<h4>Termos a pesquisar </h4>
 			<table>
-				<th>Operador</th>
-				<th>Campo</th>
-				<th>Termo</th>
-				<th>Truncatura</th>
+				<tr>
+					<th>Operador</th>
+					<th>Campo</th>
+					<th>Termo</th>
+					<th>Truncatura</th>
 				<tr>
 					<td>
 					</td>
@@ -323,7 +323,7 @@
 				<input type="reset" value="Limpar" class="botao botao2" name="Reset"></div>
 		</form>
 		<br />
-			<p>Nota: Esta pesquisa é limitada à sua biblioteca. Se preencher apenas o campo SIGLA será apresentada uma lista geral dos documentos da sua biblioteca.
+			<p>Nota: Esta pesquisa é limitada à sua biblioteca. Se preencher apenas o campo SIGLA será apresentada uma listagem de todos os documentos da sua biblioteca.
 			<br />No campo SIGLA apenas deve indicar a sua sigla (ver topo à direita) ou a da entidade a que pertence a sua biblioteca.
 			</p>		
 		<!-- Segmento Pesquisa orientada Caixa FIM -->

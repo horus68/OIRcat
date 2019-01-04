@@ -12,20 +12,20 @@ putenv('expressao='(if v9000^n='expressao' then v9000^v fi))
 '<meta name="viewport" content="width=device-width, initial-scale=1" />'/
 '<meta name="robots" content="noindex, nofollow" />'/
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
-'<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />'/
-'<script language="JavaScript" src="/rbcatalogo/js/prototype.min.js"></script>'/
-'<script language="JavaScript" src="/rbcatalogo/js/geral.min.js"></script>'/
+'<link rel="stylesheet" href="/'ref(['_cnf']1,v103)'/css/default.min.css?version=001" type="text/css" />'/
+'<script language="JavaScript" src="/'ref(['_cnf']1,v103)'/js/prototype.min.js"></script>'/
+'<script language="JavaScript" src="/'ref(['_cnf']1,v103)'/js/geral.min.js"></script>'/
 '<script>
   function cvMaiusc (s) { return s.toUpperCase();}
   function chkHref(base,nreg)
   {
    
-   window.location.href="/rbcatalogo/cgi/www.exe/[in=pesqger.in]?base="+base+"&lim_inicio=1&limites=1&expressao="+nreg+"&formato=wiusr&nomemnu="+escape("cgi/www.exe/[in=gescol.in]?ut='getenv('user')'&expressao='getenv('expressao')'&lim_inicio=1&limites=25&base='getenv('base')'&op='getenv('op')'");
+   window.location.href="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=pesqger.in]?base="+base+"&lim_inicio=1&limites=1&expressao="+nreg+"&formato=wiusr&nomemnu="+escape("cgi/www.exe/[in=gescol.in]?ut='getenv('user')'&expressao='getenv('expressao')'&lim_inicio=1&limites=25&base='getenv('base')'&op='getenv('op')'");
   }
   
   function verGrafico()
   {
-   window.location.href="/rbcatalogo/col_graficos.asp?base='getenv('base')'&op='(if v9000^n='opges' then v9000^v fi)'&criterio="+escape("'getenv('expressao')'")+"&sigla='getenv('op')'";  
+   window.location.href="/'ref(['_cnf']1,v103)'/col_graficos.asp?base='getenv('base')'&op='(if v9000^n='opges' then v9000^v fi)'&criterio="+escape("'getenv('expressao')'")+"&sigla='getenv('op')'";  
   }
   
   function getTEx()
@@ -34,14 +34,14 @@ putenv('expressao='(if v9000^n='expressao' then v9000^v fi))
 		  var op="'getenv('op')'";
 		  var termo="'getenv('termo')'";
 		  var Base= base.toUpperCase();
-		  var db= op=="X"? "rbcatalogo": base; ' 
+		  var db= op=="X"? "'ref(['_cnf']1,v103)'": base; ' 
 		  if getenv('expressao')<>'' then
 		  'var expr="'getenv('expressao')'";'
 		  else
 		  'var expr= op=="X"? "$" : op==Base ? "": "SI "+op;
 		  expr += (op==Base ? termo+"$" : " AND "+termo + "$");'
 		  fi
-		  'var url="/rbcatalogo/cgi/www.exe/[in=getex.in]?base="+db+"&expressao="+expr+"&lim_inicio=1&limites=500000&op='getenv('op')'";
+		  'var url="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=getex.in]?base="+db+"&expressao="+expr+"&lim_inicio=1&limites=500000&op='getenv('op')'";
 		  
 		  new Ajax.Request(url, {    
           method:"get",  
@@ -60,23 +60,24 @@ table#users td.nb1 {width:320px;word-wrap:break-word}
      table#users td{border:solid 1px #999;}
 }
 </STYLE>'
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head><body onload="getTEx()">'/
 '<div class="destaque1">'/
-'<h1 style="font-variant: small-caps">Catálogo Coletivo: Avaliação das existências</h1>'/
+'<h1 style="font-variant: small-caps">Catálogo Coletivo: Análise de existências</h1>'/
 '</div>'/
 '<div class="col3-contentor">'/
 '<div class="col3">'/
-'<p class="fil">» <a href="../../default.asp">Entrada</a> » <a href="../../col.asp?id=3">Coleção</a> » <a href="javascript:history.go(-1)">Avaliação das existências</a> » Lista de títulos</p>'/
+'<p class="fil">» <a href="../../default.asp">Entrada</a> » <a href="../../col.asp?id=3">Coleção</a> » <a href="javascript:history.go(-1)">Existências</a> » Lista de títulos</p>'/
 '</div>'/
 '<div class="col3" id="lblutilizador">'/
 'Utilizador: ' if getenv('user')='guest' then 'Visitante' else getenv('user') fi ' [ <a href="../../col.asp?Logout=1">Sair</a> ] '/		
 '</div>'/
 '</div>'/
 '<div id="principal"> '/
-'<div id="admbotoes" style="float:right;margin-right:30px"><a href="javascript:history.go(-1)"><img src="../../imagens/picactions/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="25" width="25"/></a><a href="javascript:window.print()"><img src="../../imagens/picactions/icon_imprimir.svg" alt="Imprimir lista de títulos" title="Imprimir lista de títulos" border="0" height="25" width="25"/></a>' if REF(['users']L(['users']'SIGLA 'getenv('op')),v21)='' then ' <a href="javascript:verGrafico();"><img src="../../imagens/picgraficos/graf_grafico.svg" alt="Gráficos" title="Gráficos" border="0" height="25" width="25"/></a> ' fi '</div>'/
+'<div id="admbotoes" style="float:right;margin-right:30px"><a href="javascript:history.go(-1)"><img src="../../imagens/picactions/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior"  height="25" width="25"/></a><a href="javascript:window.print()"><img src="../../imagens/picactions/icon_imprimir.svg" alt="Imprimir lista de títulos" title="Imprimir lista de títulos"  height="25" width="25"/></a>' if REF(['users']L(['users']'SIGLA 'getenv('op')),v21)='' then ' <a href="javascript:verGrafico();"><img src="../../imagens/picgraficos/graf_grafico.svg" alt="Gráficos" title="Gráficos"  height="25" width="25"/></a> ' fi '</div>'/
 '<h3>Listagem de títulos  [' if getenv('op')='X' then 'Toda a rede' else getenv('op') fi ']</h3>'/
+'<p style="text-align:center">' if REF(['users']L(['users']'SIGLA 'getenv('op')),v21)='' then ' <a href="javascript:verGrafico();"><img src="../../imagens/picgraficos/graf_grafico.svg" alt="Gráficos" title="Gráficos" height="80" width="80"/></a> ' fi '</p>'/
 '<br />'
 '<span style="float:right;margin-bottom:5px"><b>Total: <span id="totreg"></span> fichas (MFN) [<span id="totex" style="color:red"></span> <span style="color:red;">exemplares</span>]</span><br /><span>Critério de pesquisa: 'getenv('expressao')'</b></span>'/
 '<table id="users" class="listatitulos" summary="Lista de títulos" >'/
-'  <th width="4%">MFN</th><th>Título</th><th width="30%">Autoria</th><th width="4%">N.º ex.</th>'/
+'  <tr><th width="4%">MFN</th><th>Título</th><th width="30%">Autoria</th><th width="4%">N.º ex.</th></tr>'/

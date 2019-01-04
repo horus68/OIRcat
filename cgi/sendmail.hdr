@@ -5,12 +5,12 @@
 '<meta name="viewport" content="width=device-width, initial-scale=1" />'/
 '<meta name="robots" content="noindex, nofollow" />'/
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
-'<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" >'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="stylesheet" href="/'ref(['_cnf']1,v103)'/css/default.min.css?version=001" type="text/css" >'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<title>Denúncia de comentário abusivo</title></head>'/
 '<body>'/
-'<div style="float:right;margin:22px 37px 0 0"><input type="image" onclick="javascript:history.go(-1);" src="../../imagens/picactions/icon_close.svg" alt="Fechar janela" title="Fechar janela" border="0" height="28" width="28"></div>'/
+'<div style="float:right;margin:22px 37px 0 0"><input type="image" onclick="javascript:history.go(-1);" src="../../imagens/picactions/icon_close.svg" alt="Fechar janela" title="Fechar janela" height="28" width="28"></div>'/
 '<script language="JavaScript">'/
 
 'function validar_mail(str){
@@ -47,7 +47,7 @@ return true;
 '     }'/
 '}'/
 ' </script>'/
-'<form  method="POST" action="/rbcatalogo/admin/sendemail.asp"  target="_blank" >'/
+'<form  method="POST" action="/'ref(['_cnf']1,v103)'/admin/sendemail.asp" target="_blank"  rel="noopener" >'/
 
 '  <div align="center">'/
 '  <center>'/

@@ -8,15 +8,15 @@
 '<meta name="viewport" content="width=device-width, initial-scale=1" />'/
 '<meta name="robots" content="noindex, nofollow" />'/
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
-'<link rel="stylesheet" href="/rbcatalogo/css/print.min.css" type="text/css" />'/
-'<script language="JavaScript" src="/rbcatalogo/js/geral.min.js"></script>'/
+'<link rel="stylesheet" href="/'ref(['_cnf']1,v103)'/css/print.min.css" type="text/css" />'/
+'<script language="JavaScript" src="/'ref(['_cnf']1,v103)'/js/geral.min.js"></script>'/
 ' <script>
  function doSaveAs()
   {
    document.execCommand("SaveAs",false,"*.html")
   }
  </script>'/
- '<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+ '<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body >'/
 '<div id="titulo"> '/
@@ -62,8 +62,8 @@
  putenv('base='(if v9000^n='base' then v9000^v fi))
  putenv('formato='(if v9000^n='formato' then v9000^v fi))
  if getenv('base') = 'rbcatalogo' then 
-'		<h2>Listagem para impressão (<span class=destaque>Catálogo Coletivo</span>)</h2>'/
+'		<h2>Listagem para impressão (<span class="destaque">Catálogo Coletivo</span>)</h2>'/
 else,
-'		<h2>Listagem para impressão (<span class=destaque>Catálogo de 'getenv('base')'</span>)</h2>'/
+'		<h2>Listagem para impressão (<span class="destaque">Catálogo de 'getenv('base')'</span>)</h2>'/
       
 fi,

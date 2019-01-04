@@ -2,9 +2,7 @@ User-agent: *
 Disallow: /admin/
 Disallow: /bases/
 Disallow: /cgi/
-Disallow: /css/
-Disallow: /js/
-Disallow: /outros/
 Disallow: /tmp/
 Disallow: /upload/
 Disallow: /work/
+Sitemap: http://www.pesquisardocumentos.com/rbcatalogo/sitemap.xml

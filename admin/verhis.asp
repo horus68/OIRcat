@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex, nofollow" />
 <link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 <script type="text/javascript" src="../js/sorttable.min.js"></script>
 <script type="text/javascript" src="../js/tableH.min.js"></script>
 <script type="text/javascript" src="../js/prototype.min.js"></script>
-<title>Histórico de Pesquisas</title> 
+<title>Histórico de pesquisas</title> 
 
 <script type="text/javascript">
 onload = function() {
@@ -220,7 +221,10 @@ function clean_his()
 
 }
 </script>
+	<link rel="icon" type="image/x-icon" href="/rbcatalogo/favicon.ico" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/rbcatalogo/imagens/app/favicon-32x32.png" />
 </head>
+
 <body  style="margin-left:10px;text-align:left">
 		<p style="font: bold 10pt Arial ">Histórico de pesquisas</p>
 		<%
@@ -238,7 +242,7 @@ function clean_his()
                 response.write "<div style=""padding-right:5px;"">Ações: <select   name=""box"" id=""box""><option value=""1"">Apagar marcadas</option><option value=""2"">Apagar todas</option></select><input type=""button"" class=""botao botao1"" onclick=""javascript:clean_his()"" value=""Ok""></div>"       
                 response.write "</form>"
 				response.write "<table class=""sortable"" id=""users"" summary=""Histórico de pesquisa"">"	
-				response.write "<th>ID</th><th>Expressão de pesquisa</th><th>Formato</th><th>Tipo de documento</th><th align=""center"">Início</th><th align=""center"">Reg/pág.</th><th></th><th></th>"		
+				response.write "<tr><th>ID</th><th>Expressão de pesquisa</th><th>Formato</th><th>Tipo de documento</th><th align=""center"">Início</th><th align=""center"">Reg/pág.</th><th></th><th></th></tr>"		
 				for i=0 to histMaxUsed 
 				  select case  histArray(1,i)
 				  case "XX"

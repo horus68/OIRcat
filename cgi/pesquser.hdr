@@ -7,8 +7,8 @@
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '	<title>'ref(['_cnf']1,v100)'</title>'/	
 '	<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'/
-'<script language="JavaScript" src="../../js/tools.js"></script>'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<script language="JavaScript" src="../../js/tools.min.js"></script>'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body>'/
 '<div class="destaque1">'/
@@ -77,4 +77,4 @@
 '</div>'/
 '</div>'/
 '      <div id="principal">'
-'      <span style="float:right"><a href="javascript:fechar();"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a></span><br /><br />'/
+'      <span style="float:right"><a href="javascript:fechar();"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"/></a></span><br /><br />'/

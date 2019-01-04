@@ -75,9 +75,10 @@ Set objXmlHttp = Nothing
     </script>
 	<script type="text/javascript" src="../js/jquery.tools.min.js"></script>
 	<script type="text/javascript" src="../js/tabcontent.min.js"></script>
+	<!-- Google Charts com carregamento de versão específica -->
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
-		google.charts.load("visualization", "1", {
+		google.charts.load('46.2', {
 			packages:["<% if valores(6)="S" then response.write "barchart" else response.write "corechart" end if%>"], 'language': 'pt'});
 		google.charts.setOnLoadCallback(drawChart);
 		google.charts.setOnLoadCallback(drawChart1);
@@ -244,8 +245,8 @@ Set objXmlHttp = Nothing
 	<style>
 		table#users {width: 200px;font-size:1em}
 </style>
-	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
-	<link rel="icon" type="image/png" sizes="32x32" href="../imagens/app/favicon-32x32.png?v=001" />
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
 </head>
 <%dim valores
 valores= split(strDados,",")
@@ -274,8 +275,8 @@ next
 	</div>
 	<!-- Segmento Navegação topo - FIM -->
 		<div id="principal">
-			<div id="admbotoes" style="float:right"><a href="admin.asp?id=2&mnres=2"><img src="../imagens/picgest/icon_close.svg" alt="Voltar à página anterior" title="Voltar à página anterior" border="0" height="28" width="28"/></a>
-				<% if flag=1 then %><a href="javascript:window.print()"><img src="../imagens/picgest/icon_imprimir.svg" alt="Imprimir esta página" title="Imprimir esta página" border="0" height="28" width="28"/></a>
+			<div id="admbotoes" style="float:right"><a href="admin.asp?id=2&mnres=2"><img src="../imagens/picgest/icon_close.svg" alt="Voltar à página anterior" title="Voltar à página anterior" height="28" width="28"/></a>
+				<% if flag=1 then %><a href="javascript:window.print()"><img src="../imagens/picgest/icon_imprimir.svg" alt="Imprimir esta página" title="Imprimir esta página" height="28" width="28"/></a>
 				<%end if%>
 			</div>
 		<h3>Reservas [entidades requisitadas]</h3>
@@ -297,9 +298,11 @@ next
 			%>
 						<table id="users" class="graficos">
 						<caption>Tabela de valores</caption>
+						<tr>
 							<th>Entidade</th>
 							<th>Interbibliotecas</th>
 							<th>Leitores</th>
+						</tr>
 						<%
 			dados=split(strdados,",")
 			total1=0
@@ -328,9 +331,11 @@ next
 			%>
 						<table id="users" class="graficos">
 						<caption>Tabela de valores</caption>
+						<tr>
 							<th>Entidade</th>
 							<th>Totais</th>
 							<th>Confirmados</th>
+						</tr>
 						<%
 			dados=split(strdados1,",")
 			total1=0
@@ -360,9 +365,11 @@ next
 			%>
 							<table id="users" class="graficos">
 							<caption>Tabela de valores</caption>
+						<tr>
 								<th>Entidade</th>
 								<th>Totais</th>
 								<th>Confirmados</th>
+						</tr>
 						<%
 			dados=split(strdados2,",")
 			total1=0

@@ -1,6 +1,6 @@
 <%
 concelho= request("concelho")
-if request("concelho")="" then concelho="Porto"
+if request("concelho")="" then concelho="XXPTO"
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
@@ -196,8 +196,37 @@ function voltar() {
 }
 </script>
 
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" type="text/javascript"></script>
-
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=!&callback=initMap" type="text/javascript"></script>
+	<meta name="description" content="<%=sdescription%>" />
+	<meta name="keywords" content="<%=skeywords%>" />
+	<meta name="author" content="<%=sentidadelonga%>" />
+	<!-- Favicon Geral -->
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
+	<!-- Favicon Android -->
+	<link rel="manifest" href="manifest.json?v=001" />
+	<meta name="theme-color" content="#cdc8b1" />
+	<!-- Favicon Windows IE -->
+	<meta name="msapplication-config" content="IEconfig.xml?v=001" />
+	<meta name="application-name" content="<%=snomeAPP%>" />
+	<meta name="msapplication-TileColor" content="#afa782" />
+	<!-- Favicon iOS -->
+	<link rel="apple-touch-icon-precomposed" href="<%=sFAVios%>" />
+	<link rel="mask-icon" href="<%=sFAVsafari%>" color="#5bbad5" />
+	<!-- Google / Search Engine Tags -->
+	<meta itemprop="name" content="<%=sOGsitename%>" />
+	<meta itemprop="description" content="<%=sOGdescription%>" />
+	<meta itemprop="image" content="<%=sOGimage%>" />
+	<!-- OpenGraph Facebook -->
+	<meta property="og:image" content="<%=sOGimage%>" />
+	<meta property="og:image:height" content="363" />
+	<meta property="og:image:width" content="694" />
+	<meta property="og:title" content="<%=sOGtitle%>" />
+	<meta property="og:description" content="<%=sOGdescription%>" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="<%=sOGsitename%>" />
+	<meta property="og:url" content="<%=surlOPAC%>" />
+	<meta property="og:locale" content="pt_PT" />
 </head>
 
 <body onload="showAddress('<%=request("entidade")%>','<%=request("morada")%>'+', '+'<%=concelho%>','<%=request("lat")%>','<%=request("long")%>')">

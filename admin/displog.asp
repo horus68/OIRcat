@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
 <head>
-<TITLE><%=stitulo%></TITLE>
+<TITLE>Acessos ao catálogo - <%=stitulo%></TITLE>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -19,9 +19,11 @@
      table#users td {border:solid 1px;}
 }
 </STYLE>
-    <link rel="icon" href="../favicon.ico" type="image/ico"/>
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
-</head><body>
+	<link rel="icon" type="image/x-icon" href="<%=sFAVico%>" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<%=sFAVicon32%>" />
+</head>
+
+<body>
   <div class="destaque1">
     <h1>Catálogo Coletivo: Acessos ao sistema</h1>
   </div>    
@@ -38,11 +40,13 @@
   </div>
 <!-- Segmento Navegação topo - FIM -->
 <div id="principal">
-<div id="admbotoes" style="float:right"><a href="admin.asp?id=1"><img src="../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a><a href="javascript:window.print()"><img src="../imagens/picgest/icon_imprimir.svg" title="Imprimir lista de acessos" alt="Imprimir lista de acessos" border="0" height="28" width="28"/></a></div>
+<div id="admbotoes" style="float:right"><a href="admin.asp?id=1"><img src="../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"/></a><a href="javascript:window.print()"><img src="../imagens/picgest/icon_imprimir.svg" title="Imprimir lista de acessos" alt="Imprimir lista de acessos" height="28" width="28"/></a></div>
 <h3>Listagem de acessos ao sistema de administração [LOGS]</h3>
 
 <table id="users" class="sortable" summary="Listagem de acessos ao sistema de administração">
-  <th width="80">Data</th><th width="80" class="sorttable_nosort">Hora</th><th width="580" class="sorttable_nosort">Registo</th>
+	<tr>
+		<th width="80">Data</th><th width="80" class="sorttable_nosort">Hora</th><th width="580" class="sorttable_nosort">Registo</th>
+	</tr>
 <%
 Function writeLog (str) 
             Dim objFSO, objTStream
@@ -65,7 +69,7 @@ Function writeLog (str)
 Set ObjectoFicheiro = CreateObject("Scripting.fileSystemObject")
 Set LerTexto = ObjectoFicheiro.OpenTextFile (Server.MapPath(vdir & "/upload/logs/admin.log"), 1)
 if err.number <>0 then
-    response.write "<p style=""aviso"">Erro ao ler o ficheiro LOGS.</p>"
+    response.write "<p style=""aviso"">Erro ao ler o ficheiro LOG.</p>"
 	response.write "Por favor contacte o administrador.</p>" 
 	writeLog("Erro ao ler o ficheiro LOG")
 	response.end 

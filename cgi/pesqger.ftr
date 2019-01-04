@@ -20,7 +20,7 @@ if s(v1091)='0' then
 	 '<input type="hidden" name="id" value="'(if v9000^n='id' then v9000^v fi)'">'/
      '<input type="hidden" name="sortfmt" value="'(if v9000^n='sortfmt' then v9000^v fi)'">'/
    '<input TYPE="button" VALUE="&laquo; Página anterior" class="navbotao navbotaoanterior" ONCLICK="window.history.back(-1)" NAME="PagAnt">'/
-   '<input TYPE="button" VALUE="Nova pesquisa" class="navbotao navbotaopesquisa" ONCLICK="window.location.href = &quot;/rbcatalogo/'(if v9000^n='nomemnu' then v9000^v fi)'&id='(if v9000^n='id' then v9000^v fi)'&quot;" NAME="mnuprincipal" >'/
+   '<input TYPE="button" VALUE="Nova pesquisa" class="navbotao navbotaopesquisa" ONCLICK="window.location.href = &quot;/'ref(['_cnf']1,v103)'/'(if v9000^n='nomemnu' then v9000^v fi)'&id='(if v9000^n='id' then v9000^v fi)'&quot;" NAME="MnuPrincipal" >'/
     if val(v1083)+val(v1031)<=val(v1002) then 
     '<input type="submit" class="navbotao navbotaoseguinte" value="'if val(v1002)-val(v1083) < val(v1031)+val(v1083)-1 then 'Últimos ' f(val(v1002)-val(v1083)-val(v1031)+1,0,0)  else 'Próximos 'f(val(v1083),0,0) fi ' registos" name="Submit" tabindex="1" ></p>'/
    

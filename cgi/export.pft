@@ -4,7 +4,7 @@
                ') registos apresentados nesta página (em formato ISO 2709 - Unimarc)#')
           '<script language="javascript">
            function export_reg() { 
-             var loc="/rbcatalogo/cgi/www.exe/[in=export.in]?'
+             var loc="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=export.in]?'
            'base='v1051,'&',
            'expressao='replace(V1021,'+','%2B'),'&',
            'formato=','&',
@@ -20,5 +20,5 @@
  popup=window.open(loc,"Export","toolbar=no,location=no,directories=no,status=no,scrollbars=no,resizable=yes,width=350,height=130,left=200,top=210"); 
            }  
            </script>' 
-           '<a href="#" onclick="javascript:export_reg();"><img src="../../imagens/setnav/nav_guardar.svg" title="'v3000'" border="0" height="32" width="32"/></a>'/
+           '<a href="#" onclick="javascript:export_reg();"><img src="../../imagens/setnav/nav_guardar.svg" title="'v3000'" height="32" width="32"/></a>'/
      

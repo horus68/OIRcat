@@ -8,7 +8,7 @@ putenv('nut='(if v9000^n='nut' then v9000^v fi))
 '<meta name="viewport" content="width=device-width, initial-scale=1" />'/
 '<meta name="robots" content="noindex, nofollow" />'/
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
-'<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />'/
+'<link rel="stylesheet" href="/'ref(['_cnf']1,v103)'/css/default.min.css?version=001" type="text/css" />'/
 '<script>'/
 'function popupform(myform, windowname)
 {
@@ -33,21 +33,21 @@ putenv('nut='(if v9000^n='nut' then v9000^v fi))
 
 '       function dlRes(nreg,ti,r,s,nut){'/
 '       if (confirmaSubmit(nreg,ti,r)) ' /
-'          window.location.href="/rbcatalogo/cgi/www.exe/[in=delres.in]?base=reservas&lim_inicio=1&limites=999999&ut='getenv('user')'&nut="+nut+"&mfn="+nreg+"&titulo="+escape(ti)+"&nreg="+r+"&sigla="+s+"&flag=cat";'/
+'          window.location.href="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=delres.in]?base=reservas&lim_inicio=1&limites=999999&ut='getenv('user')'&nut="+nut+"&mfn="+nreg+"&titulo="+escape(ti)+"&nreg="+r+"&sigla="+s+"&flag=cat";'/
 
 '       }'/
 '       function confirmaSubmit(nreg,ti,r){'/
 '       var sim=confirm("Tem a certeza que quer eliminar a reserva nº" + nreg +"?\nTítulo: "+ti.toUpperCase()+ " [nº registo:"+r+"]");'/
 '       if (sim) return true ; else return false ;}'/
 '       function confRes(nreg){'/
-'       window.location.href="/rbcatalogo/cgi/www.exe/[in=confres.in]?base=reservas&lim_inicio=1&limites=999999&ut='getenv('user')'&mfn="+nreg+"&express='(if v9000^n='express' then v9000^v fi)'&estado='(if v9000^n='estado' then v9000^v fi)'";'/
+'       window.location.href="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=confres.in]?base=reservas&lim_inicio=1&limites=999999&ut='getenv('user')'&mfn="+nreg+"&express='(if v9000^n='express' then v9000^v fi)'&estado='(if v9000^n='estado' then v9000^v fi)'";'/
 '       }'
 '</script>'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head><body>'/
 '<div>'/
 '<p>&nbsp;</p>'/
 '<div id="principal" style="width:640px"> '/
-'<div style="float:right"><a href="javascript:self.close()"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a><a href="javascript:window.print()"><img src="../../imagens/picgest/icon_imprimir.svg" title="Imprimir lista de reservas" alt="Imprimir lista de reservas" border="0" height="28" width="28"/></a></div><h3>Listagem de reservas ['getenv('user')']</h3>'/
+'<div style="float:right"><a href="javascript:self.close()"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" height="28" width="28"/></a><a href="javascript:window.print()"><img src="../../imagens/picgest/icon_imprimir.svg" title="Imprimir lista de reservas" alt="Imprimir lista de reservas" height="28" width="28"/></a></div><h3>Listagem de reservas ['getenv('user')']</h3>'/
 '<table id="users" style="width:640px" summary="Listagem de reservas">'/
-'  <th>ID</th><th>Título</th><th title="biblioteca">Bib.</th><th>Cota</th><th>Nº registo</th><th>Ex</th><th>Estado</th><th>Data</th><th></th>'/
+'  <tr><th>ID</th><th>Título</th><th title="biblioteca">Bib.</th><th>Cota</th><th>Nº registo</th><th>Ex</th><th>Estado</th><th>Data</th><th></th></tr>'/

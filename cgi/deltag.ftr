@@ -1,7 +1,7 @@
 '<script>'/
 '   var tag="'(if v9000^n='tag' then v9000^v fi)'";'/
 '   var mfn='(if v9000^n='r' then v9000^v fi)';'/
-'   url ="/rbcatalogo/cgi/www.exe/[in=dtagmain.in]?tag="+escape(tag)+"&mfn="+mfn+"&d="+Math.random()*Math.random();'/
+'   url ="/'ref(['_cnf']1,v103)'/cgi/www.exe/[in=dtagmain.in]?tag="+escape(tag)+"&mfn="+mfn+"&d="+Math.random()*Math.random();'/
 ' 	new Ajax.Request(url, {     '/
 '   method:"get",  '/
 '   onFailure: function(){ alert("Ocorreu um erro [deltag.fr]. Contacte o administrador.") }   }); '/  

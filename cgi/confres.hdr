@@ -89,6 +89,6 @@
 '  window.location.href="../../cgi/www.exe/[in=gesres.in]?base=reservas&dbmin='(if v9000^n='dbmin' then v9000^v fi)'&lim_inicio='(if v9000^n='lim_inicio' then v9000^v fi)'&limites=1000&ut='(if v9000^n='ut' then v9000^v fi)'&express='(if v9000^n='express' then v9000^v fi)'&estado='(if v9000^n='estado' then v9000^v fi)'"'/
 '}'/
 '</script>'/
-'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'<link rel="icon" href="/'ref(['_cnf']1,v103)'/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body onload="refreshMe();">'/
