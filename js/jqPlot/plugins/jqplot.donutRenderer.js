@@ -38,7 +38,7 @@
      * To use this renderer, you need to include the 
      * donut renderer plugin, for example:
      * 
-     * > <script type="text/javascript" src="plugins/jqplot.donutRenderer.js"></script>
+     * > <script type="text/javascript" src="plugins/jqplot.donutRenderer.min.js"></script>
      * 
      * Properties described here are passed into the $.jqplot function
      * as options on the series renderer.  For example:

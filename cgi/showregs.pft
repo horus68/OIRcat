@@ -8,7 +8,7 @@ if val(v1002)>0  then
 ,@listex.pft,
 )
  else
-    '<tr><td colspan=5><br><b>Não foram encontrados registos</b></td></tr>'/
+    '<tr><td colspan=5><br /><b>Não foram encontrados registos</b></td></tr>'/
  fi
 ,fi
  '<script>'/

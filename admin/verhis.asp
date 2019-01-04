@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-
-<link rel="stylesheet" href="../css/default.min.css" type="text/css" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 <script type="text/javascript" src="../js/sorttable.min.js"></script>
-<script type="text/javascript" src="../js/tableH.js"></script>
-<script type="text/javascript" src="../js/prototype.js"></script>
+<script type="text/javascript" src="../js/tableH.min.js"></script>
+<script type="text/javascript" src="../js/prototype.min.js"></script>
 <title>Histórico de Pesquisas</title> 
 
 <script type="text/javascript">
@@ -125,18 +125,22 @@ function clean_his()
 			              break;	
 			case "Projeção e vídeo": tipodoc="GM";
 			              break;							  
-			case "Registos áudio":tipodoc="IM";
+			case "Sonoros não musical":tipodoc="IM";
                           break;
-			case "Registos Musicais":tipodoc="JM";
+			case "Sonoros musicais":tipodoc="JM";
                           break;
 			case "Material gráfico 2D":tipodoc="KM";
                           break;
-			case "Produtos de computador":tipodoc="LM";
+			case "Recursos eletrónicos":tipodoc="LM";
                           break;
 			case "Periódicos":tipodoc="AS";
                           break;		
 			case "Analíticos":tipodoc="AA";
                           break;	
+			case "Miscelânea":tipodoc="AC";
+                          break;
+			case "Recurso integrante":tipodoc="AI";
+                          break;
 			case "Multimédia":tipodoc="MM";
                           break;
 			case "Artefactos 3D e realia":tipodoc="RM";
@@ -269,6 +273,10 @@ function clean_his()
 				     tdoc="Periódicos"		  
 				  case "AA"
 				     tdoc="Analíticos"
+				  case "AI"
+				     tdoc="Recurso integrante"		  
+				  case "AC"
+				     tdoc="Miscelânea"
 				  case else
 				     tdoc="Não definido"
 				  end select 	 
@@ -341,12 +349,12 @@ function clean_his()
 				  case "witit"
 				      formato="Títulos"					  
 				  end select
-				  response.write "<tr><td>"& i+1 &"</td><td>" & termo & "</td><td>"& formato &"</td><td>"& tdoc &"</td><td align=""center"">"& histArray(2,i) & "</td><TD align=""center"">"&histArray(3,i)&"</td><td><input type=""checkbox"" name=""row" & i & """ id=""row" & i & """ ></td><td><img onclick=""javascript:usar_pesquisa("& i &")"" style=""cursor:pointer"" src=""../imagens/picactions/refresh.gif"" width=""18"" title=""Usar pesquisa""></td></tr>"
+				  response.write "<tr><td>"& i+1 &"</td><td>" & termo & "</td><td>"& formato &"</td><td>"& tdoc &"</td><td align=""center"">"& histArray(2,i) & "</td><TD align=""center"">"&histArray(3,i)&"</td><td><input type=""checkbox"" name=""row" & i & """ id=""row" & i & """ ></td><td><img onclick=""javascript:usar_pesquisa("& i &")"" style=""cursor:pointer"" src=""../imagens/picactions/icon_refresh.svg"" title=""Usar pesquisa"" height=""22"" width=""22""></td></tr>"
 				next
 				response.write "</table>"
             end if			
 		else 
-				response.write "<br><br><h3><center>Sessão terminada (Histórico vazio)</center></h3>"		
+				response.write "<br /><br /><h3><center>Sessão terminada (Histórico vazio)</center></h3>"		
 			
 		end if	
 		%>		

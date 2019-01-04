@@ -68,7 +68,7 @@ Function getUrl(surl)
 	If (objXmlHttp.ReadyState <> 4) Or (objXmlHttp.Status <> 200) Then  
 	  'Abort the request.   
 	  objXmlHttp.Abort   
-	  strHTML = "<br /><br /><p class=""aviso"">Servidor indisponível.<br>Não é possível continuar...</p>"
+	  strHTML = "<br /><br /><p class=""aviso"">Servidor indisponível.<br />Não é possível continuar...</p>"
 	  response.write strHTML
 	  response.end   
 	End if		
@@ -131,9 +131,9 @@ End Sub
 Function FormatStr(strTemp)
 
 	strTemp = Replace(strTemp, chr(13), "")
-	strTemp = Replace(strTemp, chr(10), "<br>")
-	strTemp = Replace(strTemp, "<br><br><br><br>", "<br><br>")
-	strTemp = Replace(strTemp, "<br><br><br>", "<br><br>")
+	strTemp = Replace(strTemp, chr(10), "<br />")
+	strTemp = Replace(strTemp, "<br /><br /><br /><br />", "<br /><br />")
+	strTemp = Replace(strTemp, "<br /><br /><br />", "<br /><br />")
 	strTemp = Replace(strTemp, chr(34), "'")
 	strTemp = Replace(strTemp, "(", "[")
 	strTemp = Replace(strTemp, ")", "]")
@@ -678,7 +678,7 @@ Function Min(aNumberArray)
 	' Loop through the array
 	For I = LBound(aNumberArray) to UBound(aNumberArray)
 		' Testing line left in for debugging if needed
-		'Response.Write aNumberArray(I) & "<BR>"
+		'Response.Write aNumberArray(I) & "<br />"
 		
 		' Check to be sure the item is numeric so we don't bomb out by trying to
 		' compare a number to a string.
@@ -720,7 +720,7 @@ Function Max(aNumberArray)
 
 	For I = LBound(aNumberArray) to UBound(aNumberArray)
 		' Testing line left in for debugging if needed
-		'Response.Write aNumberArray(I) & "<BR>"
+		'Response.Write aNumberArray(I) & "<br />"
 		If IsNumeric(aNumberArray(I)) Then
 			If CDbl(aNumberArray(I)) > dblHighestSoFar Or IsNull(dblHighestSoFar) Then
 				dblHighestSoFar = CDbl(aNumberArray(I))

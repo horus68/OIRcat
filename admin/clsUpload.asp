@@ -82,7 +82,7 @@ Const BufferSize = &H10000
 ' List of all fields passed:
 '
 '	For i = 0 To objUpload.Count - 1
-'		Response.Write objUpload(i).Name & "<BR>"
+'		Response.Write objUpload(i).Name & "<br />"
 '	Next
 '
 ' ------------------------------------------------------------------------------
@@ -951,9 +951,9 @@ Call RequestData()
 			Code = AscB(MidB(gBinaryData, Index, 1))
 			Select Case Code
 				Case 13
-					Text = Text & "<B>vbCr</B><BR>"
+					Text = Text & "<B>vbCr</B><br />"
 				Case 10
-					Text = Text & "<B>vbLf</B><BR>"
+					Text = Text & "<B>vbLf</B><br />"
 			Case Else
 				If Code < 32 Then
 					

@@ -1,5 +1,5 @@
 ' <a name="'s('tab',mfn,f(iocc,1,0))'"></a>'/
-'  <table  cellspacing=0 width="100%" >'/
+'  <table  cellspacing=0 width="100%" />'/
 '   <tr> '/ 
   putenv('n=0') 
   putenv('baseref='v1051'')

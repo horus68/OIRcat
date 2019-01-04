@@ -2,15 +2,15 @@
 <!--#include file="config.asp"-->
 <!--#include file="functions.asp"-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
 <head>
 <TITLE><%=stitulo%></TITLE>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name=viewport content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<link rel="stylesheet" href="../css/default.min.css" type="text/css" />
+<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 <script type="text/javascript" src="../js/sorttable.min.js"></script>
-<script type="text/javascript" src="../js/tableH.js"></script>
+<script type="text/javascript" src="../js/tableH.min.js"></script>
 <STYLE type="text/css">
 @media print {
      table#users {width:17cm;font-size: 10pt;}
@@ -38,7 +38,7 @@
   </div>
 <!-- Segmento Navegação topo - FIM -->
 <div id="principal">
-<div id="admbotoes" style="float:right"><a href="admin.asp?id=1"><img src="../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a><a href="javascript:window.print()"><img src="../imagens/picactions/icon_imprimir.gif" border=0 title="Imprimir lista de acessos" alt="Imprimir lista de acessos"></a></div>
+<div id="admbotoes" style="float:right"><a href="admin.asp?id=1"><img src="../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a><a href="javascript:window.print()"><img src="../imagens/picgest/icon_imprimir.svg" title="Imprimir lista de acessos" alt="Imprimir lista de acessos" border="0" height="28" width="28"/></a></div>
 <h3>Listagem de acessos ao sistema de administração [LOGS]</h3>
 
 <table id="users" class="sortable" summary="Listagem de acessos ao sistema de administração">
@@ -92,5 +92,5 @@ While NOT LerTexto.AtEndOfStream
 Wend
 Set LerTexto = nothing		     
 if flag=0 then response.write "<tr height=""200""><td colspan=""3"" align=""center"">Ficheiro vazio</td></tr>"   
-response.write "</table><br><br>"
+response.write "</table><br /><br />"
 %>

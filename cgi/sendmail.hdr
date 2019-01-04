@@ -1,12 +1,16 @@
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '<head>'/
-'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">'/
-'<link rel="stylesheet" href="/rbcatalogo/css/default.min.css" type="text/css" >'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
+'<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" >'/
+'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<title>Denúncia de comentário abusivo</title></head>'/
 '<body>'/
-'<div style="float:right;margin:22px 37px 0 0"><input type="image" onclick="javascript:history.go(-1);" src="../../imagens/picactions/icon_close.gif" alt="Fechar janela" title="Fechar janela"></div>'/
+'<div style="float:right;margin:22px 37px 0 0"><input type="image" onclick="javascript:history.go(-1);" src="../../imagens/picactions/icon_close.svg" alt="Fechar janela" title="Fechar janela" border="0" height="28" width="28"></div>'/
 '<script language="JavaScript">'/
 
 'function validar_mail(str){
@@ -47,9 +51,9 @@ return true;
 
 '  <div align="center">'/
 '  <center>'/
-'  <img src="../../imagens/logotipo.png" ><h3>DENÚNCIA DE COMENTÁRIO ABUSIVO</h3>'/
+'  <img src="../../imagens/logotipo.png" /><h3>DENÚNCIA DE COMENTÁRIO ABUSIVO</h3>'/
 '  <br />'/
-'  <table border=0 width="640" cellspacing="1">'/
+'  <table border="0" width="640" cellspacing="1">'/
 '    <tr valign="top">'/
 '      <td  width="201"><b>Remetente</b></td>'/
 '      <td  width="439"><input TYPE="text" size=60  name="Email" ></td>'/
@@ -69,9 +73,9 @@ return true;
 '  </center>'/
 '</table>'/
 '</div>'/
-'<br>'/
+'<br />'/
 '  <div align="center">'/
-'    <table border=0 cellspacing="1" width="420">'/
+'    <table border="0" cellspacing="1" width="420">'/
 '     <tr>'/
 '       <td width="50"></td>'/    
 '       <td><p align="center"><input TYPE="submit" value="Enviar" class="botao botao1" onclick="return ValMail();"><input TYPE="reset" class="botao botao2" value="Limpar"></td>'/
@@ -80,4 +84,4 @@ return true;
 '</div>'/
 '<input type="hidden" name="flag" value="true">'/ 
 '<input type="hidden" name="nc" value="'mfn(1)'">'/ 
-'<input type="hidden" name="Mensagem" value="O registo em epígrafe apresenta um comentário com linguagem inapropriada ou insultuosa.<br><em>'/
+'<input type="hidden" name="Mensagem" value="O registo em epígrafe apresenta um comentário com linguagem inapropriada ou insultuosa.<br /><em>'/

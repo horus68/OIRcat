@@ -1,11 +1,13 @@
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '  <head>'/
-'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
-'	<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
     putenv('expr=' (if v9000^n='expressao' then v9000^v fi))
 '	<title>'ref(['_cnf']1,v100)'</title>'/	
-'	<link rel="stylesheet" href="../../css/default.min.css" type="text/css" />'/
+'	<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'/
 '<style type="text/css">'/
 '.states label {'/
 '  display:inline-block;'/
@@ -18,7 +20,7 @@
 'p {  white-space:nowrap;margin:0 0 1em 0;padding:0}'/
 
 '</style>'/
-
+'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body>'/
 '<div class="destaque1">'/
@@ -52,6 +54,6 @@
 '       }'
 '      </script>'
 '      <div id="principal">'
-'      <div id="admbotoes" style="float:right"><a href="javascript:fechar();"><img src="../../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a></div>'/
+'      <div id="admbotoes" style="float:right"><a href="javascript:fechar();"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a></div>'/
 '      <h3>Definir/Editar Definições de Reservas</h3>'
-     '<br><br>'/
+     '<br /><br />'/

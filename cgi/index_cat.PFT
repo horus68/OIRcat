@@ -21,7 +21,7 @@ else
 ' <p></p>'/
 ,if getenv('fim')='' then
 
-'<div align="center"><input type="button"  onclick="showPanel('(if v9000^n='tab' then v9000^v fi)',&quot;'getenv('prox')'&quot;,true)" value="Pag. seguinte"></div>'/
+'<div align="center"><input type="button" class="botao botao1" onclick="showPanel('(if v9000^n='tab' then v9000^v fi)',&quot;'getenv('prox')'&quot;,true)" value="Página seguinte"></div>'/
 fi,
 ' <p></p>'/
 

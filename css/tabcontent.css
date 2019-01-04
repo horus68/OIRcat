@@ -23,7 +23,7 @@
   margin-right: 3px;
   border: 1px solid #778;
   color: #2d2b2b;
-  background: white url(../imagens/picextra/shade.gif) top left repeat-x;
+  background: white url(../imagens/picgest/shade.gif) top left repeat-x;
   width: 101px;
   height: 29px;
 }
@@ -43,7 +43,7 @@
 }
 
 .shadetabs li a.selected {  /*selected main tab style */
-  background-image: url(../imagens/picextra/shadeactive.gif);
+  background-image: url(../imagens/picgest/shadeactive.gif);
   border-bottom-color: white;
 }
 

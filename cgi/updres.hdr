@@ -1,10 +1,13 @@
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '<head>'/
-'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '	<title>'ref(['_cnf']1,v100)'</title>'/ 	
-'	<link rel="stylesheet" href="../../../../../../../../css/default.min.css" type="text/css" />'/
-'<script language="JavaScript" src="../../../../../../../../js/prototype.js"></script>'/
+'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />'/
+'<script language="JavaScript" src="/rbcatalogo/js/prototype.min.js"></script>'/
 '<script>'/
 'var howLong = 7000;'/
 't = null;'/
@@ -15,11 +18,11 @@
 '   {'/
 '          var maildbg= "'cat('maildbg.pft')'";'/
 '          if (maildbg != "") '/
-'              var url="../../../../../../../../admin/sendemail_curto.asp?assunto=Pedido de reserva de documento&Email='ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v11)'&destino="+maildbg;'/
+'              var url="/rbcatalogo/admin/sendemail_curto.asp?assunto=Pedido de reserva de documento&Email='ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v11)'&destino="+maildbg;'/
 '          else '/
-'              var url="../../../../../../../../admin/sendemail_curto.asp?assunto=Pedido de reserva de documento&Email='ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v11)'&destino='ref(['users']L(['users']'SIGLA '(if v9000^n='dest' then v9000^v fi)),v11)'";'/
-'          var texto="Exmos Snrs,<br><br>Por favor, queiram considerar a seguinte reserva: <br><br> Utilizador : <b>'ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v3)' </b><br>Título: <b>'(if v9000^n='titulo' then mhu,v9000^v,mhl fi)'</b> <br>Nº registo: <b>'(if v9000^n='nreg' then v9000^v fi)'</b><br><br>";'/
-'          texto += "Com os melhores cumprimentos.<br>O responsável pela biblioteca: 'ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v17)'.";'/
+'              var url="/rbcatalogo/admin/sendemail_curto.asp?assunto=Pedido de reserva de documento&Email='ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v11)'&destino='ref(['users']L(['users']'SIGLA '(if v9000^n='dest' then v9000^v fi)),v11)'";'/
+'          var texto="Exmos Snrs,<br /><br />Por favor, queiram considerar a seguinte reserva: <br /><br /> Utilizador : <b>'ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v3)' </b><br />Título: <b>'(if v9000^n='titulo' then mhu,v9000^v,mhl fi)'</b> <br />Nº registo: <b>'(if v9000^n='nreg' then v9000^v fi)'</b><br /><br />";'/
+'          texto += "Com os melhores cumprimentos.<br />O responsável pela biblioteca: 'ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v17)'.";'/
 '          url += "&mensagem="+texto;'/
 '		   new Ajax.Request(url, {     '/
 '          method:"get",  '/
@@ -27,13 +30,14 @@
 '		   var response = transport.responseText;  '/
 '          $("msg").innerHTML=response; '/  
 '          if (maildbg != "") '/
-'              var popurl="../../../../../../../../admin/prtemail.asp?assunto=Pedido de reserva de documento&destinatario="+maildbg+"&mensagem=" + texto ;'/
+'              var popurl="/rbcatalogo//admin/prtemail.asp?assunto=Pedido de reserva de documento&destinatario="+maildbg+"&mensagem=" + texto ;'/
 '          else '/
-'              var popurl="../../../../../../../../admin/prtemail.asp?assunto=Pedido de reserva de documento&destinatario='ref(['users']L(['users']'SIGLA '(if v9000^n='sigla' then v9000^v fi)),v11)'&mensagem=" + texto ;'/
+'              var popurl="/rbcatalogo/admin/prtemail.asp?assunto=Pedido de reserva de documento&destinatario='ref(['users']L(['users']'SIGLA '(if v9000^n='sigla' then v9000^v fi)),v11)'&mensagem=" + texto ;'/
 '          winpops=window.open(popurl,"","width=550,height=430,"); '/
 '           },     '/
 '		   onFailure: function(){ alert("Ocorreu um erro. Contacte o administrador.") }   }); '/
 '   }'/
 '</script>'/
+'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body onload="closeMe();self.focus()">'/

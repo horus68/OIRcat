@@ -1,5 +1,5 @@
  '</form>'/
- '<br>'/
+ '<br />'/
 '<div align="right">'
 if s(v1091)='0' then
   if val(v1032)<=val(v1002)
@@ -28,9 +28,8 @@ if s(v1091)='0' then
 
    '</form>'/
 '</div>'
+'</div>'
    '<br />'/
-  '<div class="caixapequena" style="width:75%">'
-  '</div>'/
 fi,
 else
  ,@wierro.pft,

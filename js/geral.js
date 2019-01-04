@@ -17,10 +17,10 @@ function ShowExi(header,base,formato,mfn,biblio,ut,nut,bibleitor)
   var flag;
   
   if (lastpopup ==header) flag= document.getElementById("cotas"+lastmfn).style.display=="inline"; 
-  if (image.src.indexOf('plus.gif')!=-1) {
+  if (image.src.indexOf('icon_ver_plus.svg')!=-1) {
      
-     if (lastmfn) {var strLastMfn=lastmfn;while (strLastMfn.length < 6) strLastMfn = '0' + strLastMfn;document.getElementById("vermais"+strLastMfn).src="../../imagens/picactions/plus.gif";}
-	 image.src="../../imagens/picactions/minus.gif";
+     if (lastmfn) {var strLastMfn=lastmfn;while (strLastMfn.length < 6) strLastMfn = '0' + strLastMfn;document.getElementById("vermais"+strLastMfn).src="../../imagens/picactions/icon_ver_plus.svg";}
+	 image.src="../../imagens/picactions/icon_ver_minus.svg";
      image.title="Esconder";
 	 
   }else
@@ -29,7 +29,7 @@ function ShowExi(header,base,formato,mfn,biblio,ut,nut,bibleitor)
 	{
     var str1="tab"+strMfn+"1";
 	changecont(str1);
-	image.src="../../imagens/picactions/plus.gif";
+	image.src="../../imagens/picactions/icon_ver_plus.svg";
     image.title="Expandir";
 	}
   }

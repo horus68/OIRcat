@@ -1,11 +1,14 @@
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '<head>'
 '<title>'ref(['_cnf']1,v100)'</title>'/
-'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'
-'<link rel="stylesheet" href="../../css/default.min.css" type="text/css" />'
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
+'<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'
 '<script type="text/javascript" src="../../js/sorttable.min.js"></script>'/
-'<script  type="text/javascript" src="../../js/tableH.js"></script>'/
+'<script  type="text/javascript" src="../../js/tableH.min.js"></script>'/
 '<STYLE type="text/css">
 @media print {
      table#users {width:17cm; font-size: 12pt;}
@@ -14,6 +17,7 @@
      table#users td{border:solid 1px;}
 }
 </STYLE>'
+'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
 '</head><body>'
 '<div class="destaque1">'/
 '<h1>Catálogo Coletivo: Utilizadores</h1>'/
@@ -27,8 +31,8 @@
 '</div>'/
 '</div>'/
 '<div id="principal">'
-'<div id="admbotoes" style="float:right"><a href="javascript:history.back()"><img src="../../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a><a href="javascript:window.print()"><img src="../../imagens/picactions/icon_imprimir.gif" border=0 title="Imprimir lista de utilizadores" alt="Imprimir lista de utilizadores"></a></div>'/
+'<div id="admbotoes" style="float:right"><a href="javascript:history.back()"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a><a href="javascript:window.print()"><img src="../../imagens/picgest/icon_imprimir.svg" title="Imprimir lista de utilizadores" alt="Imprimir lista de utilizadores" border="0" height="28" width="28"/></a></div>'/
 '<h3>Lista de utilizadores</h3>'/
 '<table id="users" class="sortable" summary="Lista de utilizadores");"
   onMouseOut="javascript:highlightTableRow(0);">'
-'  <th>Sigla</th><th>Designação</th><th>Dependência</th><th>Morada</th><th>Localiade</th><th>Cod. Postal</th><th>Telefone</th><th>Email</th>'
+'  <th>ID</th><th>Sigla</th><th>Designação</th><th>Grupo</th><th>Morada</th><th>Localiade</th><th>Cod. Postal</th><th>Telefone</th><th>Email</th>'

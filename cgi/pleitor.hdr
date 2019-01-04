@@ -1,12 +1,14 @@
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '  <head>'/
-'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
-'	<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
     putenv('expressao=' (if v9000^n='expressao' then v9000^v fi))
 '	<title>'ref(['_cnf']1,v100)'</title>'/	
-'	<link rel="stylesheet" href="../../css/default.min.css" type="text/css" />'/
-'<script type="text/javascript" src="../../js/prototype.js"></script>'/
+'	<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'/
+'<script type="text/javascript" src="../../js/prototype.min.js"></script>'/
 '<script type="text/javascript" src="../../js/users.min.js"></script>'/
 '      <script>'
 '      function onEnter(event){'
@@ -98,6 +100,7 @@
 ' 		} '
 '      </script>'
 putenv('user='mhu,(if v9000^n='ut' then v9000^v fi),mhl)
+'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body >'/
 '<div class="destaque1">'/
@@ -115,7 +118,7 @@ putenv('user='mhu,(if v9000^n='ut' then v9000^v fi),mhl)
 '      <span id="resp" style="display:none"></span>'
 '      <div id="principal">'
 '      '
-'      <div id="admbotoes" style="float:right"><a href="javascript:fechar();"><img src="../../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a></div><h3>Edição de Leitor</h3>'/
+'      <div id="admbotoes" style="float:right"><a href="javascript:fechar();"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" width="28" height="28"/></a></div><h3>Edição de Leitor</h3>'/
     '<!--<b>Expressão de pesquisa:</b> <input name="expr" id="expr" type="text" size="50" value="'(if v9000^n='expressao' then v9000^v fi)'" onkeypress="javascript:onEnter(event)">'/
-    '<a href="javascript:novapesq()"><img src="../../imagens/picactions/refresh.gif" alt="Refazer pesquisa" title="Refazer pesquisa" width="20" height="20" align="absmiddle" border=0></a>-->'/
+    '<a href="javascript:novapesq()"><img src="../../imagens/picgest/icon_refresh.svg" alt="Refazer pesquisa" title="Refazer pesquisa" border="0" width="28" height="28" align="absmiddle"/></a>-->'/
      ''/

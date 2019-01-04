@@ -1,12 +1,15 @@
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '<head>'/
-'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
-'	<link rel="stylesheet" href="../../css/default.min.css" type="text/css" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
+'	<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'/
 '	<title>'ref(['_cnf']1,v100)'</title>'/ 
 '<script type="text/javascript" src="../../js/sorttable.min.js"></script>'/
-'<script type="text/javascript" src="../../js/tableH.js"></script>'/
-'<script type="text/javascript" src="../../js/prototype.js"></script>'/
+'<script type="text/javascript" src="../../js/tableH.min.js"></script>'/
+'<script type="text/javascript" src="../../js/prototype.min.js"></script>'/
 '<script>
 function start() {
     if (!document.getElementsByTagName || !document.createTextNode) return;
@@ -29,18 +32,19 @@ function start() {
 
 ' if (response != codigo.toLowerCase() ) '/
 '    if (response=="Erro") '/
-'      $("td"+us).innerHTML = "<img style=\"cursor:pointer\" src=\"../../imagens/picactions/info_stop.png\" width=\"15\" border=\"0\" align=\"absmiddle\" title=\"Ficheiro ISO NÃO ENCONTRADO ou não foi possível ler o ficheiro.\">";'/
+'      $("td"+us).innerHTML = "<img style=\"cursor:pointer\" src=\"../../imagens/picgest/info_proibido.svg\" height=\"22\" width=\"22\" border=\"0\" align=\"absmiddle\" title=\"Ficheiro ISO NÃO ENCONTRADO ou não foi possível ler o ficheiro.\">";'/
 '    else '/ 
 '     if (response=="misc") '/
-'       $("td"+us).innerHTML = "<img style=\"cursor:pointer\" src=\"../../imagens/picactions/info_question.png\" width=\"15\" border=\"0\" align=\"absmiddle\" title=\"Codificação do ficheiro ISO aparentemente com mistura do padrão ANSI com o padrão ASCII.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido\">";'/
+'       $("td"+us).innerHTML = "<img style=\"cursor:pointer\" src=\"../../imagens/picgest/info_duvida.svg\" height=\"22\" width=\"22\" border=\"0\" align=\"absmiddle\" title=\"Codificação do ficheiro ISO aparentemente com mistura do padrão ANSI com o padrão ASCII.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido\">";'/
 '     else '/
-'       $("td"+us).innerHTML = "<img style=\"cursor:pointer\" src=\"../../imagens/picactions/info_aviso.png\" width=\"15\" border=\"0\" align=\"absmiddle\" title=\"Codificação do ficheiro ISO aparentemente NÃO CONFERE com a parametrização.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido\">";'/
-' else  $("td"+us).innerHTML = "<img style=\"cursor:pointer\" src=\"../../imagens/picactions/info_checked.png\" width=\"15\" border=\"0\" align=\"absmiddle\" title=\"Codificação do ficheiro ISO aparentemente VÁLIDA.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido\"/>";'/
+'       $("td"+us).innerHTML = "<img style=\"cursor:pointer\" src=\"../../imagens/picgest/info_aviso.svg\" height=\"22\" width=\"22\" border=\"0\" align=\"absmiddle\" title=\"Codificação do ficheiro ISO aparentemente NÃO CONFERE com a parametrização.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido\">";'/
+' else  $("td"+us).innerHTML = "<img style=\"cursor:pointer\" src=\"../../imagens/picgest/info_verificado.svg\" height=\"22\" width=\"22\" border=\"0\" align=\"absmiddle\" title=\"Codificação do ficheiro ISO aparentemente VÁLIDA.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido\"/>";'/
 ' }, '/
 ' onFailure: function() {alert("Ocorreu um erro. Contacte o administrador.")}
  }); '/
 '  }'/
 '</script>'/
+'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body onload="start();">'/
 '<div class="destaque1">'/
@@ -55,11 +59,11 @@ function start() {
 '</div>'/
 '</div>'/
 '<div id="principal"> '/
-'<div id="admbotoes" style="float:right"><a href="../../admin/admin.asp?mnut=1"><img src="../../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a></div>'
+'<div id="admbotoes" style="float:right"><a href="../../admin/admin.asp?mnut=1"><img src="../../imagens/picgest/icon_close.svg" height="28" width="28" border="0" title="Voltar à página anterior" alt="Voltar à página anterior"/></a></div>'
 '<br />'/
 '<div align="center">'/
 '<form name="frmseluser" id="frmseluser" action="../../cgi/www.exe/[in=pesquser.in]" method="post" >  '/
 ' <input type="hidden" name="ut" value="admin">'/
 ' <input type="hidden" name="expressao" id="expressao" value="">'/
 '<table id="users" class="sortable" style="text-align:left" summary="Seleção de utilizadores">'/
-'<th>Sigla</th><th>Dependência</th><th>Nome</th><th><img src="../../imagens/picactions/login.gif" width="15"  title="Permissões"/></th><th align="center"><img src="../../imagens/picactions/basedados.png" width="15" title="Base bibliográfica"/></th>'/
+'<th>Sigla</th><th>Grupo</th><th>Nome</th><th><img src="../../imagens/picgest/icon_contautilizador.svg" height="28" width="28" title="Permissões"/></th><th align="center"><img src="../../imagens/picgest/icon_basedados.svg" height="28" width="28" title="Base bibliográfica"/></th>'/

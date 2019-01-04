@@ -18,79 +18,97 @@
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="pt" lang="pt">
-  <head>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="pt-PT" lang="pt-PT">
+
+<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<meta name=viewport content="width=device-width, initial-scale=1">
-	<meta name="robots" content="follow,index" />
-	<title>Identificar bibliotecas <%=stitulo%></title>
-	<link rel="stylesheet" href="css/default.min.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="robots" content="index, follow" />
+	<title>Identificar bibliotecas - <%=stitulo%></title>
+	<link rel="stylesheet" href="css/default.min.css?version=001" type="text/css" />
 	<script type="text/javascript" src="js/geral.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script>
-    if (typeof jQuery == 'undefined') {
-    document.write(unescape("%3Cscript src='js/jquery-3.3.1.min.js' type='text/javascript'%3E%3C/script%3E"));
-    } 
-    </script>
-	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
-	<link rel="icon" href="favicon.ico" type="image/ico"/>
- 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-	<meta name="description" content="Identificar bibliotecas no Catálogo coletivo da Rede de Bibliotecas do Concelho"/>
-	<meta name="keywords" content="Catálogo coletivo, Bibliotecas, pesquisar biblioteca" />
-	<meta name="author" content="Rede Concelhia de Bibliotecas" />
-  <meta property="og:title" content="Identificar bibliotecas Catálogo da Rede de bibliotecas" />
-  <meta property="og:type" content="library" />
-  <meta property="og:site_name" content="Catálogo - Rede de bibliotecas" />
-  <meta property="og:description" content="Catálogo coletivo da Rede de Bibliotecas do Concelho. Pesquise os documentos existentes nas bibliotecas deste concelho" />
+	<meta name="description" content="Identificar bibliotecas no catálogo coletivo - XXPTO - Catálogo coletivo da Rede de Bibliotecas do concelho" />
+	<meta name="keywords" content="Catálogo coletivo, Bibliotecas, pesquisar biblioteca, OPAC, registo bibliográfico" />
+	<meta name="author" content="Rede Concelhia de Bibliotecas - XXPTO" />
+	<!-- Favicon Geral -->
+	<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/x-icon" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/rbcatalogo/imagens/app/favicon-32x32.png?v=001" />
+	<!-- Favicon Android -->
+	<link rel="manifest" href="manifest.json?v=001" />
+	<meta name="theme-color" content="#cdc8b1" />
+	<!-- Favicon Windows IE -->
+	<meta name="msapplication-config" content="IEconfig.xml?v=001" />
+	<meta name="application-name" content="Cat.RB XXPTO" />
+	<meta name="msapplication-TileColor" content="#afa782" />
+	<!-- Favicon iOS -->
+	<link rel="apple-touch-icon-precomposed" href="/rbcatalogo/imagens/app/apple-touch-icon-precomposed.png?v=001" />
+	<link rel="mask-icon" href="/rbcatalogo/imagens/app/safari-pinned-tab.svg?v=001" color="#5bbad5" />
+	<!-- OpenGraph Facebook -->
+	<meta property="og:image" content="http://www.pesquisardocumentos.com/rbcatalogo/partilhasocial.png"/>
+	<meta property="og:image:height" content="363"/>
+	<meta property="og:image:width" content="694"/>
+	<meta property="og:title" content="XXPTO - Catálogo da Rede de Bibliotecas do concelho"/>
+	<meta property="og:description" content="Pesquise os documentos e saiba rapidamente onde os pode requisitar. OPAC - XXPTO: Catálogo coletivo da Rede de Bibliotecas do Concelho. Ler, ver, sentir e viver"/>
+	<meta property="og:url" content="http://www.pesquisardocumentos.com/rbcatalogo/"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:site_name" content="Catálogo.XXPTO - Rede de bibliotecas - XXPTO"/>
+	<meta property="og:locale" content="pt_PT"/>
 </head>
 
 <body>
-  <div class="destaque1">
-    <h2>Catálogo Coletivo: <%=sentidadelonga%></h2>
-  </div>
-<!-- Segmento Navegação topo -->
-  <div class="col3-contentor">
-    <div class="col3">
-    <p class="fil">» <a href="default.asp">Entrada</a> » Ajuda: Dicas de pesquisa</p>
-    </div>
-    <div class="col3" id="lblutilizador">Utilizador: <% if session("user")="" then response.write "Visitante" else response.write ucase(session("user"))%>
-    </div>
-  </div>
-<!-- Segmento Navegação topo - FIM -->
-    <div id="principal">
-	  <div align="center">
-<img src="<%=slogo%>" alt="Logótipo">
-</div>
-	<h2><span class="fa-layers fa-fw" style="font-size:3em"><i class="fas fa-circle-notch" ></i><i class="fas fa-graduation-cap" data-fa-transform="shrink-8" title="Identificar e localizar uma biblioteca"></i></span>Como saber a que Biblioteca pertence um documento?</h2> 
-<p>Em cada resultado de pesquisa surge uma indicação de qual a biblioteca onde se encontra o documento, os contactos e morada da biblioteca bem como a localização no mapa.</p> 
-<p>Como é que chegamos até lá? Comece por pesquisar o que procura. Ao fazer uma pesquisa obtém os seus resultados, sob a forma de registos bibliográficos.<br /><img src="imagens/ajuda/pesquisa_simplificada.png" alt="Pesquisa simplificada" border=0 align="center">
-</p>
-	<dl>
-		<dt>Para ver a indicação das bibliotecas onde pode consultar esses documentos veja a linha "Localização" e carregue na sigla da biblioteca ou no sinal "+"</dt>
-			<dd>Todos os resultados têm uma indicação de “Localização” onde surgem as siglas das várias bibliotecas.</dd>
-			<dd>Como se trata de um catálogo coletivo vão aparecer várias siglas de acordo com os vários exemplares existentes no catálogo.</dd>
-			<dd>Clicando na sigla (ou no sinal +) surge uma informação detalhada sobre a Biblioteca onde está aquele documento.</dd>	
+	<div class="destaque1">
+		<h1 style="font-variant: small-caps">Catálogo Coletivo: <%=sentidadelonga%></h1>
+	</div>
+
+	<!-- Segmento Navegação topo -->
+	<div class="col3-contentor">
+		<div class="col3">
+			<p class="fil">» <a href="default.asp">Entrada</a> » Ajuda: Identificar e localizar bibliotecas </p>
+		</div>
+		<div class="col3" id="lblutilizador">Utilizador:
+			<% if session("user")="" then response.write "Visitante" else response.write ucase(session("user"))%>
+		</div>
+	</div>
+	<!-- Segmento Navegação topo - FIM -->
+	<div id="principal">
+		<div align="center">
+			<img src="<%=slogo%>" alt="Logótipo"/>
+		</div>
+		<h2><img src="imagens/pictitulos/pic_ajuda_alt.svg" alt="Localizar o documento" title="Localizar o documento" border="0" height="70" width="70" align="absmiddle"/><br />Como saber a que Biblioteca pertence um documento?</h2>
+		<p>Em cada resultado de pesquisa surge uma indicação de qual a biblioteca onde se encontra o documento, os contactos e morada da biblioteca bem como a localização no mapa.</p>
+		<p>Como é que chegamos até lá? Comece por pesquisar o que procura. Ao fazer uma pesquisa obtém os seus resultados, sob a forma de registos bibliográficos.
+			<br /><span style="text-align:center; display: block;"><img src="imagens/ajuda/pesquisa_simplificada.png" alt="Pesquisa simplificada" title="Pesquisa simplificada" border="0"/></span>
+		</p>
+		<p>
+			<dl>
+				<dt>Para ver a indicação das bibliotecas onde pode consultar esses documentos veja a linha "Localização" e carregue na sigla da biblioteca ou no sinal "+"</dt>
+				<dd>Todos os resultados têm uma indicação de “Localização” onde surgem as siglas das várias bibliotecas.</dd>
+				<dd>Como se trata de um catálogo coletivo vão aparecer várias siglas de acordo com os vários exemplares existentes no catálogo.</dd>
+				<dd>Clicando na sigla (ou no sinal +) surge uma informação detalhada sobre a Biblioteca onde está aquele documento.</dd>
 			</dl>
 			<br />
-<img src="imagens/ajuda/bib_identificar1.png" alt="Resultado da pesquisa" border=0 align="center">
-	</p>
-	<div class="destaquetexto">
-		<h2>Como chegar à biblioteca?</h2>
-	<p>Para saber como chegar à biblioteca pode carregar no ícone do carro/percurso para que se abra uma janela com o mapa de localização.<br />
-<img src="imagens/ajuda/bib_identificar2.png" alt="Resultado da pesquisa" border=0 align="center">
-<br />
-Na página inicial do catálogo pode ainda consultar os contactos das bibliotecas, clicando na hiperligação “Contactos das Bibliotecas”.
-	</p>
+			<span style="text-align:center; display: block;"><img src="imagens/ajuda/bib_identificar1.png" alt="Resultado da pesquisa" title="Resultado da pesquisa" border="0"/></span>
+		</p>
+		<div class="destaquetexto">
+			<h2><img src="imagens/pictitulos/pic_mapas_alt.svg" alt="Ver no mapa" title="Ver no mapa" border="0" height="60" width="60" align="absmiddle"/>Como chegar à biblioteca?</h2>
+			<p>Para saber como chegar à biblioteca pode carregar no ícone do carro/percurso para que se abra uma janela com o mapa de localização.
+				<br />
+				<span style="text-align:center; display: block;"><img src="imagens/ajuda/bib_identificar2.png" alt="Resultado da pesquisa" title="Resultado da pesquisa" border="0"/></span>
+				<br /> Na página inicial do catálogo pode ainda consultar os contactos das bibliotecas, clicando na hiperligação “Contactos das Bibliotecas”.
+			</p>
+		</div>
+		<br />
+		<p><img src="imagens/pictitulos/pic_questao_alt.svg" alt="Dúvidas" title="Dúvidas" border="0" height="32" width="32" align="absmiddle"/>Em caso de dúvidas dirija-se à biblioteca mais próxima onde o podem ajudar nas pesquisas e empréstimos.
+			<br />Boas leituras!
+		</p>
+		<div align="center" style="clear:both" class="txtvoltar">
+			<a style="text-decoration:none" href="default.asp">
+				<input type="button" name="bt2" value="Voltar" class="botao botao5" ;>
+			</a>
+		</div>
 	</div>
 	<br />
-	<p>Em caso de dúvidas, dirija-se à biblioteca mais próxima onde o podem ajudar nas pesquisas e empréstimos.
-	<br />Boas leituras!
-	</p>
-	<div align="center" style="clear:both" class="txtvoltar">
-			<a style="text-decoration:none" href="default.asp"><input type="button" name="bt2" value="Voltar" class="botao botao5";></center>
-	</div> 
-</div>
-		<br />
 	<br />
 </body>
+
 </html>

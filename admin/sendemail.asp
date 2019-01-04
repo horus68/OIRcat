@@ -8,7 +8,7 @@
 assunto=Request("assunto")
 remetente=request("Email")					
 destinatario=Request("destino")
-mensagem=Request("comentario") & "<br>" & Request("mensagem") & "<br><br>Remetido por:" & "<b>" & ucase(remetente) & "</b>" 			
+mensagem=Request("comentario") & "<br />" & Request("mensagem") & "<br /><br />Remetido por:" & "<b>" & ucase(remetente) & "</b>" 			
 if SendMail(assunto, remetente, destinatario, mensagem) Then
      if request("flag")="true" then 					
 	     response.write "<script>window.resizeTo(0,0);alert('Email enviado com sucesso.');window.close();</script>" 				

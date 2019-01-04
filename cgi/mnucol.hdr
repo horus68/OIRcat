@@ -1,15 +1,17 @@
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '  <head>'/
-'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
-'	<meta name="robots" content="noindex, nofollow" />'/
-
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
     putenv('user=' (if v9000^n='ut' then v9000^v fi))
     putenv('mnu=' (if v9000^n='mnu' then v9000^v fi))
     putenv('base=' (if v9000^n='base' then v9000^v fi))
 '	<title>'ref(['_cnf']1,v100)'</title>'/
-'	<link rel="stylesheet" href="../../css/default.min.css" type="text/css" />'/
-'<script type="text/javascript" src="../../js/users.min.js"></script>'/
+'	<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'/
+'<script type="text/javascript" src="../../js/users_col.min.js"></script>'/
+'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body>'/
 '<div class="destaque1">'/
@@ -17,16 +19,16 @@
 '</div>'/
 '<div class="col3-contentor">'/
 '<div class="col3">'/
-'<p class="fil">» <a href="../../default.asp">Zona pública</a> » <a href="../../admin/admin.asp?id=3">Administração</a> » Avaliação de existências</p>'/
+'<p class="fil">» <a href="../../default.asp">Zona pública</a> » <a href="../../col.asp">Coleção</a> » Avaliação de existências</p>'/
 '</div>'/
 '<div class="col3" id="lblutilizador">'/
-'Utilizador: ' if getenv('user')='guest' then 'Visitante' else getenv('user') fi ' [ <a href="../../admin/admin.asp?Logout=1">Sair</a> ] '/		
+'Utilizador: ' if getenv('user')='guest' then 'Visitante' else getenv('user') fi ' [ <a href="../../default.asp?Logout=1">Sair</a> ] '/		
 '</div>'/
 '</div>'/
 '<div id="principal" class="resultado"> '/
-'<div id="admbotoes" style="float:right"><a href="../../admin/admin.asp?id=3"><img src="../../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a></div>'/
-'<br>'
-	  'Selecione a entidade: '	   
+'<div id="admbotoes" style="float:right"><a href="../../col.asp"><img src="../../imagens/picactions/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a></div>'/
+'<br />'
+	  'Selecione uma biblioteca ou entidade: '	   
 		'<div align="center">'/
 		'<form name="frmselcri" id="frmselcri" action="" method="post" >  '/
 		' <input type="hidden" name="ut" value="'getenv('user')'">'/

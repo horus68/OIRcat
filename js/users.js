@@ -1,6 +1,5 @@
 //** OIR - OPAC.isisRBE
-function getAction()
-  {
+function getAction(){
 	 var pos=document.getElementById("susers").selectedIndex;
 	 var x=document.getElementById("susers").options[pos].value;
 	 document.getElementById("expressao").value="SIGLA "+x;
@@ -8,9 +7,7 @@ function getAction()
 	
 }
 
-
-function getActionHistRes(base)
-  {
+function getActionHistRes(base){
 	 var pos=document.getElementById("ophist").selectedIndex;
 	 var x=document.getElementById("ophist").options[pos].value;
      //var tipo=document.getElementById("tipores").value;
@@ -69,8 +66,7 @@ function getActionHistRes(base)
 	
 }
 
-function getActionRes()
-  {
+function getActionRes(){
 	 var pos=document.getElementById("estado").selectedIndex;
 	 var x=document.getElementById("estado").options[pos].value;	   
 	 if (x!='X') 
@@ -79,58 +75,8 @@ function getActionRes()
 	
 }
 
-function getOp(){
-   var pos=document.getElementById("criterio").selectedIndex;
-   var x=document.getElementById("criterio").options[pos].value;
-   switch(x){
-   case 'X': document.getElementById("frmgescol").action="../admin/colselop.asp";break;
-   case 'i': document.getElementById("frmgescol").action="../cgi/www.exe/[in=mnucol.in]"; document.getElementById("mnu").value="2";break;
-   case 'c': document.getElementById("frmgescol").action="../cgi/www.exe/[in=mnucol.in]"; document.getElementById("mnu").value="3";break;	 
-   }
-   document.getElementById("frmgescol").submit();
-}
-
-
-function getOpCol(){
-   var pos=document.getElementById("opges").selectedIndex;
-   var x=document.getElementById("opges").options[pos].value;
-   if (x!="" && document.getElementById("termo").value=="") {alert("ATENÇÃO! O termo não pode ficar vazio.");return false}
-   var ss= x + " " +  document.getElementById("termo").value;
-   var flag=false;
-   if(document.getElementById("op").value.toUpperCase()==document.getElementById("base").value.toUpperCase()) flag=true;
-   document.getElementById("op").value=document.getElementById("op").value.toUpperCase();
-   document.getElementById("expressao").value =(document.getElementById("op").value=='X' || flag==true? ss : "SI " + document.getElementById("op").value+ " AND " + ss);
-   if(document.getElementById("PFX").checked==false) document.getElementById("expressao").value += "$";
-   if(document.getElementById("limites").value =="" || parseInt(document.getElementById("limites").value)<=0 || parseInt(document.getElementById("limites").value)>1000 ) document.getElementById("limites").value="25";
-   document.getElementById("frmselcri").submit();
-}
-
-function getOpsel(){
-	 var pos=document.getElementById("susers").selectedIndex;
-	 if (pos==-1) {alert("ATENÇÃO! É necessário selecionar um utilizador.");return false}
-	 var x=document.getElementById("susers").options[pos].value;
-	 var tags=x.split("~~");
-	 document.getElementById("base").value=tags[1]; 
-	 document.getElementById("users").value=tags[0];
-
-	 if (FileExists("../admin/chkfile.asp?vdir=/rbcatalogo&fname="+tags[1].toLowerCase()+"&d="+new Date().getTime())=='False') {alert("ATENÇÃO! Biblioteca sem base de dados carregada no sistema.");return};
-//	 if (tags[0]==tags[1]) 
-//		document.getElementById("expressao").value="";
-//	 else
-//	     document.getElementById("expressao").value="SI "+tags[0];
-	 if (document.getElementById("mnu").value=='2')
-	    document.getElementById("frmselcri").action="../../admin/colselop.asp";
-	 else
-	 {
-	   document.getElementById("base").value=document.getElementById("base").value.toLowerCase();
-	   document.getElementById("frmselcri").action="../../admin/graficos.asp";
-	 }  
-	 document.getElementById("frmselcri").submit();
-}
 
 function validadados(flag){
-       
-	 
        var status=true;var stat_gps=true;
        var msgconf="";var msgID="";
        var msg="";
@@ -200,8 +146,6 @@ function validadados(flag){
 '       }'	
 	
 function validadadosLeitor(){
-       
-	     
        var status=true;
        var msg="";var msgID="";
 	    if (!ValidateData(document.getElementById("v3"))) return false;	
@@ -226,9 +170,7 @@ function validadadosLeitor(){
 		return status;
     }
 		   
-   function chkuser()
-   {
-            
+   function chkuser(){
 		   var flag=false; var now=new Date();
 		   new Ajax.Request('../cgi/www.exe/[in=veruser.in]?sigla='+document.getElementById("v2").value.toLowerCase()+'&r='+ now.getTime(), {     
            method:'get',     
@@ -247,9 +189,7 @@ function validadadosLeitor(){
 		   return false;
    }
    
-    function chkleitor()
-   {
-          
+    function chkleitor(){
 		   var flag=false;var now=new Date();
 
 		   new Ajax.Request('../cgi/www.exe/[in=verleitor.in]?nome='+ConvUp(document.getElementById("v2").value)+'&r='+now.getTime(), {     
@@ -273,13 +213,13 @@ function validadadosLeitor(){
 			if (pwd.value.length==0) {
 			strength.innerHTML = "";
 			} else if (false == enoughRegex.test(pwd.value)) {
-			strength.innerHTML = "<img src='/rbcatalogo/imagens/picactions/pwd0.gif' border='0'>";   //muito fraca
+			strength.innerHTML = "<img src='/rbcatalogo/imagens/picgest/pwd0.svg' border='0' height='25' width='110'/>";   //muito fraca
 			} else if (strongRegex.test(pwd.value)) {
-			strength.innerHTML = "<img src='/rbcatalogo/imagens/picactions/pwd4.gif' border='0'>";  //muito boa
+			strength.innerHTML = "<img src='/rbcatalogo/imagens/picgest/pwd4.svg' border='0' height='25' width='110'/>";  //muito boa
 			} else if (mediumRegex.test(pwd.value)) {
-			strength.innerHTML = "<img src='/rbcatalogo/imagens/picactions/pwd2.gif' border='0'>";  //razoável
+			strength.innerHTML = "<img src='/rbcatalogo/imagens/picgest/pwd2.svg' border='0' height='25' width='110'/>";  //razoável
 			} else { 
-			strength.innerHTML = "<img src='/rbcatalogo/imagens/picactions/pwd1.gif' border='0'>";  //fraca
+			strength.innerHTML = "<img src='/rbcatalogo/imagens/picgest/pwd1.svg' border='0' height='25' width='110'/>";  //fraca
 			}
 		  } 
 
@@ -292,8 +232,7 @@ function validadadosLeitor(){
 		//document.getElementById("pwd").innerHTML="";
 	}
 	
-  function alpha(s)
-  {
+  function alpha(s){
 	
 	for(var j=0; j<s.length; j++)
 	{
@@ -308,7 +247,6 @@ function validadadosLeitor(){
  return true;
  }
 
-
 /**
 *
 *  UTF-8 data encode / decode
@@ -317,7 +255,6 @@ function validadadosLeitor(){
 **/
  
 var Utf8 = {
- 
 	// public method for url encoding
 	encode : function (string) {
 		string = string.replace(/\r\n/g,"\n");
@@ -400,13 +337,13 @@ for (var i = 1; i < len; i++) if (this[i] < min) min = this[i];
 return min;
 }
 
-function trim(stringToTrim) {
+function trim(stringToTrim){
 	return stringToTrim.replace(/^\s+|\s+$/g,"");
 }
-function ltrim(stringToTrim) {
+function ltrim(stringToTrim){
 	return stringToTrim.replace(/^\s+/,"");
 }
-function rtrim(stringToTrim) {
+function rtrim(stringToTrim){
 	return stringToTrim.replace(/\s+$/,"");
 }
 
@@ -490,7 +427,7 @@ function isDate(dtStr){
 return true
 }
 
-function ValidateEmail(ctrl) {               
+function ValidateEmail(ctrl){
 var strMail = ctrl.value;   
 if (strMail=="") return true;    
 var regMail =/^\w+([-.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;        
@@ -504,7 +441,7 @@ else {
 	}
 }
 
-function ValidateData(ctrl) {
+function ValidateData(ctrl){
    
 	    if (ctrl.value !="" && !isDate(ctrl.value)) 
 		{
@@ -514,7 +451,7 @@ function ValidateData(ctrl) {
 		}else return true;
 		
 }		
-function ValidateSigla(ctrl) {
+function ValidateSigla(ctrl){
    
 	       var sigla=ctrl.value; 
 		   switch (sigla.toLowerCase())
@@ -522,7 +459,7 @@ function ValidateSigla(ctrl) {
 		    case 'admin':
 		    	ctrl.value="";
 				ctrl.focus(); 
-				alert('O nome de agrupamento não é válido.');   
+				alert('O nome da entidade agrupante não é válido.');   
 				return false;
 				break;
 			case '': 
@@ -530,7 +467,7 @@ function ValidateSigla(ctrl) {
 			    break;     	
 		    default:
 			   var flag=false;
-			   new Ajax.Request('../cgi/www.exe/[in=veragr.in]?agr='+sigla.toLowerCase(), {     
+			   new Ajax.Request('cgi/www.exe/[in=veragr.in]?agr='+sigla.toLowerCase(), {     
 			   method:'get', 		   
 			   onSuccess: function(transport){       
 			   var response = transport.responseText || "nao";      
@@ -540,7 +477,7 @@ function ValidateSigla(ctrl) {
 				 {	   
 				ctrl.value="";
 				ctrl.focus();    
-				alert('A entidade não existe ou o nome de agrupamento não é válido.'); 
+				alert('A entidade não existe ou o nome da entidade agrupante não é válido.'); 
 				}},
 				onFailure: function(){ alert('Ocorreu um erro. Contacte o administrador.') }   });
 				return flag;
@@ -548,7 +485,7 @@ function ValidateSigla(ctrl) {
 			}	
 }		
 
-function ValidateGPS(str) {
+function ValidateGPS(str){
         str=rtrim(str);
 		if (isNaN(parseInt(str))) return false;
 		var regStr =/^[+-]?\d+([,]\d+)*$/;        
@@ -563,8 +500,7 @@ function check(f){
    return hex_md5(f.value);	
 }
 
-function FileExists(strURL)
-{
+function FileExists(strURL){
     oHttp = window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest(); 
 	oHttp.open("GET", strURL, false);
 	oHttp.send();

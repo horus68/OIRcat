@@ -26,7 +26,7 @@
 	If (objXmlHttp.ReadyState <> 4) Or (objXmlHttp.Status <> 200) Then  
 	  'Abort the request.   
 	  objXmlHttp.Abort   
-	  strHTML = "<p class=""aviso"">Servidor Indisponível.<br>Não é possível continuar...</p>"
+	  strHTML = "<p class=""aviso"">Servidor Indisponível.<br />Não é possível continuar...</p>"
 	  response.write strHTML
 	  response.end   
 	End if		

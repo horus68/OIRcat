@@ -119,14 +119,14 @@ FI/
 '    <td width="20%"  valign="top" align="left"><strong><i>Ver também...</i></strong></td>'/
 '    <td width="65%" valign="top" align="left">'/
 
-     if p(v856) then mpl,(|<img src="../../imagens/picactions/icon_open.png"> Web |V856^z|<br>|/) mhl,FI/
-     if p(v675) then ('CDU 'V675^a'<br>'/) FI/
-     if p(v700) then (''V700^a,| |V700^b| |,V700^c,| |V700^f'<br>'/) FI/
-     if p(v701) then (''V701^a,| |V701^b| |,V701^c,| |V701^f'<br>'/) FI/
-     if p(v702) then (''V702^a,| |V702^b| |,V702^c,| |V702^f'<br>'/) FI/
-     if p(v710) then (''V710^a,| |V710^b,| |V710^c,| |V710^d,| |V710^e,| |V710^f'<br>'/) FI/
-     if p(v711) then (''V711^a,| |V711^b,| |V711^c,| |V711^d,| |V711^e,| |V711^f'<br>'/) FI/
-     if p(v712) then (''V712^a,| |V712^b,| |V712^c,| |V712^d,| |V712^e,| |V712^f'<br>'/) FI
+     if p(v856) then mpl,(|<img src="../../imagens/picactions/icon_url_alt.svg" height="22" width="22"/> Web |V856^z|<br />|/) mhl,FI/
+     if p(v675) then ('CDU 'V675^a'<br />'/) FI/
+     if p(v700) then (''V700^a,| |V700^b| |,V700^c,| |V700^f'<br />'/) FI/
+     if p(v701) then (''V701^a,| |V701^b| |,V701^c,| |V701^f'<br />'/) FI/
+     if p(v702) then (''V702^a,| |V702^b| |,V702^c,| |V702^f'<br />'/) FI/
+     if p(v710) then (''V710^a,| |V710^b,| |V710^c,| |V710^d,| |V710^e,| |V710^f'<br />'/) FI/
+     if p(v711) then (''V711^a,| |V711^b,| |V711^c,| |V711^d,| |V711^e,| |V711^f'<br />'/) FI/
+     if p(v712) then (''V712^a,| |V712^b,| |V712^c,| |V712^d,| |V712^e,| |V712^f'<br />'/) FI
 
 '    </td>'/
 '  </tr>'/

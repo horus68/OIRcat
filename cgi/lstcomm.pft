@@ -1,7 +1,7 @@
 '<div id="live-preview-display" class="lp-block" >'/
 '   <div style="padding-bottom:3px">'/
 if val(getenv('id'))=val(v1) or getenv('id')='-1' then
- '<div style="float:right"><a  href="javascript:void(0)" onclick="delcomm('mfn(1)')"><img src="../../imagens/picactions/icon_delete.gif" border="0"/></a></div>'/
+ '<div style="float:right"><a  href="javascript:void(0)" onclick="delcomm('mfn(1)')"><img src="../../imagens/picgest/icon_delete.svg" title="Eliminar"  border="0" height="202" width="22"/></a></div>'/
 fi
 '<div>#'mfn(1)' ('v4*6.2'-'v4*4.2'-'v4.4')</div></div>'/
 '   <div><span style="float:left"><fb:like></fb:like <fb:like layout="button_count"></fb:like></span></div>'/
@@ -13,6 +13,6 @@ fi
 '   <div id="lp-name">'if v2<>'' then ref(['leitor']val(v1),v2) fi ', disse:</div>'
 '	<div id="lp-comment" class="wordwrap">'v3'</div><br />'
 if getenv('id')<> '-1' then
-'   <div style="clear:both;float:right"><img src="../../imagens/picactions/icon_abuso.gif" border="0" align="absmiddle" /> <a href="javascript:void(0)" onclick="mailabuso('mfn(1)','v1')" alt="" title="">Denunciar abuso</a></div>'
+'   <div style="clear:both;float:right"><img src="../../imagens/picactions/icon_abuso.svg" align="absmiddle" border="0" height="22" width="22" /> <a href="javascript:void(0)" onclick="mailabuso('mfn(1)','v1')" alt="Denunciar" title="Denunciar">Denunciar abuso</a></div>'
 fi
 '</div>'

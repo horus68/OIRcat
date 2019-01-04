@@ -1,12 +1,15 @@
 putenv('nut='(if v9000^n='nut' then v9000^v fi))
 putenv('biblt='(if v9000^n='biblt' then v9000^v fi))
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '  <head>'/
-'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '	<title>Reservas</title>'/	
-'	<link rel="stylesheet" href="../../css/default.min.css" type="text/css" />'/
-'<script language="JavaScript" src="../../js/prototype.js"></script>'/
+'	<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'/
+'<script language="JavaScript" src="../../js/prototype.min.js"></script>'/
 '<script>'/
 'var howLong = 8000;'/
 't = null;'/
@@ -25,16 +28,16 @@ putenv('biblt='(if v9000^n='biblt' then v9000^v fi))
 '          else '/
               if getenv('nut')<>'' then
 '          var url="../../admin/sendemail_curto.asp?assunto=Pedido de reserva de documento&Email='ref(['leitor']L(['leitor']'NR 'getenv('nut')),v8)'&destino='ref(['users']L(['users']'SIGLA '(if v9000^n='dest' then v9000^v fi)),v11)'";'/
-'          var texto="Exmos Snrs,<br><br>Por favor, queiram considerar a seguinte reserva: <br><br>Utilizador : <b>'ref(['leitor']L(['leitor']'NR 'getenv('nut')),v2)'</b> [Leitor nº 'getenv('nut')' ('ref(['leitor']L(['leitor']'NR 'getenv('nut')),v20)')]<br>";'/
+'          var texto="Exmos Snrs,<br /><br />Por favor, queiram considerar a seguinte reserva: <br /><br />Utilizador : <b>'ref(['leitor']L(['leitor']'NR 'getenv('nut')),v2)'</b> [Leitor nº 'getenv('nut')' ('ref(['leitor']L(['leitor']'NR 'getenv('nut')),v20)')]<br />";'/
               else
 '          var url="../../admin/sendemail_curto.asp?assunto=Pedido de reserva de documento&Email='ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v11)'&destino='ref(['users']L(['users']'SIGLA '(if v9000^n='dest' then v9000^v fi)),v11)'";'/
-'          var texto="Exmos Snrs,<br><br>Por favor, queiram considerar a seguinte reserva: <br><br>Utilizador : <b>'ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v3)'</b><br>";'/
+'          var texto="Exmos Snrs,<br /><br />Por favor, queiram considerar a seguinte reserva: <br /><br />Utilizador : <b>'ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v3)'</b><br />";'/
               fi
-'          texto += "Título : <b>'(if v9000^n='titulo' then mhu,v9000^v,mhl fi)'</b> <br>Autor : <b>'(if v9000^n='autor' then mhu,v9000^v,mhl fi)'</b> <br>Nº registo: <b>'(if v9000^n='nreg' then v9000^v fi)'</b><br>Biblioteca: <b>'(if v9000^n='entidade' then v9000^v fi)'</b><br><br>";'/
+'          texto += "Título : <b>'(if v9000^n='titulo' then mhu,v9000^v,mhl fi)'</b> <br />Autor : <b>'(if v9000^n='autor' then mhu,v9000^v,mhl fi)'</b> <br />Nº registo: <b>'(if v9000^n='nreg' then v9000^v fi)'</b><br />Biblioteca: <b>'(if v9000^n='entidade' then v9000^v fi)'</b><br /><br />";'/
 			 if getenv('nut')<>'' then
-'          texto += "Com os melhores cumprimentos.<br>";'/
+'          texto += "Com os melhores cumprimentos.<br />";'/
              else
-'          texto += "Com os melhores cumprimentos.<br>O responsável pela biblioteca: 'ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v17)'.";'/			 
+'          texto += "Com os melhores cumprimentos.<br />O responsável pela biblioteca: 'ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v17)'.";'/			 
 			 fi
 '          url += "&mensagem="+texto;'/
 '		   new Ajax.Request(url, {     '/

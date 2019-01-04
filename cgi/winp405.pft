@@ -8,7 +8,7 @@
 if val(v1002)>1 then
 
 '    <td>'/
-'    <input  onclick="this.value=check(forms[0].T8000);return false;" src="../../imagens/picactions/icon_select_all.png" name="img" type="image" title="Marcar/desmarcar todas as fichas desta página">'/
+'    <input  onclick="this.value=check(forms[0].T8000);return false;" src="../../imagens/picactions/icon_select_all.svg" height="30" width="30" name="img" type="image" alt="Marcar/desmarcar todas as fichas desta página" title="Marcar/desmarcar todas as fichas desta página">'/
 '</td>'/
 '<td valign="top">'
 if S((if v9000^n='selrec' then v9000^v fi))='1' then
@@ -25,10 +25,10 @@ if S((if v9000^n='selrec' then v9000^v fi))='1' then
    '<input type="hidden" name="user" value="'(if v9000^n='user' then v9000^v fi)'">'
    '<input type="hidden" name="nut" value="'(if v9000^n='nut' then v9000^v fi)'">'
    '<input type="hidden" name="sortfmt" value="'(if v9000^n='sortfmt' then v9000^v fi)'">'
-   '<input style="display:none" border="0" src="../../imagens/picactions/icon_filter.png"  name="img" id="img" type="image" title="Filtrar fichas selecionadas...">'
+   '<input style="display:none" border="0" src="../../imagens/picactions/icon_filter.svg" height="30" width="30" name="img" id="img" type="image" alt="Carregue para mostrar apenas as fichas selecionadas..." title="Carregue para mostrar apenas as fichas selecionadas...">'
 else 
    '       '/
-   '<input style="display:none" border="0" src="../../imagens/picactions/icon_filter.png"  name="img" id="img" type="image" alt="ATENÇÃO! Esta funcionalidade não está disponível de momento. Tente mais tarde!"'
+   '<input style="display:none" border="0" src="../../imagens/picactions/icon_filter.svg" height="30" width="30" name="img" id="img" type="image" alt="ATENÇÃO! Esta funcionalidade não está disponível de momento. Tente mais tarde!"'
     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' onclick="javascript:alert(&quot;ATENÇÃO! Esta funcionalidade não está disponível de momento. Tente mais tarde!&quot;)">'
 ,fi,
 else
@@ -45,11 +45,12 @@ else if val(v1001)=1 then ,@hdrreg.pft, fi fi,
 
 '<a name="R'V1001'"></a>'/
 
-'<br>'
+'<br />'
 
 '<table  width="100%" cellpadding="0" cellspacing="0">'/
 '  <tr>'/
-'    <td valign="baseline" colspan=2>' if v1051='rbcatalogo' then '<span style="float:right">Exemplares: <span id="total'mfn(1)'">'v966^c'</span></span>' fi ,@witdoc.pft, '</td>'/
+'    <td valign="baseline" colspan=2>'@witdoc.pft, '</td>'/
+/*'  <td valign="baseline" colspan=2>' if v1051='rbcatalogo' then 'Exemplares: <span id="total'mfn(1)'">'v966^c'</span>' fi ,@witdoc.pft, '</td>'/*/
 '  </tr>'/
 '<tr><td colspan=2 valign="top"><hr size="1"></td></tr>'/
 '  <tr>'/

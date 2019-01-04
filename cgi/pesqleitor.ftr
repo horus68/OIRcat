@@ -1,7 +1,7 @@
 '</table>'
 '</form>'
 if val(v1091)=7 then
-  '<br>'/
+  '<br />'/
   '<p class="aviso">Não foram encontrados registos </p>'/
 else
 '<br />'/
@@ -23,5 +23,5 @@ else
    
 '</div>'
 fi
-'<br>'/
+'<br />'/
 '</BODY>'

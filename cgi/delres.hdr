@@ -1,5 +1,5 @@
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
    putenv('nut=' (if v9000^n='nut' then v9000^v fi))
    if getenv('nut')<>'' then
      putenv('user=' (if v9000^n='nut' then v9000^v fi))
@@ -9,11 +9,13 @@
    putenv('ori=' (if v9000^n='flag' then v9000^v fi))
 '<head>'/
 '<META HTTP-EQUIV="Refresh" CONTENT="7;URL=/rbcatalogo/cgi/www.exe/'if getenv('ori')='cat' then '[in=pesqres.in]' else '[in=gesres.in]' fi '?'if getenv('ori')='cat' then 'base=reservas&expressao=REQ 's(getenv('user')) else, if getenv('user')='ADMIN' then 'base=reservas&express=$'  else 'base=reservas&express=REQ '(if v9000^n='ut' then v9000^v fi) fi, fi'&lim_inicio=1&limites=999999&ut='(if v9000^n='ut' then v9000^v fi)'&dbmin='(if v9000^n='dbmin' then v9000^v fi)'&nut='getenv('nut')';"/>'/
-'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
-'	<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '	<title>'ref(['_cnf']1,v100)'</title>'/ 	
-'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css" type="text/css" />'/
-'<script type="text/javascript" src="/rbcatalogo/js/prototype.js"></script>'/
+'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />'/
+'<script type="text/javascript" src="/rbcatalogo/js/prototype.min.js"></script>'/
 '<script>'/
 'function avisar()'/
 '   {'/
@@ -24,8 +26,8 @@ if getenv('user')='ADMIN' then
 '            var url="/rbcatalogo/admin/sendemail_curto.asp?assunto=Cancelamento de reserva&Email='ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v11)'&destino="+maildbg;'/
 '          else '/
 '            var url="/rbcatalogo/admin/sendemail_curto.asp?assunto=Cancelamento de reserva&Email='ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v11)'&destino='ref(['users']L(['users']'SIGLA '(if v9000^n='dest' then v9000^v fi)),v11)'";'/
-'          var texto="Exmos Snrs,<br><br>Por decisão do ADMINISTRADOR DA REDE, queiram fazer o favor de considerar o CANCELAMENTO da reserva nº '(if v9000^n='mfn' then v9000^v fi)', referente a: <br><br>Biblioteca : <b>'ref(['users']L(['users']'SIGLA '(if v9000^n='sigla' then v9000^v fi)),v3)' </b><br>Título : <b>'(if v9000^n='titulo' then mhu,v9000^v,mhl fi)'</b> <br>Nº registo: <b>'(if v9000^n='nreg' then v9000^v fi)'</b><br><br>";'/
-'          texto += "Com os melhores cumprimentos.<br>O Administrador: 'ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v17)'.";'/
+'          var texto="Exmos Snrs,<br /><br />Por decisão do ADMINISTRADOR DA REDE, queiram fazer o favor de considerar o CANCELAMENTO da reserva nº '(if v9000^n='mfn' then v9000^v fi)', referente a: <br /><br />Biblioteca : <b>'ref(['users']L(['users']'SIGLA '(if v9000^n='sigla' then v9000^v fi)),v3)' </b><br />Título : <b>'(if v9000^n='titulo' then mhu,v9000^v,mhl fi)'</b> <br />Nº registo: <b>'(if v9000^n='nreg' then v9000^v fi)'</b><br /><br />";'/
+'          texto += "Com os melhores cumprimentos.<br />O Administrador: 'ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v17)'.";'/
 '          url += "&mensagem="+texto;'/
 '		   new Ajax.Request(url, {     '/
 '          method:"get",  '/
@@ -70,8 +72,8 @@ else
               else
 '                var url="/rbcatalogo/admin/sendemail_curto.asp?assunto=Cancelamento de reserva&Email='ref(['users']L(['users']'SIGLA '(if v9000^n='ut' then v9000^v fi)),v11)'&destino='ref(['users']L(['users']'SIGLA '(if v9000^n='sdest' then v9000^v fi)),v11)'";'/
               fi
-'          var texto="Exmos Snrs,<br><br>Por favor, queiram considerar o cancelamento da reserva nº '(if v9000^n='mfn' then v9000^v fi)', referente a: <br><br>Biblioteca : <b>'ref(['users']L(['users']'SIGLA '(if v9000^n='sigla' then v9000^v fi)),v3)' </b><br>Título : <b>'(if v9000^n='titulo' then mhu,v9000^v,mhl fi)'</b> <br>Nº registo: <b>'(if v9000^n='nreg' then v9000^v fi)'</b><br><br>";'/
-'          texto += "Com os melhores cumprimentos.<br>";'/
+'          var texto="Exmos Snrs,<br /><br />Por favor, queiram considerar o cancelamento da reserva nº '(if v9000^n='mfn' then v9000^v fi)', referente a: <br /><br />Biblioteca : <b>'ref(['users']L(['users']'SIGLA '(if v9000^n='sigla' then v9000^v fi)),v3)' </b><br />Título : <b>'(if v9000^n='titulo' then mhu,v9000^v,mhl fi)'</b> <br />Nº registo: <b>'(if v9000^n='nreg' then v9000^v fi)'</b><br /><br />";'/
+'          texto += "Com os melhores cumprimentos.<br />";'/
            if getenv('nut')<>'' then
 '            texto += "O leitor nº 'getenv('nut')': <b>'ref(['leitor']L(['leitor']'NR 'getenv('nut')),v2)' ['ref(['leitor']L(['leitor']'NR 'getenv('nut')),v20)']</b>";'/
            else
@@ -93,5 +95,6 @@ else
 fi
 '   }'/
 '</script>'/
+'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body>'/

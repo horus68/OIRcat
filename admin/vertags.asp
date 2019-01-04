@@ -1,13 +1,17 @@
 <!--#include file="config.asp"-->
 <!--#include file="functions.asp"-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
 <head>
-<link rel="stylesheet" href="/rbcatalogo/css/default.min.css"  type="text/css" />
-<link rel="stylesheet" href="/rbcatalogo/js/jquery-tagbox/css/jquery.tagbox.css" type="text/css" />
-<script type="text/javascript" src="/rbcatalogo/js/prototype.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    if (typeof jQuery == 'undefined') {
-    document.write(unescape("%3Cscript src='js/jquery-3.3.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001"  type="text/css" />
+<link rel="stylesheet" href="/rbcatalogo/js/jquery-tagbox/css/jquery.tagbox.min.css" type="text/css" />
+<script type="text/javascript" src="/rbcatalogo/js/prototype.min.js"></script>
+<script defer="defer" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+	<script>
+		if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='../js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
     } 
     </script>
 
@@ -89,7 +93,7 @@ document.getElementById('forme').toBeReloaded.value = 1;
   alfavalores=tmp
   'response.end
   response.write "<br />"
-  response.write "<div style=float:right><input type=""image"" onclick=""window.close();"" src=""../imagens/picactions/icon_close.gif"" alt=""Fechar janela"" title=""Fechar janela""></div>"
+  response.write "<div style=float:right><input type=""image"" onclick=""window.close();"" src=""../imagens/picactions/icon_close.svg"" alt=""Fechar janela"" title=""Fechar janela"" border=""0"" height=""28"" width=""28""></div>"
   response.write "<form action=""/rbcatalogo/admin/chktag.asp"" method=""post"">"
   response.write "<input type=""hidden"" name=""mfn"" value=""" & request("mfn") & """>"
   response.write "<input type=""hidden"" name=""ip"" value=""" & request("ip") & """>"

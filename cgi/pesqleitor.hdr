@@ -1,12 +1,15 @@
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '<head>'/
-'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
-'	<link rel="stylesheet" href="../../css/default.min.css" type="text/css" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
+'	<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'/
 '<title>'ref(['_cnf']1,v100)'</title>'/  
 '<script type="text/javascript" src="../../js/sorttable.min.js"></script>'/
-'<script  type="text/javascript" src="../../js/tableH.js"></script>'/
-'<script type="text/javascript" src="../../js/prototype.js"></script>'/
+'<script  type="text/javascript" src="../../js/tableH.min.js"></script>'/
+'<script type="text/javascript" src="../../js/prototype.min.js"></script>'/
 '<script>'
 'function start() {
     if (!document.getElementsByTagName || !document.createTextNode || !document.getElementById("users")) return;
@@ -85,7 +88,7 @@ fi
 '	   onFailure: function(){ alert("Ocorreu um erro. Contacte o administrador.") }  }); '/
 '}'/
 '</script>'
-
+'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body onload="start();'if getenv('user')='ADMIN' then 'mostra_biblio();' fi'">'/
 '<div class="destaque1">'/
@@ -100,7 +103,7 @@ fi
 '</div>'/
 '</div>'/
 '      <div id="principal">'
-'<div id="admbotoes" style="float:right"><a href="../../admin/admin.asp?'if getenv('user')='ADMIN' then 'mnut=2' else 'id=5' fi'"><img src="../../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a></div><h3>Seleção de leitor</h3>'/
+'<div id="admbotoes" style="float:right"><a href="../../admin/admin.asp?'if getenv('user')='ADMIN' then 'mnut=2' else 'id=5' fi'"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a></div><h3>Seleção de leitor</h3>'/
 '<div align="center">'/
 '<form name="frmselleitor" id="frmselleitor" action="../../cgi/www.exe/[in=pleitor.in]" method="post" >  '/
 ' <input type="hidden" name="ut" value="'getenv('user')'">'/

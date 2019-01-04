@@ -1,15 +1,15 @@
-# OIR - aplicaçao de catálogo OPAC
+# OIR - aplicação de catálogo OPAC
 Sistema para pesquisa em catálogo coletivo de bibliotecas.
-OIR (de OPAC-ISIS-RBE) é um software que permite a disponibilizaçao de 
+OIR (de OPAC-ISIS-RBE) é um software que permite a disponibilização de 
 um serviço de pesquisa bibliográfica em catálogos coletivos criados de
-forma nao síncrona. 
+forma não síncrona. 
 
 O catálogo público (OPAC) é criado a partir das bases individuais de 
 cada biblioteca de um concelho, que continuam a utilizar os seus 
-próprios programas de catalogaçao. 
+próprios programas de catalogação. 
 
 
-# Instalaçao e gestao do software
+# Instalação e gestão do software
 Apoio a técnicos e guias do utilizador:
 https://sites.google.com/view/opacrbe/
 
@@ -44,7 +44,6 @@ O pacote inclui ficheiros e código que utilizam outras licenças.
 Existem ainda direitos detidos por entidades terceiras, conforme indicado nos ficheiros específicos.
 
 
-# Produçao e desenvolvimento
+# Produção e desenvolvimento
 Criado pelo projeto RedesConcelhias.RBE
 https://sites.google.com/view/redesconcelhias/
-

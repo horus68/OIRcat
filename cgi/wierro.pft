@@ -2,13 +2,13 @@
 '<table style="margin-top:50px; font-size:1.2em; font-weight:bold" border="0" width="100%">'/
 '  <tr>'/
 '    <td align="center">'/
-' <img src="../../imagens/picextra/oops.png" border="0">'/ 
+' <img src="/rbcatalogo/imagens/picextra/oops.png" border="0"/>'/ 
 '<br />'
 ,select s(v1091)
   case '1':'Erro interno'/,
   case '3':,'Erro na expressão de pesquisa'/
   case '5':,'Erro no formato'/,
-  case '7':,'Pesquisa sem resultados! <br /> Pesquise por outro termo, campo ou de forma menos limitada.',
+  case '7':,'Pesquisa sem resultados! <br /> Pesquise por outro termo, campo ou colocando menos limitações.',
   elsecase  'Erro interno do programa: 'V1091/,
 endsel,
 '  </td></tr>'/

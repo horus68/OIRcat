@@ -1,28 +1,17 @@
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '  <head>'/
-'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
-'	<meta name="robots" content="noindex, nofollow" />'/
-'	<title>Formato UNIMARC para cópia de registo</title>'/	
-'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css" type="text/css" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
+'<title>Formato UNIMARC para cópia de registo</title>'/
+'<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />'/
+'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body id="topopagina" onload="window.focus()">'/
-
 '<script language="JavaScript" src="/rbcatalogo/js/geral.min.js"></script>'/
-'<script language="JavaScript" src="/rbcatalogo/js/clipff.js"></script>'/
 '<script language="JavaScript">'/
-
-' function ClipBoard()'/ 
-'{'/
-'if(document.all){
-    document.getElementById("guardatexto").innerText = document.getElementById("unimarc").innerText;
-} else{
-    document.getElementById("guardatexto").textContent = document.getElementById("unimarc").textContent;
-}'/
-'copy_clip(document.getElementById("guardatexto"));'/
-'alert("Registo copiado!");'/
-'}'/
-
 'function ChkLinkHref(tipo,formato,linha_in)'/
 '{'/
 '  var dim=0;'/

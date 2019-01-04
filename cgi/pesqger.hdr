@@ -1,19 +1,22 @@
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '  <head>'/
 '   <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">'/
 '   <META HTTP-EQUIV="Pragma" CONTENT="no-cache">'/
 '   <META HTTP-EQUIV="Expires" CONTENT="0">'/
-'   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
-'	<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '	<title>'ref(['_cnf']1,v100)'</title>'/	
-'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css" type="text/css" />'/
+'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />'/
 '<script language="JavaScript" src="/rbcatalogo/js/geral.min.js"></script>'/
-'<script language="JavaScript" src="/rbcatalogo/js/prototype.js"></script>'/
-'<script type="text/javascript" src="/rbcatalogo/js/jquery-3.3.1.min.js"></script>'/
-'<script type="text/javascript" src="/rbcatalogo/js/jquery-tagbox/js/jquery.tagbox.js"></script>'/
-'<link rel="stylesheet" href="/rbcatalogo/js/jquery-tagbox/css/jquery.tagbox.css" type="text/css" />'/
+'<script language="JavaScript" src="/rbcatalogo/js/prototype.min.js"></script>'/
+'<script type="text/javascript" src="/rbcatalogo/js/jquery.min.js"></script>'/
+'<script type="text/javascript" src="/rbcatalogo/js/jquery-tagbox/js/jquery.tagbox.min.js"></script>'/
+'<link rel="stylesheet" href="/rbcatalogo/js/jquery-tagbox/css/jquery.tagbox.min.css" type="text/css" />'/
 '<script type="text/javascript" src="/rbcatalogo/js/jqueryRater/jquery.rater.min.js"></script>'/
+'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
 '<script>'/
  putenv('exp='(if v9000^n='expressao' then v9000^v fi))
  putenv('termo='(if v9000^n='termo' then v9000^v fi))
@@ -51,10 +54,6 @@
 '		 if(window.focus) popup.focus(); '
 '}'
 '</script>'/
-'<style>'/
-'div.autosize { display: table; width: 1px; }'/
-'div.autosize > div { display: table-cell; }'/
-'</style>'/
 '</head>'/
 '<body id="topopagina" onload="grava_historico();toggle_filtro();">'/
 '<script language="JavaScript">'/
@@ -78,7 +77,7 @@
        flag="Marcar todos"; 
     }
 	var $b = $("input[type=checkbox]");
-	if ($b.filter(":checked").length >0 ) $("#lblfilter").html("&nbsp;" +$b.filter(":checked").length+" ficha(s) selecionada(s)");
+	if ($b.filter(":checked").length >0 ) $("#lblfilter").html("&nbsp;" +$b.filter(":checked").length+" selecionada(s) [carregue no funil para ver só as marcadas]");
     else $("#lblfilter").html("");  	
 	return flag;
 }'/
@@ -89,7 +88,7 @@
 	if ($b.filter(":checked").length >0 ) 
 	{
 	  $("#img").show();  
-      $("#lblfilter").html("&nbsp;" +$b.filter(":checked").length+" ficha(s) selecionada(s)"); 
+      $("#lblfilter").html("&nbsp;" +$b.filter(":checked").length+" selecionada(s) [carregue no funil para ver só as marcadas]"); 
 	} else {
 	       $("#img").hide(); 
 	       $("#lblfilter").html(Array(39).join("&nbsp;")); 
@@ -143,21 +142,21 @@
 		    fi
         
  
-	'  » Resultado</p>	'/   
-	''/
+	'  » Resultado</p>	'/
 '   </div>  '/
 '   <div class="col3" id="lblutilizador">Utilizador: ' 
         if getenv('user')='guest' then 'Visitante' else getenv('user') fi
         '</span>' if getenv('user')<>'guest' then ' [ <a href="/rbcatalogo/logout.asp?sys=admin">Sair</a> ] ' fi ' '/
 '   </div>  '/
 '   </div>  '/
-	'<div id="principal" class="resultado"> '/
-	'  <!-- '/		
- '  <div id="basket" style="background-color: #efefef; padding: 0px; 'if getenv('user')<>'guest' and getenv('user')<>'ADMIN' then '' else 'display:none' fi '">'/
+	'  <!-- '/
+'  <div class="navegatopo" style="padding: 0px; 'if getenv('user')<>'guest' and getenv('user')<>'ADMIN' then '' else 'display:none' fi '">'/
+'<br />'if getenv('nuser')<>'' then '<span style="font: 8pt Arial">Alterar PIN</span> <a  href="javascript:void(0)"   onclick="javascript:alterarPin()"><img src="../../imagens/setnav/nav_leitor.svg" alt="Alterar o meu PIN" title="Alterar o meu PIN" border="0" height="28" width="28"/></a> ' fi'  <span style="font: 8pt Arial"> As minhas reservas </span> <a href="javascript:void(0)" onclick="javascript:build_reservas(&quot;'getenv('user')'&quot;,&quot;'getenv('nuser')'&quot;)" align="absmiddle"><img src="../../imagens/setnav/nav_reservas.svg" alt="As minhas reservas" title="As minhas reservas" border="0" height="28" width="28"/></i></span></a>'/
 '	<table border="0">'/
 '		<tr>'/
-'			<td width='if getenv('nuser')<>'' then '"762"' else '"800"' fi'></td><td>'if getenv('nuser')<>'' then '<span style="font: 8pt Arial">Alterar PIN</span> <a  href="javascript:void(0)"   onclick="javascript:alterarPin()"><img src="../../imagens/setnav/pic_person.png"  border="0" alt="Alterar o meu PIN" title="Alterar o meu PIN" align="absmiddle"></a> ' fi'  <span style="font: 8pt Arial"> As minhas reservas </span> <a href="javascript:void(0)" onclick="javascript:build_reservas(&quot;'getenv('user')'&quot;,&quot;'getenv('nuser')'&quot;)"><img src="../../imagens/setnav/pic_basket.png"  border="0" alt="As minhas reservas" align="absmiddle"></a></td>'/
+'			<td></td><td></td>'/
 '		</tr>'
 '	</table>'/
 '</div>'/
 ' -->'/
+	'<div id="principal" class="resultado"> '/

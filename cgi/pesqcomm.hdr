@@ -1,11 +1,13 @@
 putenv('id='(if v9000^n='id' then v9000^v fi))
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '  <head>'/
-'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
-'	<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '	<title>'ref(['_cnf']1,v100)'</title>'/		
-'<link rel="stylesheet" href="/rbcatalogo/css/default.min.css" type="text/css" />'/
+'<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />'/
 '<script>'/
 ' function delcomm(n) {
    var rs=confirm("Tem a certeza de que quer eliminar o comentário nº "+n); 
@@ -14,8 +16,8 @@ putenv('id='(if v9000^n='id' then v9000^v fi))
  }'
 '</script>'/
 '<script type="text/javascript" src="/rbcatalogo/js/geral.min.js"></script>'/
-'<script type="text/javascript" src="/rbcatalogo/js/jquery-3.3.1.min.js"></script>'/
+'<script type="text/javascript" src="/rbcatalogo/js/jquery.min.js" crossorigin="anonymous"></script>'/
 '<script type="text/javascript" src="/rbcatalogo/js/md5.js"></script>'/
 '<div id="principal" style="width:500px">'/
-'<div style="float:right"><input type="image" onclick="history.back();" src="../../imagens/picactions/icon_close.gif" alt="Fechar janela" title="Fechar janela"></div><div style="font-size:1.2em;font-weight:bold;display:inline">COMENTÁRIOS</div> <div style="margin-left:8px;display:inline;margin-bottom:4px;">'if val(getenv('id'))> 0 then '(<a href="javascript:void(0)" onclick="adcoment('getenv('id')',&quot;'(if v9000^n='mfn' then v9000^v fi)'&quot;)">Adicionar</a>)'fi'</div>'/
+'<div style="float:right"><input type="image" onclick="history.back();" src="../../imagens/picactions/icon_close.svg" alt="Fechar janela" title="Fechar janela" border="0" height="28" width="28"></div><div style="font-size:1.2em;font-weight:bold;display:inline">COMENTÁRIOS</div> <div style="margin-left:8px;display:inline;margin-bottom:4px;">'if val(getenv('id'))> 0 then '(<a href="javascript:void(0)" onclick="adcoment('getenv('id')',&quot;'(if v9000^n='mfn' then v9000^v fi)'&quot;)">Adicionar</a>)'fi'</div>'/
 ''/

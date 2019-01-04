@@ -2,19 +2,22 @@
 <!--#include file="functions.asp"-->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
 <head>
-<title><%=stitulo%></title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-
+<link rel="icon" href="../favicon.ico" type="image/ico"/>
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Leitor - entrada no sistema</title>
 <% Response.CacheControl = "no-cache" %>
 <% Response.AddHeader "Pragma", "no-cache" %> 
 <% Response.Expires = -1 %>
 <!--#include file="md5.asp"-->
-<link rel="stylesheet" href="../css/default.min.css" type="text/css" />
+<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 <script type="text/javascript" src="../js/md5.js"></script>
 <script type="text/javascript" src="../js/rc4.js"></script>
-<script type="text/javascript" src="../js/prototype.js"></script>
+<script type="text/javascript" src="../js/prototype.min.js"></script>
 <script type="text/javascript">
 <!--
 function removeacento(texto){
@@ -87,8 +90,8 @@ Function log_erro(msg)
 	writeLog("LOGIN (insucesso) - Leitor:" & ucase(nu) & msg )
 	response.write "<p>&nbsp;</p>"						 
 	response.write "<h4 style=""font: 9pt Verdana;color:red"">Acesso negado. O leitor não tem acesso ao sistema...</h3>"
-	response.write "<p style=""font: 8pt Verdana"">Mensagem:" & msg & "</p>"
-	response.write "<p style=""font: 8pt Verdana"">Contacte o administrador em " & strHTML & "</p>"
+	response.write "<p style=""font: 8pt Verdana"">Mensagem: " & msg & "</p>"
+	response.write "<p style=""font: 8pt Verdana"">Contacte o administrador do sistema " & strHTML & "</p>"
 	'Session("LogError")=Session("LogError")+1        
 	response.write "<div align=""right"" style=""font: 8pt Verdana;margin-right:10px""><a href=""javascript:window.self.close();"" >Fechar</a></div>"
 	on error goto 0
@@ -98,9 +101,9 @@ end function
 if request("op")="vp" then
 
       if not session("LeitorIn") then
-	           response.write "<br><br>"
+	           response.write "<br /><br />"
 			   response.write "<center><h3 class=""aviso"">AVISO</h3></center> " 
-			   response.write "<p style=""font:10pt bold Arial"">Não é possível continuar...A sua sessão expirou!</p>"
+			   response.write "<p style=""font:10pt bold Arial"">Não é possível continuar... a sua sessão expirou!</p>"
 			   response.write "<div align=""right""> » <a style=""font:10pt bold Arial"" href=""javascript:window.self.close();"">Fechar</a> &nbsp;</div>"
 			   response.End 
 			
@@ -113,9 +116,9 @@ if request("op")="vp" then
 									
 			strHTML=getUrl(strROOT & "/cgi/www.exe/[in=getpin.in]?expressao=NL " & trim(session("nuser")))
 			avalores=split(strHTML,",")
-			'response.write RC4(np) & "<br>"
+			'response.write RC4(np) & "<br />"
 			'response.write md5(avalores(1))
-			'response.write avalores(0) & "<br>"
+			'response.write avalores(0) & "<br />"
 		    'response.write np 
 			'response.end
 			if strcomp(md5(avalores(1)), op,0)=0 then 
@@ -130,7 +133,7 @@ if request("op")="vp" then
 				response.write "<p>&nbsp;</p><div align=""right"" style=""font: 9pt Verdana""><a href=""javascript:window.self.close();"" >Fechar</a>&nbsp&nbsp;</div>"
 				response.end   
 			else 
-			   response.write "<br><br>"
+			   response.write "<br /><br />"
 			   response.write "<center><h3 class=""aviso"">AVISO</h3></center> " 
 			   response.write "<p style=""font:10pt bold Arial"">O PIN anterior não confere com o valor guardado.</p>"
 			   response.write "O PIN do leitor mantém-se inalterado..."
@@ -188,8 +191,8 @@ If Session("LogError") < 3 Then
 					next
 					Session("user")= nomelt
 					session("entidade")=bib
-					'response.write nomelt & "<br>"
-					'response.write bib & "<br>"
+					'response.write nomelt & "<br />"
+					'response.write bib & "<br />"
 					'response.end
 					writeLog("LOGIN (sucesso) - " & nut & ":" & ucase(session("user"))) 
 				        
@@ -211,10 +214,6 @@ If Session("LogError") < 3 Then
    else
 
 		%>
-		<head>
-		 <title>Leitor - entrada no sistema</title>
-    <link rel="icon" href="../favicon.ico" type="image/ico"/>
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
 		</head>
 		<body onLoad="window.focus();" style="margin-left:15px;text-align:left">
   <div class="destaque1">    <h4>Catálogo Coletivo - Leitores</h4>
@@ -222,7 +221,7 @@ If Session("LogError") < 3 Then
 		<%
 		if request("op")="ap" and session("LeitorIn") then
 		%>
-		<br>
+		<br />
 		<p style="font: bold 10pt Arial ">Leitores - alteração do código PIN</p>
 		<form name="Login" action="logleitor.asp?op=vp" method="post" onSubmit="oldpin.value = hex_md5(oldpin.value);novopin.value = novopin.value;">
 		<input type="hidden" name="reqPath" value="<%=server.URLEncode(replace(replace(replace(request.ServerVariables("HTTP_REFERER"),"%5B","["),"%5D","]"),"%3D","="))%>">
@@ -235,12 +234,12 @@ If Session("LogError") < 3 Then
 			<td > <input  type="password" name="novopin" size="10"></td>					
 		  </tr> 					  					 
 		</table> 
-		 <br> <div align="center"><input style="font: 9pt Arial" type="submit" value="Confirmar" class="botao botao4" onClick="return novopin.value!=''"></div>
+		 <br /> <div align="center"><input style="font: 9pt Arial" type="submit" value="Confirmar" class="botao botao4" onClick="return novopin.value!=''"></div>
 		</form>
 		<div align="right" style="font: 9pt Arial"><a href="javascript:window.self.close();" >Fechar</a>&nbsp; </div>  		      
 		
 		<% else %>
-		<br>
+		<br />
 		<p style="font: bold 10pt Arial ">Leitores - acesso ao sistema</p>
 		<form name="Login" action="logLeitor.asp?Login=1" method="post" onSubmit="pin.value = hex_md5(pin.value);">
 		<input type="hidden" name="reqPath" value="<%=server.URLEncode(replace(replace(replace(request.ServerVariables("HTTP_REFERER"),"%5B","["),"%5D","]"),"%3D","="))%>">
@@ -253,7 +252,7 @@ If Session("LogError") < 3 Then
 			 <td > <input  type="password" name="pin" size="10"></td>					
 		  </tr> 					  									
 		</table>
-		<br><div align="center"> <input type="submit" value="Entrada" class="botao botao1" maxlength="4" onClick="return (pin.value!='')"></div>
+		<br /><div align="center"> <input type="submit" value="Entrada" class="botao botao1" maxlength="4" onClick="return (pin.value!='')"></div>
 		</form>
 		<div align="right" style="font: 9pt Arial"><a href="javascript:window.self.close();" >Fechar</a> &nbsp;</div>  		      
 		<% end if %>
@@ -261,7 +260,7 @@ If Session("LogError") < 3 Then
 <% end if
 Else
 		writeLog("LOGIN (insucesso): nº máx de tentativas")
-		Response.Write("<br /><p>&nbsp;</p><p>Esgotou as três tentativas de ENTRADA. <br />Terá de fechar esta janela e iniciar nova sessão!</p>")
+		Response.Write("<br /><p>&nbsp;</p><p>Esgotou as três tentativas de ENTRADA.<br />Terá de fechar esta janela e iniciar nova sessão!</p>")
 	
 End If
 

@@ -1,12 +1,15 @@
 '<!DOCTYPE html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">'/
 '<html xmlns="http://www.w3.org/1999/xhtml">'/
 '<head>'/
-'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
-'	<link rel="stylesheet" href="../../css/default.min.css" type="text/css" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
+'	<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'/
 '	<title>'ref(['_cnf']1,v100)'</title>'/ 
 '<script type="text/javascript" src="../../js/sorttable.min.js"></script>'/
 '<script type="text/javascript" src="../../js/geral.min.js"></script>'/
-'<script  type="text/javascript" src="../../js/tableH.js"></script>'/
+'<script  type="text/javascript" src="../../js/tableH.min.js"></script>'/
 
 '<script>
 
@@ -22,6 +25,7 @@ function start() {
 }	
    
 </script>'/
+'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
 '</head>'/
 '<body onload="start();">'/
 '<div class="destaque1">'/
@@ -36,7 +40,7 @@ function start() {
 '</div>'/
 '</div>'/
 '<div id="principal"> '/
-'<div id="admbotoes" style="float:right"><a href="../../admin/admin.asp?id=2"><img src="../../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a><a href="javascript:window.print()"><img src="../../imagens/picactions/icon_imprimir.gif" border=0 alt="Imprimir lista de reservas" title="Imprimir lista de reservas"></a></div>'/
+'<div id="admbotoes" style="float:right"><a href="../../admin/admin.asp?id=2"><img src="../../imagens/picgest/icon_close.svg" title="Voltar à página anterior" alt="Voltar à página anterior" border="0" height="28" width="28"/></a><a href="javascript:window.print()"><img src="../../imagens/picgest/icon_imprimir.svg" alt="Imprimir lista de reservas" title="Imprimir lista de reservas" border="0" height="28" width="28"/></a></div>'/
 '<div align="center">'/
 '<form name="frmselres" id="frmselres" action="../../cgi/www.exe/[in=pesqhistres.in]" method="get" >  '/
 ' <input type="hidden" name="ut" value="admin">'/
@@ -44,4 +48,4 @@ function start() {
 ' <input type="hidden" name="mnu" id="mnu" value="mnuhist">'/
 '<div style="text-align:left">&nbsp;Resultado da pesquisa: <span id="nhistres"></span> [critério: '(if v9000^n='express1' then v9000^v fi)']</div>'/
 '<table id="users" class="sortable" style="text-align:left" summary="Histórico de reservas" onMouseOver="javascript:trackTableHighlight(event, &quot;#FFFF99&quot;);" onMouseOut="javascript:highlightTableRow(0);">'/
-'<th align="center">Nº</th><th align="center">Título</th><th align="center">Agrup.º</th><th align="center">Bib.</th><th  align="center">Data</th><th align="center">Requisitante</th><th align="center">Estado</th><th title="Situação">Sit.</th>'/
+'<th align="center">Nº</th><th align="center">Título</th><th align="center">Grupo</th><th align="center">Bib.</th><th  align="center">Data</th><th align="center">Requisitante</th><th align="center">Estado</th><th title="Situação">Sit.</th>'/

@@ -1,8 +1,14 @@
-'<html>'/
+'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '<head>'/
-'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">'/
-'<title>Envio de registos por Email</title></head>
- <body  topmargin="3" leftmargin="3">'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
+'<title>Envio de registos por Email</title>
+'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'/
+'</head>'/
+'<body topmargin="3" leftmargin="3">'/
 
 '<script language="JavaScript">'/
 
@@ -44,9 +50,9 @@ return true;
 
 '  <div align="center">'/
 '  <center>'/
-'  <img src="../../imagens/logotipo.png" ><h3>ENVIO DE REGISTOS POR EMAIL</h3>'/
+'  <img src="../../imagens/logotipo.png"/><h3>ENVIO DE REGISTOS POR EMAIL</h3>'/
 '  <br />'/
-'  <table border=0 width="440" cellspacing="1">'/
+'  <table border="0" width="440" cellspacing="1">'/
 '    <tr valign="top">'/
 '      <td  width="201"><font size="1" face="Verdana" color="#000000"><b>Remetente</b></font></td>'/
 '      <td  width="239"><input TYPE="text" size=60 style="font-size:8pt" name="Email" ></td>'/
@@ -67,9 +73,9 @@ return true;
 '  </center>'/
 '</table>'/
 '</div>'/
-'<br>'/
+'<br />'/
 '  <div align="center">'/
-'    <table border=0 cellspacing="1" width="420">'/
+'    <table border="0" cellspacing="1" width="420">'/
 '     <tr>'/
 '       <td width="50"></td>'/    
 '       <td><p align="center"><input TYPE="submit" style="font-size:8pt" value="Enviar" onclick="return ValMail();"><input TYPE="reset" style="font-size:8pt" value="Limpar"></td>'/
@@ -77,8 +83,8 @@ return true;
 '   </table>'/
 '</div>'/
 '<input type=hidden name="Mensagem" value="'/
-/'-------------------------------------------------------------------------<br>'/
-/'                         Resultado da pesquisa<br>'/
+/'-------------------------------------------------------------------------<br />'/
+/'                         Resultado da pesquisa<br />'/
 /''/
-/'                    ',@wdate.pft,'<br>'/
-/'-------------------------------------------------------------------------<br>'/
+/'                    ',@wdate.pft,'<br />'/
+/'-------------------------------------------------------------------------<br />'/

@@ -43,10 +43,10 @@
   '</div>'
   '<div class="col5-contentor" style="width:100%">'  
     '<div class="col5">'
-	  '<label for="estado"><span>Estado: </span></label>'if getenv('estado')='cancelada' then '<img src="../../imagens/picactions/res_cancelada.png" border="0" alt="Reserva cancelada" title="Reserva cancelada" align="absmiddle"> (cancelada)' else '<img src="../../imagens/picactions/res_circulando.png" border="0" alt="Reserva em curso" title="Reserva em curso" align="absmiddle"> (em curso)' fi 	
+	  '<label for="estado"><span>Estado: </span></label>'if getenv('estado')='cancelada' then '<img src="../../imagens/picreservas/res_cancelada.svg" alt="Reserva cancelada" title="Reserva cancelada" align="absmiddle" border="0" height="15" width="15"/> (cancelada)' else '<img src="../../imagens/picreservas/res_circulando.svg" alt="Reserva em curso" title="Reserva em curso" align="absmiddle" border="0" height="15" width="15"/> (em curso)' fi 	
     '</div>'
     '<div class="col5">'
-	  '<label for="situa"><span>Situação: </span></label>'if v200^a='0' then '<img src="../../imagens/picactions/res_relogio.gif" border="0" alt="Reserva pendente" title="Reserva pendente" align="absmiddle"> (pendente)' else '<img src="../../imagens/picactions/res_lock.gif" border="0" alt="Reserva confirmada" title="Reserva confirmada" align="absmiddle"> (confirmada)' fi
+	  '<label for="situa"><span>Situação: </span></label>'if v200^a='0' then '<img src="../../imagens/picreservas/res_relogio.svg" alt="Reserva pendente" title="Reserva pendente" align="absmiddle" border="0" height="15" width="15"/> (pendente)' else '<img src="../../imagens/picreservas/res_lock.svg" alt="Reserva confirmada" title="Reserva confirmada" align="absmiddle" border="0" height="15" width="15"/> (confirmada)' fi
     '</div>'  
   '</div>'
 	  '</fieldset>'
@@ -62,7 +62,7 @@
 	'</div>'	
 	'<div class="col5-contentor" style="width:100%">'
 	'<div class="col5">'
-	  '<label>Agrupamento</label> <input type="text" id="agr" name="agr" value="'v100^s'" size="10" readonly>'
+	  '<label>Entidade/Grupo</label> <input type="text" id="agr" name="agr" value="'v100^s'" size="10" readonly>'
 	'</div>'
     '<div class="col5">'
 	  '<label for="nagr">Designação</label> <input type="text" id="nagr" name="nagr" value="'ref(['users']L(['users']'SIGLA 'v100^s),v3)'" size="50" readonly>'
@@ -125,7 +125,7 @@
 	  '<label for="quem" >Biblioteca</label> <input type="text" id="quem" name="quem" value="'ref(['users']L(['users']'SIGLA 'v300^a),v3)'" readonly>'
     '</div>'
     '<div class="col5">'
-	'<label for="bagr">Agrup.º</label> <input type="text" id="bagr" name="bagr" value="'ref(['users']L(['users']'SIGLA 'v300^a),v21)'" readonly>'
+	'<label for="bagr">Grupo</label> <input type="text" id="bagr" name="bagr" value="'ref(['users']L(['users']'SIGLA 'v300^a),v21)'" readonly>'
     '</div>'  
   '</div>'
   '<div class="col5-contentor" style="width:100%">'  

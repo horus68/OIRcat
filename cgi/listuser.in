@@ -2,7 +2,7 @@ ctttype=text/html
 tcg=9000
 pfxtag=T
 prolog=@prtusers.hdr
-cgi=@LISTuser.cgi
+cgi=@listuser.cgi
 epilog=@prtusers.ftr
 
 

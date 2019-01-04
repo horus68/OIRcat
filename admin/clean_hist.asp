@@ -3,7 +3,7 @@
 	
 	tabela=split(temp,",")
 	'for i=0 to ubound(tabela)
-	'    response.write i & "#" & tabela(i) & "<br>"
+	'    response.write i & "#" & tabela(i) & "<br />"
 	'next
 	Dim histMaxUsed
 	histArray = Session("histArray")
@@ -32,7 +32,7 @@
 	next
     'for i=0 to ubound(a,2)
 	'   for j=0 to 4
-	'    response.write i & "#" & a(j,i) & "<br>"
+	'    response.write i & "#" & a(j,i) & "<br />"
 	'   next	
 	'next
     '  response.write k	

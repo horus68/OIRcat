@@ -4,10 +4,10 @@
 '    <tr>'/
     
 '      <td width="10%" valign="top" align="left">  '/
-'      <a href="javascript:void(0);" onclick="javascript:if (ChkVer()) window.print(); else alert(&quot;Esta funcionalidade não está disponível!\n\nPara imprimir, utilize a opção disponível no seu browser\n(use clique direito para menu / Imprimir...)&quot;);">Imprimir</a>'/
+'      <a href="javascript:void(0);" onclick="javascript:if (ChkVer()) window.print(); else alert(&quot;Esta funcionalidade não está disponível!\n\nPara imprimir, utilize a opção disponível no seu navegador Web\n(use clique direito para menu / Imprimir...)&quot;);">Imprimir</a>'/
 '      </td>'/
 '        <td width="70%" valign="top" align="left"> '/
-'      <a href="javascript:void(0);" onclick="javascript:if (ChkVer()) doSaveAs(); else alert(&quot;Esta funcionalidade não está disponível no seu browser\n(use clique direito para menu / Guardar como...)&quot;);">Guardar para ficheiro</a>'/
+'      <a href="javascript:void(0);" onclick="javascript:if (ChkVer()) doSaveAs(); else alert(&quot;Esta funcionalidade não está disponível no seu navegador Web\n(use clique direito para menu / Guardar como...)&quot;);">Guardar para ficheiro</a>'/
 '      </td>'
 '     <td align=right width="20%"><b>' if val(v1002)>25 then f(val(v1083),0,0) else f(val(v1002),0,0) fi'</b> ficha(s)</td>'/
 '    </tr>'/
@@ -124,14 +124,14 @@ IF S(V675,V700,V701,V702,V710,V711,V712,V856)<>'' THEN
 '    <td width="20%"  valign="top" align="left"><strong><i>Ver também...</i></strong></td>'/
 '    <td width="65%" valign="top" align="left">'/
 
-     if p(v856) then mpl,(|<img src="../../imagens/picactions/icon_open.png"> Web |V856^z|<br>|/) mhl,FI/      
-     if p(v675) then ('CDU 'V675^a'<br>'/) FI/
-     if p(v700) then (V700^a,| |V700^b| |,V700^c,| |V700^f'<br>'/) FI/
-     if p(v701) then (V701^a,| |V701^b| |,V701^c,| |V701^f'</a><br>'/) FI/
-     if p(v702) then (V702^a,| |V702^b| |,V702^c,| |V702^f'</a><br>'/) FI/
-     if p(v710) then (V710^a,| |V710^b,| |V710^c,| |V710^d,| |V710^e,| |V710^f'</a><br>'/) FI/
-     if p(v711) then (V711^a,| |V711^b,| |V711^c,| |V711^d,| |V711^e,| |V711^f'</a><br>'/) FI/
-     if p(v712) then (V712^a,| |V712^b,| |V712^c,| |V712^d,| |V712^e,| |V712^f'</a><br>'/) FI
+     if p(v856) then mpl,(|<img src="../../imagens/picactions/icon_url_alt.svg" height="22" width="22"/> Web |V856^z|<br />|/) mhl,FI/      
+     if p(v675) then ('CDU 'V675^a'<br />'/) FI/
+     if p(v700) then (V700^a,| |V700^b| |,V700^c,| |V700^f'<br />'/) FI/
+     if p(v701) then (V701^a,| |V701^b| |,V701^c,| |V701^f'</a><br />'/) FI/
+     if p(v702) then (V702^a,| |V702^b| |,V702^c,| |V702^f'</a><br />'/) FI/
+     if p(v710) then (V710^a,| |V710^b,| |V710^c,| |V710^d,| |V710^e,| |V710^f'</a><br />'/) FI/
+     if p(v711) then (V711^a,| |V711^b,| |V711^c,| |V711^d,| |V711^e,| |V711^f'</a><br />'/) FI/
+     if p(v712) then (V712^a,| |V712^b,| |V712^c,| |V712^d,| |V712^e,| |V712^f'</a><br />'/) FI
 
 '    </td>'/
 '  </tr>'/
@@ -149,7 +149,7 @@ proc('D9777A9777*'mid(s(mhu,V9777),instr(V9777,'.')+1,1000),mpl,'*'),
    '<img  src="'v859^u'" title="'v859^z'" onerror="ImageLoadFailed(this)" width="120" height="160" align="center">',
    if p(v859^x) then '</a>' fi,
    if p(v859^z) then
-   '<br>'v859^z, ''
+   '<br />'v859^z, ''
    fi,
    '</p>'
  fi,
@@ -185,7 +185,7 @@ else,
 		 | : |v225^e,| / |V225^f,|; |V225^g,| |v225^h,| |V225^i,|, |V225^x,| ; |V225^v)
 		 (|. - |v300^a)/
 	
-	'<br>'
+	'<br />'
 	'    '/
 	'  </div> </td>'/
 	'  </tr>'
@@ -222,7 +222,7 @@ else,
      | = |v208^d)". - "D210(| ; |+v210^a,|, |v210^b,| : |v210^c,|, |v210^d,| (|v210^e,
      | |v210^f,| : |v210^g,|, |v210^h)". - "D215(| ; |+v215^a,| : |v215^c,| |V215^d,
      | + |v215^e)". - ("D225(| (|+V225^a,| = |v225^d,| : |v225^e,| / |V225^f,|; |V225^g,
-     | |v225^h,| |V225^i,|, |V225^x,| ; |V225^v)(|. - |v300^a)"<br>"D300,(|. - |v301^a)
+     | |v225^h,| |V225^i,|, |V225^x,| ; |V225^v)(|. - |v300^a)"<br />"D300,(|. - |v301^a)
      (|. - |v302^a)(|. - |v303^a)(|. - |v304^a)(|. - |v305^a)(|. - |v306^a)(|. - |v307^a)
      (|. - |v308^a)(|. - |v310^a)(|. - |v311^a)(|. - |v312^a)(|. -|v313^a)(|. - |v314^a)
      (|. - |v315^a)(|. - |v320^a)(|. - |v321^a,|, |v321^b,| |v321^x)(|. - |v322^a)
@@ -239,10 +239,10 @@ else,
      (". - Mudou de novo para: "|. - |+V448^a,| / |V448^f)
      (". - Outra ed. no mesmo suporte: "|. - |+V451^a,| / |V451^f)(". - Ed. em suporte diferente: "|. - |+V452^a,
      | / |V452^f)(". - Trad. como: "|. - |+V453^a,| / |V453^f)(". - Trad. de: "|. - |+V454^a,
-     | / |V454^f)IF S(v921,v922):'aa' AND s(v461,v463)<>'' THEN '<br>' 'In: ',v461^t,|, |v461^h,|. - |v461^c,| : |v461^b,|, |v461^d,|, |v461^p,v463^a,| : |v463^e,| / |v463^f,|. - |v463^v FI (". - Outras obras relacionadas: "|. - |+V488^a,| / |V488^f)
+     | / |V454^f)IF S(v921,v922):'aa' AND s(v461,v463)<>'' THEN '<br />' 'In: ',v461^t,|, |v461^h,|. - |v461^c,| : |v461^b,|, |v461^d,|, |v461^p,v463^a,| : |v463^e,| / |v463^f,|. - |v463^v FI (". - Outras obras relacionadas: "|. - |+V488^a,| / |V488^f)
      IF A(V10^a) THEN |. - |V10^b,| : |V10^d,|. |V10^z ELSE "<br>ISBN "D10,(|. ISBN |+V10^a,| (|V10^b|)|,| : |V10^d,
      |. |V10^z)FI,". ISSN "D11(|. |+V11^a,| |V11^b,| : |V11^d,|. |V11^z)IF S(V600V601V602V604V605V606V607V610)<>''THEN
-     '<br>'FI(| / |+V600^a,| |V600^b,| |V600^d,| |V600^c,| |V600^f,|--|V600^x,|--|V600^y,|--|V600^z)IF P(V600)
+     '<br />'FI(| / |+V600^a,| |V600^b,| |V600^d,| |V600^c,| |V600^f,|--|V600^x,|--|V600^y,|--|V600^z)IF P(V600)
      THEN" / "D601FI(| / |+V601^a| |,V601^b,| |V601^c,| |V601^d,| |V601^e,| |V601^f,|--|V601^x,|--|V601^y,|--|V601^z)
      IF S(V600V601)<>''THEN" / "D602FI(| / |+V602^a,| |V602^f,|--|V602^x,|--|V602^y,
      |--|V602^z)IF S(V600V601V602)<>''THEN" / "D604FI(| / |+V604^a| |V604^b,| |V604^c,
@@ -253,8 +253,8 @@ else,
      (| / |+V606^a,IF V606^x:'['THEN |--|V606^y,|--|V606^z,|--|V606^x ELSE |--|V606^x,|--|V606^y,|--|V606^z FI)
      IF S(V600V601V602V604V605V606)<>''THEN" / "D607FI(| / |+V607^a,|--|V607^x,|--|V607^y,|--|V607^z)IF S(V600V601V602V604V605V606V610)<>''THEN" / "D610 FI
      (| / |+V610^a)
-     IF S(V675V676V686)<>''THEN '<br>'FI("CDU "V675^a(4,4) if p(v675^a) then '<br>' fi/)("CDD "V676^a(4,4),if p(v676^a) then '<br>' fi/)/
-     (V686^d,| |V686^a(4,4) if p(v686^d) then '<br>' fi/)
+     IF S(V675V676V686)<>''THEN '<br />'FI("CDU "V675^a(4,4) if p(v675^a) then '<br />' fi/)("CDD "V676^a(4,4),if p(v676^a) then '<br />' fi/)/
+     (V686^d,| |V686^a(4,4) if p(v686^d) then '<br />' fi/)
 
 
 '    </div></td>'/
@@ -284,7 +284,7 @@ else,
 					 | = |v208^d)". - "D210(| ; |+v210^a,|, |v210^b,| : |v210^c,|, |v210^d,| (|v210^e,
 					 | |v210^f,| : |v210^g,|, |v210^h)". - "D215(| ; |+v215^a,| : |v215^c,| |V215^d,
 					 | + |v215^e)". - ("D225(| (|+V225^a,| = |v225^d,| : |v225^e,| / |V225^f,|; |V225^g,
-					 | |v225^h,| |V225^i,|, |V225^x,| ; |V225^v)(|. - |v300^a)"<br>"D300,(|. - |v301^a)
+					 | |v225^h,| |V225^i,|, |V225^x,| ; |V225^v)(|. - |v300^a)"<br />"D300,(|. - |v301^a)
 					 (|. - |v302^a)(|. - |v303^a)(|. - |v304^a)(|. - |v305^a)(|. - |v306^a)(|. - |v307^a)
 					 (|. - |v308^a)(|. - |v310^a)(|. - |v311^a)(|. - |v312^a)(|. -|v313^a)(|. - |v314^a)
 					 (|. - |v315^a)(|. - |v320^a)(|. - |v321^a,|, |v321^b,| |v321^x)(|. - |v322^a)
@@ -301,11 +301,11 @@ else,
 					 (". - Mudou de novo para: "|. - |+V448^a,| / |V448^f)
 					 (". - Outra ed. no mesmo suporte: "|. - |+V451^a,| / |V451^f)(". - Ed. em suporte diferente: "|. - |+V452^a,
 					 | / |V452^f)(". - Trad. como: "|. - |+V453^a,| / |V453^f)(". - Trad. de: "|. - |+V454^a,
-					 | / |V454^f)IF S(v921,v922):'aa' AND s(v461,v463)<>'' THEN '<br>' 'In: ',v461^a,| : |v461^e,
+					 | / |V454^f)IF S(v921,v922):'aa' AND s(v461,v463)<>'' THEN '<br />' 'In: ',v461^a,| : |v461^e,
 					 |. - |v461^v,v463^a,| : |v463^e,| / |v463^f,|. - |v463^v FI (". - Outras obras relacionadas: "|. - |+V488^a,| / |V488^f)
 					 IF A(V10^a) THEN |. - |V10^b,| : |V10^d,|. |V10^z ELSE "<br>ISBN "D10,(|. ISBN |+V10^a,| (|V10^b|)|,| : |V10^d,
 					 |. |V10^z)FI,". ISSN "D11(|. |+V11^a,| |V11^b,| : |V11^d,|. |V11^z)IF S(V600V601V602V604V605V606V607V610)<>''THEN
-					 '<br>'FI(| / |+V600^a,| |V600^b,| |V600^d,| |V600^c,| |V600^f,|--|V600^x,|--|V600^y,|--|V600^z)IF P(V600)
+					 '<br />'FI(| / |+V600^a,| |V600^b,| |V600^d,| |V600^c,| |V600^f,|--|V600^x,|--|V600^y,|--|V600^z)IF P(V600)
 					 THEN" / "D601FI(| / |+V601^a| |,V601^b,| |V601^c,| |V601^d,| |V601^e,| |V601^f,|--|V601^x,|--|V601^y,|--|V601^z)
 					 IF S(V600V601)<>''THEN" / "D602FI(| / |+V602^a,| |V602^f,|--|V602^x,|--|V602^y,
 					 |--|V602^z)IF S(V600V601V602)<>''THEN" / "D604FI(| / |+V604^a| |V604^b,| |V604^c,
@@ -316,8 +316,8 @@ else,
 					 (| / |+V606^a,IF V606^x:'['THEN |--|V606^y,|--|V606^z,|--|V606^x ELSE |--|V606^x,|--|V606^y,|--|V606^z FI)
 					 IF S(V600V601V602V604V605V606)<>''THEN" / "D607FI(| / |+V607^a,|--|V607^x,|--|V607^y,|--|V607^z)IF S(V600V601V602V604V605V606V610)<>''THEN" / "D610 FI
 					 (| / |+V610^a)
-					 IF S(V675V676V686)<>''THEN '<br>'FI("CDU "V675^a(4,4) if p(v675^a) then '<br>' fi/)("CDD "V676^a(4,4),if p(v676^a) then '<br>' fi/)/
-					 (V686^d,| |V686^a(4,4) if p(v686^d) then '<br>' fi/)
+					 IF S(V675V676V686)<>''THEN '<br />'FI("CDU "V675^a(4,4) if p(v675^a) then '<br />' fi/)("CDD "V676^a(4,4),if p(v676^a) then '<br />' fi/)/
+					 (V686^d,| |V686^a(4,4) if p(v686^d) then '<br />' fi/)
 				
 				'    </div></td>'/
 				'  </tr>'/

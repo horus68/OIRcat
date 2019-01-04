@@ -12,39 +12,35 @@
 ' <input type="hidden" name="id" value="'(if v9000^n='id' then v9000^v fi)'">'/
 ' <input type="hidden" name="user" value="'(if v9000^n='user' then v9000^v fi)'">'/
 ' <input type="hidden" name="nut" value="'(if v9000^n='nut' then v9000^v fi)'">'/
-'<br>'/
-'<div>'/
-'         <table cellpadding=0 cellspacing=1>'/
-'           <tr>'/
-'              <td width=230><div><p>'/
-'                 <select MULTIPLE SIZE="13" NAME="Lexico" size="2" style="width:220px">'/
+'<br />'/
+
+'	<div class="col5-contentor" style="width:100%">'/
+'		<div class="col5" style="min-width:70%;background-color:#f9f9ed;">'/
+'			<select MULTIPLE SIZE="13" NAME="Lexico" size="2" style="width:100%">'/
 fi/
 
 if v1<>'' then '<option value="'V1'">'  v1'</option>'/
 
 else/
-' </select></td>'/
-' <td>'/
+'		</div>'/
+' </select>'/
+'		<div class="col5" style="min-width:30%">'/
 ' <p><strong>A lista contém  <em>'V1083'</em> termos pesquisáveis.</strong></p>'/
-' <p>Primeiro: <em>'v1031'</em><br>'/
+' <p>Primeiro: <em>'v1031'</em><br />'/
 ' Último: <em>'v1032'</em></p>'/
 ' <strong>1.</strong>'/
-' Para selecionar mais do que um termo basta premir simultaneamente as'/
-' teclas CTLR + Tecla Esquerda do rato. Caso sejam selecionados vários termos é assumido'/
-' o operador OU (+). <br>'/
+' Para selecionar mais do que um termo carregue simultaneamente nas'/
+' teclas CTLR + botão esquerdo do rato. Caso sejam selecionados vários termos é assumido'/
+' o operador OU (+). <br />'/
 ' <strong>2.</strong>'/
-' Para pesquisar os termos selecionados prima a opção'/
+' Para pesquisar os termos selecionados carregue em'/
 ' "Pesquisar termos"'/
 ' <p></p><p><input TYPE="submit" VALUE="Pesquisar termos" ONCLICK="SelTrmLista(this.form)" NAME="PesqTrm" class="botao botao1"></p>'/
 
-' </td>'/
-'          </tr>'/
-'        </table>'/
-
-' </div>'/
 '</form>'/
-fi/
 
+fi/
+'		</div>'/
 if a(v1) then
 ' <a name="opcoes"></a>'/
 ' <form method="get" action="/rbcatalogo/cgi/www.exe/[in=pesqtrm.in]">'/
@@ -63,7 +59,7 @@ if a(v1) then
 ' <input type="submit" class="navbotao navbotaoseguinte" value="Próximos 'f(val(v1083),0,0)' termos >>" name="PagSeg">'/
 ' <input TYPE="button" class="navbotao navbotaoanterior" VALUE="Página anterior" ONCLICK="window.history.back(-1)" NAME="PagAnt" >'/
 ' <input TYPE="button" class="navbotao navbotaopesquisa" VALUE="Novos termos" ONCLICK="window.location.href = &quot;/rbcatalogo/'(if v9000^n='nomemnu' then v9000^v fi)'&id='(if v9000^n='id' then v9000^v fi)'&quot;" NAME="MnuPrincipal">'/
-' </div>'/
+'	</div>'/
 
 '</form>'/
 fi,
